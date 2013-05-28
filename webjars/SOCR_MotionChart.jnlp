@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_MotionChart.jnlp"> 
+    <information> 
+       <title>SOCR MotionChart</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCRAnalyses</description> 
+       <description kind="short">SOCR MotionChart</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_motionchart_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_motionchart_webstart" 
+      main-class="edu.ucla.stat.SOCR.motionchart.MotionChartGUI" 
+      width="1500" 
+      height="900"> 
+     </applet-desc>
+</jnlp>

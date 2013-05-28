@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!--  Statistics Online Computational Resources Java Build File for "ant" compiling  
+		ant -f build_webstart.xml all
+-->
+
+<project name="SOCR_webstart" basedir=".">
+
+	<!-- =================================================================== -->
+	<!-- Initialization target                                               -->
+	<!-- =================================================================== -->
+	<target name="init">
+		<tstamp />
+		<property name="Name" value="SOCR" />
+		<property name="name" value="SOCR" />
+		<property name="version" value="1.2.6" />
+		<property name="year" value="2001-2013" />
+		<property name="group" value="SOCR/I.D.Dinov" />
+
+		<echo message="---------------- ${Name} ${version} ${group} [${year}] -------------" />
+
+		<property name="build.dir" value="." />
+		<property name="build.src" value="src" />
+		<property name="build.dest" value="classes" />
+		<property name="lib" value="lib" />
+		<property name="jars" value="jars" />
+		<property name="webjars" value="webjars" />
+		<property name="classpath" value="./jars/SOCRJSci.jar:./src/JSci/classes.dir/:./src/JSci/mathmldom.jar:
+			./src/JSci/classes.dir/xercesImpl.jar:./src/JSci/classes.dir/xml-apis.jar:
+			./src/JSci/classes.dir/xmlParserAPIs.jar:${build.dest}:${jars}/SOCR_jgraph.jar:${jars}/jfreechart-1.0.11.jar:
+			${jars}/jcommon-1.0.14.jar:${jars}/loniEditor.jar:${jars}/freehep-java3d-2.0.jar"/>
+		<property name="htmldir" value="." />
+		<property name="browser" location="C:/Program Files/Internet Explorer/iexplore.exe" />
+		<available file="${browser}" property="browser.found">
+		</available>
+		
+		<property name="jvm.ms" value="-Xms300M" />
+		<property name="jvm.mx" value="-Xms800M" />
+	</target>
+	
+	<target name="clean" depends="init">
+			<delete>
+				<fileset dir="${webjars}" excludes="*.jnlp" />
+			</delete>
+		</target>
+	
+	<target name="web_applications_jar" depends="init" description="Build applications Webstart.jar">
+			<mkdir dir = "${webjars}"/>
+			<jar jarfile = "${webjars}/SOCR_applications_webstart.jar">
+				<!-- Merge library jars into final jar file -->
+				<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+				<zipfileset includes="**/*.class" src="${jars}/SOCR_chart.jar"/>
+				<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+				<zipfileset includes="**/*.class" src="${jars}/jcommon-1.0.14.jar"/>
+				<zipfileset includes="**/*.class" src="${jars}/SOCR_plugin.jar"/>
+				<zipfileset includes="**/*.class" src="${jars}/jgraph.jar"/>
+				<!--zipgroupfileset refid="chart.jars"/-->
+			</jar>
+			<echo message="signing the JAR"/>
+			<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_applications_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+							
+	    </target>
+	<target name="web_charts_jar" depends="init" description="Build charts Webstart.jar">
+		<mkdir dir = "${webjars}"/>
+		<jar jarfile = "${webjars}/SOCR_charts_webstart.jar">
+			<!-- Merge library jars into final jar file -->
+			<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+			<zipfileset includes="**/*.class" src="${jars}/SOCR_chart.jar"/>
+			<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+			<zipfileset includes="**/*.class" src="${jars}/jcommon-1.0.14.jar"/>
+			<zipfileset includes="**/*.class, **/*.gif" src="${jars}/SOCR_plugin.jar"/>
+			<!--zipgroupfileset refid="chart.jars"/-->
+		</jar>
+		<echo message="signing the JAR"/>
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_charts_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+						
+    </target>
+	<target name="web_3dcharts_jar" depends="init" description="Build 3dchart Webstart.jar">
+			<mkdir dir = "${webjars}"/>
+			<jar jarfile = "${webjars}/SOCR_3Dcharts_webstart.jar">
+				<!-- Merge library jars into final jar file -->
+				<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+				<zipfileset includes="**/*.class, **/*.data" src="${jars}/SOCR_chart3d.jar"/>
+				<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+				<zipfileset includes="**/*.class" src="${jars}/jcommon-1.0.14.jar"/>
+				<zipfileset includes="**/*.class, **/*.gif" src="${jars}/SOCR_plugin.jar"/>
+				<!--zipgroupfileset refid="chart.jars"/-->
+			</jar>
+			<echo message="signing the JAR"/>
+			<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_3Dcharts_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+							
+	    </target>
+	<target name="web_motionchart_jar" depends="init" description="Build motion chart Webstart.jar">
+				<mkdir dir = "${webjars}"/>
+				<jar jarfile = "${webjars}/SOCR_motionchart_webstart.jar">
+					<!-- Merge library jars into final jar file -->
+					<zipfileset includes="**/*.class, **/*.png" src="${jars}/SOCR_MotionCharts.jar"/>			
+					<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+					<zipfileset includes="**/*.class" src="${jars}/jcommon-1.0.14.jar"/>
+					<!--zipgroupfileset refid="chart.jars"/-->
+				</jar>
+				<echo message="signing the JAR"/>
+				<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_motionchart_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+								
+		    </target>
+	<target name="web_plugins_jar" depends="init" description="Build plugins Webstart.jar">
+			<mkdir dir = "${webjars}"/>
+			<jar jarfile = "${webjars}/SOCR_plugins_webstart.jar">
+				<!-- Merge library jars into final jar file -->
+				<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+				<zipfileset includes="**/*.class,**/*.gif" src="${jars}/SOCR_plugin.jar"/>
+				<!--zipgroupfileset refid="chart.jars"/-->
+			</jar>
+			<echo message="signing the JAR"/>
+			<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_plugins_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+							
+    </target>
+	<target name="web_analyses_jar" depends="init" description="Build analyses Webstart.jar">
+				<mkdir dir = "${webjars}"/>
+				<jar jarfile = "${webjars}/SOCR_analyses_webstart.jar">
+					<!-- Merge library jars into final jar file -->
+					<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+					<zipfileset includes="**/*.class, **/*.gif" src="${jars}/SOCR_plugin.jar"/>
+					<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+					<zipfileset includes="**/*.class" src="${jars}/jcommon-1.0.14.jar"/>
+					<!--zipgroupfileset refid="chart.jars"/-->
+				</jar>
+				<echo message="signing the JAR"/>
+				<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_analyses_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+								
+		    </target>
+	<target name="web_games_jar" depends="init" description="Build games Webstart.jar">
+					<mkdir dir = "${webjars}"/>
+					<jar jarfile = "${webjars}/SOCR_games_webstart.jar">
+						<!-- Merge library jars into final jar file -->
+						<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+						<zipfileset includes="**/*.class, **/*.gif" src="${jars}/SOCR_plugin.jar"/>
+						<zipfileset includes="**/*.class" src="${jars}/SOCRJSci.jar"/>
+						<!--zipgroupfileset refid="chart.jars"/-->
+					</jar>
+					<echo message="signing the JAR"/>
+					<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_games_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+									
+			    </target>
+	
+	<target name="web_modeler_jar" depends="init" description="Build modeler Webstart.jar">
+						<mkdir dir = "${webjars}"/>
+						<jar jarfile = "${webjars}/SOCR_modeler_webstart.jar">
+							<!-- Merge library jars into final jar file -->
+							<zipfileset includes="**/*.class" src="${jars}/SOCR_core.jar"/>			
+							<zipfileset includes="**/*.class, **/*.gif" src="${jars}/SOCR_plugin.jar"/>
+							<zipfileset includes="**/*.class, **/*.properties" src="${jars}/jfreechart-1.0.11.jar"/>
+							<zipfileset includes="**/*.class" src="${jars}/SOCRJSci.jar"/>
+							<!--zipgroupfileset refid="chart.jars"/-->
+						</jar>
+						<echo message="signing the JAR"/>
+						<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${webjars}/SOCR_modeler_webstart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+										
+				    </target>
+	<target name="all" depends="init, web_motionchart_jar, web_3dcharts_jar, web_analyses_jar, web_applications_jar, web_charts_jar, web_games_jar, web_modeler_jar, web_plugins_jar"></target>
+</project>

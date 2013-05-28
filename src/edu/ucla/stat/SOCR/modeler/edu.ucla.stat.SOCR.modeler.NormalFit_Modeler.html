@@ -1,0 +1,411 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   </head>
+   <body>
+      <table bgcolor="#CCCCFF" border="0" cellpadding="1" cellspacing="3" table-layout="fixed" width="100%">
+         <tr bgColor="#CCCCFF" width="100%">
+            <td width="72" align="center"><b><a href="overview-summary.html">Overview</a></b></td>
+            <td width="72" align="center"><b><a href="edu.ucla.stat.SOCR.modeler.html">
+                     Package
+                     </a></b></td>
+            <td bgColor="#00008B" width="72" align="center"><span style="color:#FFFFFF; font-weight:bold">Class</span></td>
+            <td width="72" align="center">
+               Diagram
+               
+            </td>
+            <td>&nbsp;</td>
+         </tr>
+      </table>
+      <hr>
+      <h2><font size="-1"><img src="icons/package.gif">edu.ucla.stat.SOCR.modeler</font></h2><img src="icons/class_public.gif"><span style="font-size:large; font-weight:bold">Class </span><span style="font-size:large; font-weight:bold">NormalFit_Modeler</span><br><br>public <b>NormalFit_Modeler</b><br><p>This class Designs a Normal Fit model fitting curve.</p><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Field Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private javax.swing.ButtonGroup</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#42">buttonGroup</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JCheckBox</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#43">estimateParams</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JCheckBox</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#44">userParams</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public edu.ucla.stat.SOCR.distributions.NormalDistribution</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#45">stdNorm</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public float</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#46">kernalVar</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#47">minX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#48">maxX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#49">modelType</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#50">meanParamField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#51">meanParamLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#52">stdevParamField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#53">stdevParamLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double[]</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#54">modelX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double[]</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#55">modelY</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public JSci.maths.DoubleVector</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#56">coeffs</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#57">dataPts</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.table.TableColumn</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#58">clm2</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#59">runs</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#60">kernalVarField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private javax.swing.JTextArea</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#61">statsTable</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#62">mn</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#63">sd</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#64">modelCt</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JCheckBox</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#65">rawCheck</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Constructor Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#67">NormalFit_Modeler</a>()</code><br>          <font>This method initializes the applet, including the toolbar,
+                scatterplot, and statistics table.</font>&nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#68">NormalFit_Modeler</a>(javax.swing.JPanel controlpanel)</code><br>          &nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Method Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#70">registerObservers</a>(edu.ucla.stat.SOCR.util.ObservableWrapper o)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#71">addParams</a>(javax.swing.JPanel controlpanel)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public int </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#72">getModelType</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#73">getLowerLimit</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#74">getUpperLimit</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#75">returnModelX</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#76">returnModelY</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#77">toggleParams</a>(boolean istrue)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#78">itemStateChanged</a>(java.awt.event.ItemEvent event)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#79">generateSamples</a>(int sampleCount)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public int </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#80">getModelCount</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#81">fitCurve</a>(float[] rawDat, float minx, float maxx, javax.swing.JTextArea resultPanelTextArea)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#82">getDescription</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#83">getInstructions</a>()</code><br>          <font>return the instructions for using this modeler</font>&nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#84">getResearch</a>()</code><br>          <font>return the references for this modeler</font>&nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Field Detail</span></td>
+      </tr></table><a name="42"><span style="font-size:larger">buttonGroup</span></a><br><br><pre>private javax.swing.ButtonGroup <b>buttonGroup</b></pre><br><dl></dl><br><hr><a name="43"><span style="font-size:larger">estimateParams</span></a><br><br><pre>public javax.swing.JCheckBox <b>estimateParams</b></pre><br><dl></dl><br><hr><a name="44"><span style="font-size:larger">userParams</span></a><br><br><pre>public javax.swing.JCheckBox <b>userParams</b></pre><br><dl></dl><br><hr><a name="45"><span style="font-size:larger">stdNorm</span></a><br><br><pre>public edu.ucla.stat.SOCR.distributions.NormalDistribution <b>stdNorm</b></pre><br><dl></dl><br><hr><a name="46"><span style="font-size:larger">kernalVar</span></a><br><br><pre>public float <b>kernalVar</b></pre><br><dl></dl><br><hr><a name="47"><span style="font-size:larger">minX</span></a><br><br><pre>private double <b>minX</b></pre><br><dl></dl><br><hr><a name="48"><span style="font-size:larger">maxX</span></a><br><br><pre>private double <b>maxX</b></pre><br><dl></dl><br><hr><a name="49"><span style="font-size:larger">modelType</span></a><br><br><pre>private int <b>modelType</b></pre><br><dl></dl><br><hr><a name="50"><span style="font-size:larger">meanParamField</span></a><br><br><pre>public javax.swing.JTextField <b>meanParamField</b></pre><br><dl></dl><br><hr><a name="51"><span style="font-size:larger">meanParamLabel</span></a><br><br><pre>public javax.swing.JLabel <b>meanParamLabel</b></pre><br><dl></dl><br><hr><a name="52"><span style="font-size:larger">stdevParamField</span></a><br><br><pre>public javax.swing.JTextField <b>stdevParamField</b></pre><br><dl></dl><br><hr><a name="53"><span style="font-size:larger">stdevParamLabel</span></a><br><br><pre>public javax.swing.JLabel <b>stdevParamLabel</b></pre><br><dl></dl><br><hr><a name="54"><span style="font-size:larger">modelX</span></a><br><br><pre>private double[] <b>modelX</b></pre><br><dl></dl><br><hr><a name="55"><span style="font-size:larger">modelY</span></a><br><br><pre>private double[] <b>modelY</b></pre><br><dl></dl><br><hr><a name="56"><span style="font-size:larger">coeffs</span></a><br><br><pre>public JSci.maths.DoubleVector <b>coeffs</b></pre><br><dl></dl><br><hr><a name="57"><span style="font-size:larger">dataPts</span></a><br><br><pre>private int <b>dataPts</b></pre><br><dl></dl><br><hr><a name="58"><span style="font-size:larger">clm2</span></a><br><br><pre>public javax.swing.table.TableColumn <b>clm2</b></pre><br><dl></dl><br><hr><a name="59"><span style="font-size:larger">runs</span></a><br><br><pre>private int <b>runs</b></pre><br><dl></dl><br><hr><a name="60"><span style="font-size:larger">kernalVarField</span></a><br><br><pre>public javax.swing.JTextField <b>kernalVarField</b></pre><br><dl></dl><br><hr><a name="61"><span style="font-size:larger">statsTable</span></a><br><br><pre>private javax.swing.JTextArea <b>statsTable</b></pre><br><dl></dl><br><hr><a name="62"><span style="font-size:larger">mn</span></a><br><br><pre>private double <b>mn</b></pre><br><dl></dl><br><hr><a name="63"><span style="font-size:larger">sd</span></a><br><br><pre>private double <b>sd</b></pre><br><dl></dl><br><hr><a name="64"><span style="font-size:larger">modelCt</span></a><br><br><pre>private int <b>modelCt</b></pre><br><dl></dl><br><hr><a name="65"><span style="font-size:larger">rawCheck</span></a><br><br><pre>public javax.swing.JCheckBox <b>rawCheck</b></pre><br><dl></dl><br><hr><br><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Constructor Detail</span></td>
+      </tr></table><span style="font-size:medium"><a name="67"><span style="font-size:medium">NormalFit_Modeler</span></a></span><br><pre>public <b>NormalFit_Modeler</b>()</pre><br><dl>
+         <p>This method initializes the applet, including the toolbar,
+             scatterplot, and statistics table.
+         </p><br></dl>
+      <hr><span style="font-size:medium"><a name="68"><span style="font-size:medium">NormalFit_Modeler</span></a></span><br><pre>public <b>NormalFit_Modeler</b>()</pre><br><dl><br></dl>
+      <hr><br><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Method Detail</span></td>
+      </tr></table><a name="70"><span style="font-size:medium">registerObservers</span></a><br><br><pre>public  void  <b>registerObservers</b>()</pre><br><dl><br></dl>
+      <hr><a name="71"><span style="font-size:medium">addParams</span></a><br><br><pre>public  void  <b>addParams</b>()</pre><br><dl><br></dl>
+      <hr><a name="72"><span style="font-size:medium">getModelType</span></a><br><br><pre>public  int  <b>getModelType</b>()</pre><br><dl><br></dl>
+      <hr><a name="73"><span style="font-size:medium">getLowerLimit</span></a><br><br><pre>public  double  <b>getLowerLimit</b>()</pre><br><dl><br></dl>
+      <hr><a name="74"><span style="font-size:medium">getUpperLimit</span></a><br><br><pre>public  double  <b>getUpperLimit</b>()</pre><br><dl><br></dl>
+      <hr><a name="75"><span style="font-size:medium">returnModelX</span></a><br><br><pre>public  double[]  <b>returnModelX</b>()</pre><br><dl><br></dl>
+      <hr><a name="76"><span style="font-size:medium">returnModelY</span></a><br><br><pre>public  double[]  <b>returnModelY</b>()</pre><br><dl><br></dl>
+      <hr><a name="77"><span style="font-size:medium">toggleParams</span></a><br><br><pre>public  void  <b>toggleParams</b>()</pre><br><dl><br></dl>
+      <hr><a name="78"><span style="font-size:medium">itemStateChanged</span></a><br><br><pre>public  void  <b>itemStateChanged</b>()</pre><br><dl><br></dl>
+      <hr><a name="79"><span style="font-size:medium">generateSamples</span></a><br><br><pre>public  double[]  <b>generateSamples</b>()</pre><br><dl><br></dl>
+      <hr><a name="80"><span style="font-size:medium">getModelCount</span></a><br><br><pre>public  int  <b>getModelCount</b>()</pre><br><dl><br></dl>
+      <hr><a name="81"><span style="font-size:medium">fitCurve</span></a><br><br><pre>public  void  <b>fitCurve</b>()</pre><br><dl><br></dl>
+      <hr><a name="82"><span style="font-size:medium">getDescription</span></a><br><br><pre>public  java.lang.String <b>getDescription</b>()</pre><br><dl><br></dl>
+      <hr><a name="83"><span style="font-size:medium">getInstructions</span></a><br><br><pre>public  java.lang.String <b>getInstructions</b>()</pre><br><dl>
+         <p>return the instructions for using this modeler</p><br></dl>
+      <hr><a name="84"><span style="font-size:medium">getResearch</span></a><br><br><pre>public  java.lang.String <b>getResearch</b>()</pre><br><dl>
+         <p>return the references for this modeler</p><br></dl>
+      <hr><br><br><table bgcolor="#CCCCFF" border="0" cellpadding="1" cellspacing="3" table-layout="fixed" width="100%">
+         <tr bgColor="#CCCCFF" width="100%">
+            <td width="72" align="center"><b><a href="overview-summary.html">Overview</a></b></td>
+            <td width="72" align="center"><b><a href="edu.ucla.stat.SOCR.modeler.html">
+                     Package
+                     </a></b></td>
+            <td bgColor="#00008B" width="72" align="center"><span style="color:#FFFFFF; font-weight:bold">Class</span></td>
+            <td width="72" align="center">
+               Diagram
+               
+            </td>
+            <td>&nbsp;</td>
+         </tr>
+      </table>
+      <hr><br><br><center><span style="font-size:xx-small">This documentation has been generated by EclipseUML.</span></center><br></body>
+</html>

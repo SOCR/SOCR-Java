@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="SOCRDistributome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Distributions"/>
+        <xs:element minOccurs="0" ref="Relations"/>
+        <xs:element minOccurs="0" ref="Formulas"/>
+        <xs:element minOccurs="0" ref="References"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Distributions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Node"/>
+      </xs:sequence>
+      <xs:attribute name="URLPrefix" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Node">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="NodeURL"/>
+      </xs:sequence>
+      <xs:attribute name="FormulaID" use="required" type="xs:integer"/>
+      <xs:attribute name="ID" use="required" type="xs:integer"/>
+      <xs:attribute name="Keywords" use="required"/>
+      <xs:attribute name="Name" use="required"/>
+      <xs:attribute name="Refs" use="required"/>
+      <xs:attribute name="Types" use="required"/>
+      <xs:attribute name="URL" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeURL" type="xs:string"/>
+  <xs:element name="Relations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Edge"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edge">
+    <xs:complexType>
+      <xs:attribute name="FormulaID" use="required" type="xs:integer"/>
+      <xs:attribute name="FromNodeID" use="required" type="xs:integer"/>
+      <xs:attribute name="ID" use="required" type="xs:integer"/>
+      <xs:attribute name="Name" use="required"/>
+      <xs:attribute name="Refs" use="required"/>
+      <xs:attribute name="ToNodeID" use="required" type="xs:integer"/>
+      <xs:attribute name="Types" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Formulas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Formula"/>
+      </xs:sequence>
+      <xs:attribute name="DensityPrefix" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Formula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="FormulaEquation"/>
+      </xs:sequence>
+      <xs:attribute name="Density" use="required"/>
+      <xs:attribute name="Equation"/>
+      <xs:attribute name="ID" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormulaEquation" type="xs:string"/>
+  <xs:element name="References">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ref">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="RefURL"/>
+      </xs:sequence>
+      <xs:attribute name="Author" use="required"/>
+      <xs:attribute name="ID" use="required" type="xs:integer"/>
+      <xs:attribute name="Journal" use="required"/>
+      <xs:attribute name="Page" use="required"/>
+      <xs:attribute name="Title" use="required"/>
+      <xs:attribute name="URL" type="xs:anyURI"/>
+      <xs:attribute name="Year" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefURL" type="xs:anyURI"/>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Osmium</name>
+   <symbol>Os</symbol>
+   <atomic-number>76</atomic-number>
+   <mass-number>190</mass-number>
+   <electronegativity>2.2</electronegativity>
+   <covalent-radius>1.26</covalent-radius>
+   <atomic-radius>1.92</atomic-radius>
+   <melting-point>3300.0</melting-point>
+   <boiling-point>5285.0</boiling-point>
+   <density>22.40</density>
+   <specific-heat>0.13</specific-heat>
+   <electrical-conductivity>0.109e6</electrical-conductivity>
+   <thermal-conductivity>0.876</thermal-conductivity>
+</element>

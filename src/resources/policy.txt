@@ -1,0 +1,7 @@
+grant CodeBase "file:." 
+{ 	permission java.awt.AWTPermission "accessClipboard";
+	permission java.net.SocketPermission "*.ucla.edu", "accept,connect,listen,resolve";
+	permission java.net.SocketPermission "www.stat.ucla.edu", "accept,connect,listen,resolve";
+	permission java.net.SocketPermission "mathworld.wolfram.com/", "accept,connect,listen,resolve";
+	permission java.net.SocketPermission "*:80-65535", "accept,connect,listen,resolve";
+};

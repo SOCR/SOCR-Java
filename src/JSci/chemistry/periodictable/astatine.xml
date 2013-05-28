@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="halogen">
+   <name>Astatine</name>
+   <symbol>At</symbol>
+   <atomic-number>85</atomic-number>
+   <mass-number>210</mass-number>
+   <electronegativity>2.2</electronegativity>
+   <covalent-radius>1.45</covalent-radius>
+   <atomic-radius>1.43</atomic-radius>
+   <melting-point>575</melting-point>
+   <boiling-point>610</boiling-point>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.017</thermal-conductivity>
+</element>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_3DCharts.jnlp"> 
+    <information> 
+       <title>SOCR Modeler</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCR3DCharts</description> 
+       <description kind="short">SOCR 3DCharts</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_3Dcharts_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_3Dcharts_webstart" 
+      main-class="edu.ucla.stat.SOCR.core.SOCRChart3D" 
+      width="1500" 
+      height="900"> 
+      <param name=selectedItemName value="Demo3_MatrixInput">
+      <param name="java_arguments" value="-Xmx256m">
+     </applet-desc>
+</jnlp>

@@ -1,0 +1,6 @@
+#implemented Analaysis
+# format: coma delimited recode
+# name,    class
+Logistic Regression Analysis,		edu.ucla.stat.SOCR.analyses.jri.gui.LogisticRegression
+Simple Regression Analysis, 		edu.ucla.stat.SOCR.analyses.jri.gui.SimpleLinearRegression
+#Time Series with ARIMA,			edu.ucla.stat.SOCR.analyses.jri.gui.WorkToBeCompletedYetInYear2007

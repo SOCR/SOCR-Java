@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Aluminium</name>
+   <symbol>Al</symbol>
+   <atomic-number>13</atomic-number>
+   <mass-number>27</mass-number>
+   <electronegativity>1.61</electronegativity>
+   <covalent-radius>1.25</covalent-radius>
+   <atomic-radius>1.82</atomic-radius>
+   <melting-point>933.25</melting-point>
+   <boiling-point>2793</boiling-point>
+   <density>2.702</density>
+   <specific-heat>0.9</specific-heat>
+   <electrical-conductivity>0.377e6</electrical-conductivity>
+   <thermal-conductivity>2.37</thermal-conductivity>
+</element>

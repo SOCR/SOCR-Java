@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Oxygen</name>
+   <symbol>O</symbol>
+   <atomic-number>8</atomic-number>
+   <mass-number>16</mass-number>
+   <electronegativity>3.44</electronegativity>
+   <covalent-radius>0.66</covalent-radius>
+   <atomic-radius>0.65</atomic-radius>
+   <melting-point>50.35</melting-point>
+   <boiling-point>90.13</boiling-point>
+   <density>0.001429</density>
+   <specific-heat>0.92</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.0002674</thermal-conductivity>
+</element>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Promethium</name>
+   <symbol>Pm</symbol>
+   <atomic-number>61</atomic-number>
+   <mass-number>145</mass-number>
+   <electronegativity>1.13</electronegativity>
+   <covalent-radius>1.63</covalent-radius>
+   <atomic-radius>2.62</atomic-radius>
+   <melting-point>1204.0</melting-point>
+   <boiling-point>3785.0</boiling-point>
+   <density>6.475</density>
+   <specific-heat>0.18</specific-heat>
+   <thermal-conductivity>0.179</thermal-conductivity>
+</element>

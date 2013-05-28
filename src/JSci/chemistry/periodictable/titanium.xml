@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Titanium</name>
+   <symbol>Ti</symbol>
+   <atomic-number>22</atomic-number>
+   <mass-number>48</mass-number>
+   <electronegativity>1.54</electronegativity>
+   <covalent-radius>1.32</covalent-radius>
+   <atomic-radius>2.00</atomic-radius>
+   <melting-point>1943.0</melting-point>
+   <boiling-point>3562.0</boiling-point>
+   <density>4.50</density>
+   <specific-heat>0.52</specific-heat>
+   <electrical-conductivity>0.0234e6</electrical-conductivity>
+   <thermal-conductivity>0.219</thermal-conductivity>
+</element>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="halogen">
+   <name>Bromine</name>
+   <symbol>Br</symbol>
+   <atomic-number>35</atomic-number>
+   <mass-number>80</mass-number>
+   <electronegativity>2.96</electronegativity>
+   <covalent-radius>1.142</covalent-radius>
+   <atomic-radius>1.12</atomic-radius>
+   <melting-point>265.9</melting-point>
+   <boiling-point>332.25</boiling-point>
+   <density>3.119</density>
+   <specific-heat>0.473</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.00122</thermal-conductivity>
+</element>

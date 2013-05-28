@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Palladium</name>
+   <symbol>Pd</symbol>
+   <atomic-number>46</atomic-number>
+   <mass-number>106</mass-number>
+   <electronegativity>2.20</electronegativity>
+   <covalent-radius>1.29</covalent-radius>
+   <atomic-radius>1.79</atomic-radius>
+   <melting-point>1825.0</melting-point>
+   <boiling-point>3237.0</boiling-point>
+   <density>12.02</density>
+   <specific-heat>0.24</specific-heat>
+   <electrical-conductivity>0.0950e6</electrical-conductivity>
+   <thermal-conductivity>0.718</thermal-conductivity>
+</element>

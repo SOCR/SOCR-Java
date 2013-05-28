@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-earth-metal">
+   <name>Beryllium</name>
+   <symbol>Be</symbol>
+   <atomic-number>4</atomic-number>
+   <mass-number>9</mass-number>
+   <electronegativity>1.57</electronegativity>
+   <covalent-radius>0.9</covalent-radius>
+   <atomic-radius>1.4</atomic-radius>
+   <melting-point>1560</melting-point>
+   <boiling-point>2745</boiling-point>
+   <density>1.848</density>
+   <specific-heat>1.82</specific-heat>
+   <electrical-conductivity>0.313e6</electrical-conductivity>
+   <thermal-conductivity>2.0</thermal-conductivity>
+</element>

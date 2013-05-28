@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Zinc</name>
+   <symbol>Zn</symbol>
+   <atomic-number>30</atomic-number>
+   <mass-number>65</mass-number>
+   <electronegativity>1.65</electronegativity>
+   <covalent-radius>1.25</covalent-radius>
+   <atomic-radius>1.53</atomic-radius>
+   <melting-point>692.73</melting-point>
+   <boiling-point>1180.0</boiling-point>
+   <density>7.14</density>
+   <specific-heat>0.39</specific-heat>
+   <electrical-conductivity>0.166e6</electrical-conductivity>
+   <thermal-conductivity>1.16</thermal-conductivity>
+</element>

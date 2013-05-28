@@ -1,0 +1,88 @@
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\uah\math\experiments
+# current format is "name, classname"
+# there are 77 files in the package edu.uah.math.experiments
+# about.gifis not a .class file
+# blueDie.gifis not a .class file
+# CVSis not a .class file
+# die.gifis not a .class file
+# greenDie.gifis not a .class file
+# left.gifis not a .class file
+# neighbors.gifis not a .class file
+# redDie.gifis not a .class file
+# reset.gifis not a .class file
+# right.gifis not a .class file
+# run.gifis not a .class file
+# sim.gifis not a .class file
+# spinner.gifis not a .class file
+# step.gifis not a .class file
+# stop.gifis not a .class file
+# transition.gifis not a .class file
+
+Ballot Experiment, edu.uah.math.experiments.BallotExperiment
+Ball and Urn Experiment, edu.uah.math.experiments.UrnExperiment
+Bertrand Experiment, edu.uah.math.experiments.BertrandExperiment
+Beta Coin Experiment, edu.uah.math.experiments.BetaCoinExperiment
+Beta Estimate Experiment, edu.uah.math.experiments.BetaEstimateExperiment
+Binomial Coin Experiment, edu.uah.math.experiments.BinomialCoinExperiment
+Binomial Timeline Experiment, edu.uah.math.experiments.BinomialTimelineExperiment
+Birthday Experiment, edu.uah.math.experiments.BirthdayExperiment
+Bivariate Normal Experiment, edu.uah.math.experiments.BivariateNormalExperiment
+Bivariate Uniform Experiment, edu.uah.math.experiments.BivariateUniformExperiment
+Buffon's Coin Experiment, edu.uah.math.experiments.BuffonCoinExperiment
+Buffon's Needle Experiment, edu.uah.math.experiments.BuffonNeedleExperiment
+CardExperiment, edu.uah.math.experiments.CardExperiment
+Chi Square Dice Experiment, edu.uah.math.experiments.ChiSquareFitExperiment
+Chuck A Luck Experiment, edu.uah.math.experiments.ChuckALuckExperiment
+Coin Die Experiment, edu.uah.math.experiments.CoinDieExperiment
+Coin Sample Experiment, edu.uah.math.experiments.CoinSampleExperiment
+Coin Toss LLN Experiment, edu.uah.math.experiments.CoinTossLawOfLargeNumbersExperiment
+Confidence Interval Experiment, edu.ucla.stat.SOCR.experiments.ConfidenceIntervalExperimentSimple
+Confidence Interval Experiment General, edu.ucla.stat.SOCR.experiments.ConfidenceIntervalExperimentGeneral
+Coupon Collector Experiment, edu.uah.math.experiments.CouponCollectorExperiment
+Craps Experiment, edu.uah.math.experiments.CrapsExperiment
+Dice Experiment, edu.uah.math.experiments.DiceExperiment
+Dice Sample Experiment, edu.uah.math.experiments.DiceSampleExperiment
+Die Coin Experiment, edu.uah.math.experiments.DieCoinExperiment
+Exponential-Times Car Experiment, edu.uah.math.experiments.ExponentialTimesCarExperiment
+#Random Experiment, edu.uah.math.experiments.EstimateExperiment
+#Random Experiment, edu.uah.math.experiments.Experiment
+Finite Order Statistic Experiment, edu.uah.math.experiments.FiniteOrderStatisticExperiment
+#Fire Experiment, edu.uah.math.experiments.FireExperiment
+Galton Board Experiment, edu.uah.math.experiments.GaltonBoardExperiment
+Gamma Estimate Experiment, edu.uah.math.experiments.GammaEstimateExperiment
+Gamma Experiment, edu.uah.math.experiments.GammaExperiment
+LLN Simple Experiment, edu.uah.math.experiments.LLN_SimpleExperiment
+Markov Chain Experiment, edu.uah.math.experiments.MarkovChainExperiment
+Match Experiment, edu.uah.math.experiments.MatchExperiment
+Mean Estimate Experiment, edu.uah.math.experiments.MeanEstimateExperiment
+Mean Test Experiment, edu.uah.math.experiments.MeanTestExperiment
+Mixture Model EM Experiment, edu.ucla.stat.SOCR.experiments.MixtureEMExperiment
+Monty Hall Experiment, edu.uah.math.experiments.MontyHallExperiment
+Negative Binomial Experiment, edu.uah.math.experiments.NegativeBinomialExperiment
+Normal Estimate Experiment, edu.uah.math.experiments.NormalEstimateExperiment
+Order Statistics Experiment, edu.uah.math.experiments.OrderStatisticExperiment
+Pareto Estimate Experiment, edu.uah.math.experiments.ParetoEstimateExperiment
+#Problem of Points Experiment, edu.uah.math.experiments.PointExperiment
+Two-Dimensional Poisson Experiment, edu.uah.math.experiments.Poisson2DExperiment
+Poisson Experiment, edu.uah.math.experiments.PoissonExperiment
+Two-Type Poisson Experiment, edu.uah.math.experiments.PoissonSplitExperiment
+Poker Dice Experiment, edu.uah.math.experiments.PokerDiceExperiment
+Poker Experiment, edu.uah.math.experiments.PokerExperiment
+Probability Plot Experiment, edu.uah.math.experiments.ProbabilityPlotExperiment
+Proportion Estimate Experiment, edu.uah.math.experiments.ProportionEstimateExperiment
+Proportion Test Experiment, edu.uah.math.experiments.ProportionTestExperiment
+Random Variable Experiment, edu.uah.math.experiments.RandomVariableExperiment
+Randowm Walk Experiment, edu.uah.math.experiments.RandomWalkExperiment
+Red and Black Experiment, edu.uah.math.experiments.RedBlackExperiment
+Roulette Experiment, edu.uah.math.experiments.RouletteExperiment
+Sample Mean Experiment, edu.uah.math.experiments.SampleMeanExperiment
+Sampling Distribution (CLT) Experiment, edu.uah.math.experiments.SamplingDistributionExperiment
+Sign Test Experiment, edu.uah.math.experiments.SignTestExperiment
+Spinner Experiment, edu.uah.math.experiments.SpinnerExperiment
+Triangle Experiment, edu.uah.math.experiments.TriangleExperiment
+Uniform Estimate Experiment, edu.uah.math.experiments.UniformEstimateExperiment
+Uniform E-Estimate Experiment, edu.uah.math.experiments.Uniform_E_EstimateExperiment
+Variance Estimate Experiment, edu.uah.math.experiments.VarianceEstimateExperiment
+Variance Test Experiment, edu.uah.math.experiments.VarianceTestExperiment
+Voter Experiment, edu.uah.math.experiments.VoterExperiment

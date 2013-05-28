@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Tungsten</name>
+   <symbol>W</symbol>
+   <atomic-number>74</atomic-number>
+   <mass-number>184</mass-number>
+   <electronegativity>2.36</electronegativity>
+   <covalent-radius>1.30</covalent-radius>
+   <atomic-radius>2.02</atomic-radius>
+   <melting-point>3680.0</melting-point>
+   <boiling-point>5828.0</boiling-point>
+   <density>19.3</density>
+   <specific-heat>0.13</specific-heat>
+   <electrical-conductivity>0.189e6</electrical-conductivity>
+   <thermal-conductivity>1.74</thermal-conductivity>
+</element>

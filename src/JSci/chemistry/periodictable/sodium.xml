@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Sodium</name>
+   <symbol>Na</symbol>
+   <atomic-number>11</atomic-number>
+   <mass-number>23</mass-number>
+   <electronegativity>0.93</electronegativity>
+   <covalent-radius>1.57</covalent-radius>
+   <atomic-radius>2.23</atomic-radius>
+   <melting-point>371.0</melting-point>
+   <boiling-point>1156.0</boiling-point>
+   <density>0.971</density>
+   <specific-heat>1.23</specific-heat>
+   <electrical-conductivity>0.139e6</electrical-conductivity>
+   <thermal-conductivity>1.41</thermal-conductivity>
+</element>

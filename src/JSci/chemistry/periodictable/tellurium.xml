@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Tellurium</name>
+   <symbol>Te</symbol>
+   <atomic-number>52</atomic-number>
+   <mass-number>128</mass-number>
+   <electronegativity>2.1</electronegativity>
+   <covalent-radius>1.37</covalent-radius>
+   <atomic-radius>1.42</atomic-radius>
+   <melting-point>722.65</melting-point>
+   <boiling-point>1621.0</boiling-point>
+   <density>6.24</density>
+   <specific-heat>0.20</specific-heat>
+   <electrical-conductivity>2.0</electrical-conductivity>
+   <thermal-conductivity>0.0235</thermal-conductivity>
+</element>

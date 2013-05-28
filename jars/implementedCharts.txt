@@ -1,0 +1,129 @@
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from /Users/jenny/work/My_SOCR/classes/edu/ucla/stat/SOCR/chart/demo
+# current format is "name, classname"
+# there are 204 files in the package edu.ucla.stat.SOCR.chart.demo
+# BarChartDemo3$CustomRenderer.class is an Inner class
+# BarChartDemo7$LabelGenerator.class is an Inner class
+# BarChartDemo9$CustomBarRenderer.class is an Inner class
+# PieChart3DDemo3$CustomLabelGenerator.class is an Inner class
+# PieChartDemo4$Rotator.class is an Inner class
+
+[Root]
+subCategory = Pie Charts
+subCategory = Bar Charts
+subCategory = Line Charts
+subCategory = Area Charts
+subCategory = Miscellaneous
+
+[Pie Charts]
+item = PieChart3DDemo1, edu.ucla.stat.SOCR.chart.demo.PieChart3DDemo1
+#item = PieChart3DDemo2, edu.ucla.stat.SOCR.chart.demo.PieChart3DDemo2
+#item = PieChart3DDemo3, edu.ucla.stat.SOCR.chart.demo.PieChart3DDemo3
+item = PieChartDemo1, edu.ucla.stat.SOCR.chart.demo.PieChartDemo1
+#item = PieChartDemo2, edu.ucla.stat.SOCR.chart.demo.PieChartDemo2
+item = PieChartDemo2, edu.ucla.stat.SOCR.chart.demo.PieChartDemo4
+#item = PieChartDemo5, edu.ucla.stat.SOCR.chart.demo.PieChartDemo5
+item = RingChartDemo1, edu.ucla.stat.SOCR.chart.demo.RingChartDemo1
+
+[Bar Charts]
+subCategory = CategoryPlot
+subCategory = XYPlot 
+
+[CategoryPlot]
+item = BarChartDemo1, edu.ucla.stat.SOCR.chart.demo.BarChartDemo1
+item = BarChartDemo2, edu.ucla.stat.SOCR.chart.demo.BarChartDemo2
+item = BarChartDemo3, edu.ucla.stat.SOCR.chart.demo.BarChartDemo3
+item = BarChartDemo4, edu.ucla.stat.SOCR.chart.demo.BarChartDemo4
+item = BarChartDemo5, edu.ucla.stat.SOCR.chart.demo.BarChartDemo5
+item = BarChartDemo7, edu.ucla.stat.SOCR.chart.demo.BarChartDemo7
+item = BarChartDemo8, edu.ucla.stat.SOCR.chart.demo.BarChartDemo8
+item = BarChartDemo9, edu.ucla.stat.SOCR.chart.demo.BarChartDemo9
+item = BarChart3DDemo1, edu.ucla.stat.SOCR.chart.demo.BarChart3DDemo1
+item = BarChart3DDemo2, edu.ucla.stat.SOCR.chart.demo.BarChart3DDemo2
+item = BarChart3DDemo3, edu.ucla.stat.SOCR.chart.demo.BarChart3DDemo3
+item = LayeredBarChartDemo1, edu.ucla.stat.SOCR.chart.demo.LayeredBarChartDemo1
+item = LayeredBarChartDemo2, edu.ucla.stat.SOCR.chart.demo.LayeredBarChartDemo2
+item = StackedBarChartDemo1, edu.ucla.stat.SOCR.chart.demo.StackedBarChartDemo1
+item = StackedBarChartDemo2, edu.ucla.stat.SOCR.chart.demo.StackedBarChartDemo2
+item = StackedBarChartDemo3, edu.ucla.stat.SOCR.chart.demo.StackedBarChartDemo3
+item = StackedBarChartDemo4, edu.ucla.stat.SOCR.chart.demo.StackedBarChartDemo4
+item = StatisticalBarChartDemo1, edu.ucla.stat.SOCR.chart.demo.StatisticalBarChartDemo1
+item = StatisticalBarChartDemo1a, edu.ucla.stat.SOCR.chart.demo.StatisticalBarChartDemo1a
+item = StatisticalBarChartDemo2, edu.ucla.stat.SOCR.chart.demo.StatisticalBarChartDemo2
+item = StatisticalBarChartDemo3, edu.ucla.stat.SOCR.chart.demo.StatisticalBarChartDemo3
+item = WaterfallChartDemo1, edu.ucla.stat.SOCR.chart.demo.WaterfallChartDemo1
+
+[XYPlot]
+item = XYBarChartDemo1, edu.ucla.stat.SOCR.chart.demo.XYBarChartDemo1
+item = XYBarChartDemo2, edu.ucla.stat.SOCR.chart.demo.XYBarChartDemo2
+item = HistogramChartDemo1, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo
+item = HistogramChartDemo2, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo2
+item = HistogramChartDemo3, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo3
+item = HistogramChartDemo4, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo4
+item = HistogramChartDemo5, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo5
+item = HistogramChartDemo6, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo6
+item = HistogramChartDemo7, edu.ucla.stat.SOCR.chart.demo.HistogramChartDemo7
+
+
+
+[Line Charts]
+
+item = LineChartDemo1, edu.ucla.stat.SOCR.chart.demo.LineChartDemo1
+item = LineChartDemo1a, edu.ucla.stat.SOCR.chart.demo.LineChartDemo1a
+item = LineChartDemo1b, edu.ucla.stat.SOCR.chart.demo.LineChartDemo1b
+item = LineChartDemo2, edu.ucla.stat.SOCR.chart.demo.LineChartDemo2
+item = LineChartDemo3, edu.ucla.stat.SOCR.chart.demo.LineChartDemo3
+item = LineChartDemo5, edu.ucla.stat.SOCR.chart.demo.LineChartDemo5
+item = LineChartDemo6, edu.ucla.stat.SOCR.chart.demo.LineChartDemo6
+item = ScatterChartDemo1, edu.ucla.stat.SOCR.chart.demo.ScatterChartDemo1
+item = SOCR_EM_MixtureModelChart, edu.ucla.stat.SOCR.chart.demo.SOCR_EM_MixtureModelChartDemo
+item = DotChart, edu.ucla.stat.SOCR.chart.demo.DotChart
+item = IndexChart, edu.ucla.stat.SOCR.chart.demo.IndexChart
+item = QQData2DataDemo, edu.ucla.stat.SOCR.chart.demo.QQData2DataDemo
+item = QQNormalPlotDemo, edu.ucla.stat.SOCR.chart.demo.QQNormalPlotDemo
+item = PowerTransformChart, edu.ucla.stat.SOCR.chart.demo.PowerTransformationFamilyChart
+item = PowerTransformScatterChartDemo, edu.ucla.stat.SOCR.chart.demo.PowerTransformXYScatterChart
+item = PowerTransformHistogramChartDemo, edu.ucla.stat.SOCR.chart.demo.PowerTransformHistogramChart
+item = PowerTransformQQNormalPlotDemo, edu.ucla.stat.SOCR.chart.demo.PowerTransformQQNormalPlotChart
+
+item = NormalDistributionDemo, edu.ucla.stat.SOCR.chart.demo.NormalDistributionDemo
+item = StatisticalLineChartDemo1, edu.ucla.stat.SOCR.chart.demo.StatisticalLineChartDemo1
+item = StatisticalLineChartDemo1a, edu.ucla.stat.SOCR.chart.demo.StatisticalLineChartDemo1a
+item = StatisticalLineChartDemo2, edu.ucla.stat.SOCR.chart.demo.StatisticalLineChartDemo2
+item = StatisticalLineChartDemo3, edu.ucla.stat.SOCR.chart.demo.StatisticalLineChartDemo3
+item = XYStepRendererDemo1, edu.ucla.stat.SOCR.chart.demo.XYStepRendererDemo1
+
+#item = QQChartDemo1a, edu.ucla.stat.SOCR.chart.demo.QQChartDemo1a
+#item = QQChartDemo3, edu.ucla.stat.SOCR.chart.demo.QQChartDemo3
+
+[Area Charts]
+item = AreaChartDemo1, edu.ucla.stat.SOCR.chart.demo.AreaChartDemo1
+item = StackedXYAreaChartDemo1, edu.ucla.stat.SOCR.chart.demo.StackedXYAreaChartDemo1
+item = StackedXYAreaChartDemo2, edu.ucla.stat.SOCR.chart.demo.StackedXYAreaChartDemo2
+item = XYAreaChartDemo1, edu.ucla.stat.SOCR.chart.demo.XYAreaChartDemo1
+item = XYAreaChartDemo2, edu.ucla.stat.SOCR.chart.demo.XYAreaChartDemo2
+
+#item = StackedAreaChartDemo, edu.ucla.stat.SO*CR.chart.demo.StackedAreaChartDemo
+
+[Miscellaneous]
+subCategory = CrossHairs
+item = BoxAndWhiskerChartDemo1, edu.ucla.stat.SOCR.chart.demo.BoxAndWhiskerChartDemo1
+item = BoxAndWhiskerChartDemo2, edu.ucla.stat.SOCR.chart.demo.BoxAndWhiskerChartDemo2
+item = BoxAndWhiskerChartDemo3, edu.ucla.stat.SOCR.chart.demo.BoxAndWhiskerChartDemo3
+item = BubbleChartDemo1, edu.ucla.stat.SOCR.chart.demo.BubbleChartDemo1
+item = CategoryStepChartDemo1, edu.ucla.stat.SOCR.chart.demo.CategoryStepChartDemo1
+item = CompassDemo1, edu.ucla.stat.SOCR.chart.demo.CompassDemo1
+item = DifferenceChartDemo1, edu.ucla.stat.SOCR.chart.demo.DifferenceChartDemo1
+item = EventFrequencyDemo1, edu.ucla.stat.SOCR.chart.demo.EventFrequencyDemo1
+item = PolarChartDemo1, edu.ucla.stat.SOCR.chart.demo.PolarChartDemo1
+item = SpiderWebChartDemo1, edu.ucla.stat.SOCR.chart.demo.SpiderWebChartDemo1
+item = SymbolAxisDemo1, edu.ucla.stat.SOCR.chart.demo.SymbolAxisDemo1
+item = YIntervalChartDemo1, edu.ucla.stat.SOCR.chart.demo.YIntervalChartDemo1
+item = YIntervalChartDemo1a, edu.ucla.stat.SOCR.chart.demo.YIntervalChartDemo1a
+
+#item = NoChart, edu.ucla.stat.SOCR.chart.demo.NoChart
+
+[CrossHairs]
+item = CrosshairDemo1, edu.ucla.stat.SOCR.chart.demo.CrosshairDemo1
+item = CrosshairDemo3, edu.ucla.stat.SOCR.chart.demo.CrosshairDemo3
+item = CrosshairDemo4, edu.ucla.stat.SOCR.chart.demo.CrosshairDemo4

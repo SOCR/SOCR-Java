@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="noble-gas">
+   <name>Radon</name>
+   <symbol>Rn</symbol>
+   <atomic-number>86</atomic-number>
+   <mass-number>222</mass-number>
+   <electronegativity>0.0</electronegativity>
+   <atomic-radius>1.34</atomic-radius>
+   <melting-point>202.0</melting-point>
+   <boiling-point>211.0</boiling-point>
+   <density>0.00973</density>
+   <specific-heat>0.09</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.0000364</thermal-conductivity>
+</element>

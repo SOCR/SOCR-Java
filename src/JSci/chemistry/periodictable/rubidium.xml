@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Rubidium</name>
+   <symbol>Rb</symbol>
+   <atomic-number>37</atomic-number>
+   <mass-number>85</mass-number>
+   <electronegativity>0.82</electronegativity>
+   <covalent-radius>2.16</covalent-radius>
+   <atomic-radius>2.98</atomic-radius>
+   <melting-point>312.64</melting-point>
+   <boiling-point>961.0</boiling-point>
+   <density>1.53</density>
+   <specific-heat>0.363</specific-heat>
+   <electrical-conductivity>0.0779e6</electrical-conductivity>
+   <thermal-conductivity>0.582</thermal-conductivity>
+</element>

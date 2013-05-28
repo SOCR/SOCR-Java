@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Polonium</name>
+   <symbol>Po</symbol>
+   <atomic-number>84</atomic-number>
+   <mass-number>210</mass-number>
+   <electronegativity>2.0</electronegativity>
+   <covalent-radius>1.53</covalent-radius>
+   <atomic-radius>1.53</atomic-radius>
+   <melting-point>527.0</melting-point>
+   <boiling-point>1235.0</boiling-point>
+   <density>9.4</density>
+   <specific-heat>0.12</specific-heat>
+   <electrical-conductivity>0.0219e6</electrical-conductivity>
+   <thermal-conductivity>0.20</thermal-conductivity>
+</element>

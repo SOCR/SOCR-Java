@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Bismuth</name>
+   <symbol>Bi</symbol>
+   <atomic-number>83</atomic-number>
+   <mass-number>209</mass-number>
+   <electronegativity>2.02</electronegativity>
+   <covalent-radius>1.52</covalent-radius>
+   <atomic-radius>1.63</atomic-radius>
+   <melting-point>544.52</melting-point>
+   <boiling-point>1837</boiling-point>
+   <density>9.8</density>
+   <specific-heat>0.12</specific-heat>
+   <electrical-conductivity>8.67e3</electrical-conductivity>
+   <thermal-conductivity>0.078</thermal-conductivity>
+</element>

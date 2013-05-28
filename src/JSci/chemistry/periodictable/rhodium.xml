@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Rhodium</name>
+   <symbol>Rh</symbol>
+   <atomic-number>45</atomic-number>
+   <mass-number>103</mass-number>
+   <electronegativity>2.28</electronegativity>
+   <covalent-radius>1.25</covalent-radius>
+   <atomic-radius>1.83</atomic-radius>
+   <melting-point>2236.0</melting-point>
+   <boiling-point>3970.0</boiling-point>
+   <density>12.4</density>
+   <specific-heat>0.242</specific-heat>
+   <electrical-conductivity>0.211e6</electrical-conductivity>
+   <thermal-conductivity>1.50</thermal-conductivity>
+</element>

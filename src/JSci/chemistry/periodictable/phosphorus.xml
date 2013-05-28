@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Phosphorus</name>
+   <symbol>P</symbol>
+   <atomic-number>15</atomic-number>
+   <mass-number>31</mass-number>
+   <electronegativity>2.19</electronegativity>
+   <covalent-radius>1.10</covalent-radius>
+   <atomic-radius>1.23</atomic-radius>
+   <melting-point>317.3</melting-point>
+   <boiling-point>550.0</boiling-point>
+   <density>1.82</density>
+   <specific-heat>0.77</specific-heat>
+   <electrical-conductivity>1.0e-11</electrical-conductivity>
+   <thermal-conductivity>0.00235</thermal-conductivity>
+</element>

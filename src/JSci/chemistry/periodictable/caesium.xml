@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Caesium</name>
+   <symbol>Cs</symbol>
+   <atomic-number>55</atomic-number>
+   <mass-number>133</mass-number>
+   <electronegativity>0.79</electronegativity>
+   <covalent-radius>2.35</covalent-radius>
+   <atomic-radius>3.34</atomic-radius>
+   <melting-point>301.55</melting-point>
+   <boiling-point>944.0</boiling-point>
+   <density>1.873</density>
+   <specific-heat>0.24</specific-heat>
+   <electrical-conductivity>0.0489e6</electrical-conductivity>
+   <thermal-conductivity>0.359</thermal-conductivity>
+</element>

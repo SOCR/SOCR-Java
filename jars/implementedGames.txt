@@ -1,0 +1,29 @@
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\uah\math\games
+# current format is "name, classname"
+# there are 22 files in the package edu.uah.math.games
+# about.gifis not a .class file
+# blueDie.gifis not a .class file
+# die.gifis not a .class file
+# greenDie.gifis not a .class file
+# left.gifis not a .class file
+# neighbors.gifis not a .class file
+# redDie.gifis not a .class file
+# reset.gifis not a .class file
+# right.gifis not a .class file
+# run.gifis not a .class file
+# sim.gifis not a .class file
+# spinner.gifis not a .class file
+# step.gifis not a .class file
+# stop.gifis not a .class file
+# transition.gifis not a .class file
+
+Interactive Scatterplot, edu.uah.math.games.BivariateGame
+Interactive Histogram with Error Graph, edu.uah.math.games.ErrorGame
+Galton Board Game, edu.uah.math.games.GaltonBoardGame
+#Game, edu.uah.math.games.Game
+Interactive Histogram, edu.uah.math.games.HistogramGame
+Monty Hall Game, edu.uah.math.games.MontyHallGame
+Red and Black Game, edu.uah.math.games.RedBlackGame
+Fourier Game, edu.ucla.stat.SOCR.games.FourierGame
+Wavelet Game, edu.ucla.stat.SOCR.games.WaveletGame

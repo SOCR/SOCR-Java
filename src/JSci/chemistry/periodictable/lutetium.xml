@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Lutetium</name>
+   <symbol>Lu</symbol>
+   <atomic-number>71</atomic-number>
+   <mass-number>175</mass-number>
+   <electronegativity>1.27</electronegativity>
+   <covalent-radius>1.56</covalent-radius>
+   <atomic-radius>2.25</atomic-radius>
+   <melting-point>1936.0</melting-point>
+   <boiling-point>3668.0</boiling-point>
+   <density>9.85</density>
+   <specific-heat>0.15</specific-heat>
+   <electrical-conductivity>0.0185e6</electrical-conductivity>
+   <thermal-conductivity>0.164</thermal-conductivity>
+</element>

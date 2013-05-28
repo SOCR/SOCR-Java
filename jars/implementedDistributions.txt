@@ -1,0 +1,84 @@
+# This file created by CreateImplementationFile,
+# current format is "name, classname"
+# there are 48 files in the package.edu.ucla.stat.SOCR.distributions.
+# Distribution.class is an abstract class
+# Domain.class is not a Distribution class
+# Functions.class is not a Distribution class
+# implementedDistributions.txt is not a Distribution class
+# IntervalData.class is not a Distribution class
+# LocationScaleDistribution.class seemed don't have a contructor
+# RandomVariable.class is not a Distribution class
+
+Anderson-Darling Distribution, edu.ucla.stat.SOCR.distributions.AndersonDarlingDistribution
+ArcSine Distribution, edu.ucla.stat.SOCR.distributions.ArcSineDistribution
+Benford Distribution, edu.ucla.stat.SOCR.distributions.BenfordDistribution
+Bernoulli Distribution, edu.ucla.stat.SOCR.distributions.BernoulliDistribution
+Beta Distribution, edu.ucla.stat.SOCR.distributions.BetaDistribution
+Beta (Generalized) Distribution, edu.ucla.stat.SOCR.distributions.BetaGeneralDistribution
+Beta-Binomial Distribution, edu.ucla.stat.SOCR.distributions.BetaBinomialDistribution
+Binomial Distribution, edu.ucla.stat.SOCR.distributions.BinomialDistribution
+Birthday Distribution, edu.ucla.stat.SOCR.distributions.BirthdayDistribution
+Cauchy Distribution, edu.ucla.stat.SOCR.distributions.CauchyDistribution
+Chi Distribution, edu.ucla.stat.SOCR.distributions.ChiDistribution
+Chi-Square Distribution, edu.ucla.stat.SOCR.distributions.ChiSquareDistribution
+Circle Distribution, edu.ucla.stat.SOCR.distributions.CircleDistribution
+Continuous Uniform Distribution, edu.ucla.stat.SOCR.distributions.ContinuousUniformDistribution
+Coupon Distribution, edu.ucla.stat.SOCR.distributions.CouponDistribution
+Die Distribution, edu.ucla.stat.SOCR.distributions.DieDistribution
+Discrete ArcSine Distribution, edu.ucla.stat.SOCR.distributions.DiscreteArcsineDistribution
+Discrete Uniform Distribution, edu.ucla.stat.SOCR.distributions.DiscreteUniformDistribution
+Erlang Distribution, edu.ucla.stat.SOCR.distributions.ErlangDistribution
+Error Distribution, edu.ucla.stat.SOCR.distributions.ErrorDistribution
+Exponential Distribution, edu.ucla.stat.SOCR.distributions.ExponentialDistribution
+Finite Distribution, edu.ucla.stat.SOCR.distributions.FiniteDistribution
+Fisher's F Distribution, edu.ucla.stat.SOCR.distributions.FisherDistribution
+Fisher-Tippett Distribution, edu.ucla.stat.SOCR.distributions.FisherTippettDistribution
+Gamma Distribution, edu.ucla.stat.SOCR.distributions.GammaDistribution
+General Cauchy Distribution, edu.ucla.stat.SOCR.distributions.GeneralCauchyDistribution
+Generalized Extreme Value Distribution, edu.ucla.stat.SOCR.distributions.GeneralizedExtremeValueDistribution
+Geometric Distribution, edu.ucla.stat.SOCR.distributions.GeometricDistribution
+Gilbrats Distribution, edu.ucla.stat.SOCR.distributions.GilbratsDistribution
+Gompertz Distribution, edu.ucla.stat.SOCR.distributions.GompertzDistribution
+Gumbel Distribution, edu.ucla.stat.SOCR.distributions.GumbelDistribution
+Half-Normal Distribution, edu.ucla.stat.SOCR.distributions.HalfNormalDistribution
+HyperGeometric Distribution, edu.ucla.stat.SOCR.distributions.HypergeometricDistribution
+Hyperbolic-Secant Distribution, edu.ucla.stat.SOCR.distributions.HyperbolicSecantDistribution
+Inverse-Gamma Distribution, edu.ucla.stat.SOCR.distributions.InverseGammaDistribution
+Inverse-Gaussian (Wald) Distribution, edu.ucla.stat.SOCR.distributions.InverseGaussianDistribution
+Johnson Special-Bounded (SB) Distribution, edu.ucla.stat.SOCR.distributions.JohnsonSBDistribution
+Johnson Special-Unbounded (SU) Distribution, edu.ucla.stat.SOCR.distributions.JohnsonSUDistribution
+Kolmogorov Distribution, edu.ucla.stat.SOCR.distributions.KolmogorovDistribution
+Laplace Distribution, edu.ucla.stat.SOCR.distributions.LaplaceDistribution
+Logarithmic-Series Distribution, edu.ucla.stat.SOCR.distributions.LogarithmicSeriesDistribution 
+Logistic Distribution, edu.ucla.stat.SOCR.distributions.LogisticDistribution
+Logistic-Exponential Distribution, edu.ucla.stat.SOCR.distributions.LogisticExponentialDistribution
+Log-Normal Distribution, edu.ucla.stat.SOCR.distributions.LogNormalDistribution
+Lomax Distribution, edu.ucla.stat.SOCR.distributions.LomaxDistribution
+Matching Distribution, edu.ucla.stat.SOCR.distributions.MatchDistribution
+Maxwell Distribution, edu.ucla.stat.SOCR.distributions.MaxwellDistribution
+Minimax Distribution, edu.ucla.stat.SOCR.distributions.MinimaxDistribution
+Mixture Distribution, edu.ucla.stat.SOCR.distributions.MixtureDistribution
+MultiNomial Distribution, edu.ucla.stat.SOCR.distributions.MultiNomialDistribution
+Muth Distribution, edu.ucla.stat.SOCR.distributions.MuthDistribution
+Negative-Binomial Distribution, edu.ucla.stat.SOCR.distributions.NegativeBinomialDistribution
+Negative-Hypergeometric Distribution, edu.ucla.stat.SOCR.distributions.NegativeHypergeometricDistribution
+Negative-Multinomial Distribution, edu.ucla.stat.SOCR.distributions.NegativeMultiNomialDistribution
+Normal Distribution, edu.ucla.stat.SOCR.distributions.NormalDistribution
+Non-Central Chi-Square Distribution, edu.ucla.stat.SOCR.distributions.NonCentralChiSquareDistribution
+Normal Truncated Distribution, edu.ucla.stat.SOCR.distributions.NormalTruncatedDistribution
+Pareto Distribution, edu.ucla.stat.SOCR.distributions.ParetoDistribution
+Point-Mass Distribution, edu.ucla.stat.SOCR.distributions.PointMassDistribution
+Poisson Distribution, edu.ucla.stat.SOCR.distributions.PoissonDistribution
+Poker-Dice Distribution, edu.ucla.stat.SOCR.distributions.PokerDiceDistribution
+Power-Function Distribution, edu.ucla.stat.SOCR.distributions.PowerFunctionDistribution
+Rayleigh Distribution, edu.ucla.stat.SOCR.distributions.RayleighDistribution
+Rice Distribution, edu.ucla.stat.SOCR.distributions.RiceDistribution
+Student's T Distribution, edu.ucla.stat.SOCR.distributions.StudentDistribution
+Triangle Distribution, edu.ucla.stat.SOCR.distributions.TriangleDistribution
+Two-Sided Power Distribution, edu.ucla.stat.SOCR.distributions.TwoSidedPowerDistribution
+U-Quadratic Distribution, edu.ucla.stat.SOCR.distributions.UQuadraticDistribution
+VonMises Distribution, edu.ucla.stat.SOCR.distributions.VonMisesDistribution
+Walk-Max Distribution, edu.ucla.stat.SOCR.distributions.WalkMaxDistribution
+Walk Position Distribution, edu.ucla.stat.SOCR.distributions.WalkPositionDistribution
+Weibull Distribution, edu.ucla.stat.SOCR.distributions.WeibullDistribution
+Zipf-Mandelbrot Distribution, edu.ucla.stat.SOCR.distributions.ZipfMandelbrotDistribution

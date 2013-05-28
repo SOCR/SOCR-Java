@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="noble-gas">
+   <name>Krypton</name>
+   <symbol>Kr</symbol>
+   <atomic-number>36</atomic-number>
+   <mass-number>84</mass-number>
+   <electronegativity>0.0</electronegativity>
+   <covalent-radius>1.12</covalent-radius>
+   <atomic-radius>1.03</atomic-radius>
+   <melting-point>115.78</melting-point>
+   <boiling-point>119.8</boiling-point>
+   <density>0.003708</density>
+   <specific-heat>0.248</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.0000949</thermal-conductivity>
+</element>

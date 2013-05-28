@@ -1,0 +1,12 @@
+#implemented Wavelets			
+# format: coma delimited recode
+# name,    class
+
+Daubechies2 Wavelet, edu.ucla.stat.SOCR.games.wavelet.FastDaubechies2
+Daubechies4 Wavelet, edu.ucla.stat.SOCR.games.wavelet.Daubechies
+HAAR Wavelet, edu.ucla.stat.SOCR.games.wavelet.FastHaar
+Symmlet8 Wavelet, edu.ucla.stat.SOCR.games.wavelet.FastSymmlet8
+
+
+
+

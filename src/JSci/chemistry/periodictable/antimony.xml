@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Antimony</name>
+   <symbol>Sb</symbol>
+   <atomic-number>51</atomic-number>
+   <mass-number>122</mass-number>
+   <electronegativity>2.05</electronegativity>
+   <covalent-radius>1.41</covalent-radius>
+   <atomic-radius>1.53</atomic-radius>
+   <melting-point>904</melting-point>
+   <boiling-point>1860</boiling-point>
+   <density>6.684</density>
+   <specific-heat>0.21</specific-heat>
+   <electrical-conductivity>0.0288e6</electrical-conductivity>
+   <thermal-conductivity>0.243</thermal-conductivity>
+</element>

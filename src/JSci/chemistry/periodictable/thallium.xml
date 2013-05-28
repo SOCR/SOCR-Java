@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Thallium</name>
+   <symbol>Tl</symbol>
+   <atomic-number>81</atomic-number>
+   <mass-number>204</mass-number>
+   <electronegativity>2.04</electronegativity>
+   <covalent-radius>1.55</covalent-radius>
+   <atomic-radius>2.08</atomic-radius>
+   <melting-point>577.0</melting-point>
+   <boiling-point>1746.0</boiling-point>
+   <density>11.85</density>
+   <specific-heat>0.13</specific-heat>
+   <electrical-conductivity>0.0617e6</electrical-conductivity>
+   <thermal-conductivity>0.461</thermal-conductivity>
+</element>

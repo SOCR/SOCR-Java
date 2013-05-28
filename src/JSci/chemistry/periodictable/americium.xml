@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Americium</name>
+   <symbol>Am</symbol>
+   <atomic-number>95</atomic-number>
+   <mass-number>243</mass-number>
+   <electronegativity>1.3</electronegativity>
+   <melting-point>1268.0</melting-point>
+   <boiling-point>2880.0</boiling-point>
+   <density>13.6</density>
+   <specific-heat>0.11</specific-heat>
+   <electrical-conductivity>0.022e6</electrical-conductivity>
+   <thermal-conductivity>0.1</thermal-conductivity>
+</element>

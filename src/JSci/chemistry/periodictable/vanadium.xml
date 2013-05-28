@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Vanadium</name>
+   <symbol>V</symbol>
+   <atomic-number>23</atomic-number>
+   <mass-number>51</mass-number>
+   <electronegativity>1.63</electronegativity>
+   <covalent-radius>1.22</covalent-radius>
+   <atomic-radius>1.92</atomic-radius>
+   <melting-point>2175.0</melting-point>
+   <boiling-point>3682.0</boiling-point>
+   <density>5.8</density>
+   <specific-heat>0.49</specific-heat>
+   <electrical-conductivity>0.0489e6</electrical-conductivity>
+   <thermal-conductivity>0.307</thermal-conductivity>
+</element>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Platinum</name>
+   <symbol>Pt</symbol>
+   <atomic-number>78</atomic-number>
+   <mass-number>195</mass-number>
+   <electronegativity>2.28</electronegativity>
+   <covalent-radius>1.30</covalent-radius>
+   <atomic-radius>1.83</atomic-radius>
+   <melting-point>2045.0</melting-point>
+   <boiling-point>4100.0</boiling-point>
+   <density>21.45</density>
+   <specific-heat>0.13</specific-heat>
+   <electrical-conductivity>0.0996e6</electrical-conductivity>
+   <thermal-conductivity>0.716</thermal-conductivity>
+</element>

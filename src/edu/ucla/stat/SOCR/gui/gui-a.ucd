@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="gui-a" size="256,1287" id="edu.ucla.stat.SOCR.gui" metadata="nsuml-1.4" tag="5" key="323030343131323520534F4352">
+  <children xsi:type="editmodel:ClassEditModel" name="AnimatedSamplePane" location="50,498" size="186,211" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane" runTimeClassModel="bg,fg,start(),main([LString;),delta,paintComponent(Ljava.awt.Graphics;),sleeptime,AnimatedSamplePane(),cellHeight">
+    <children xsi:type="editmodel:CompartmentEditModel" size="94,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="bg" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#bg"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cellHeight" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#cellHeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="delta" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#delta"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fg" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#fg"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sleeptime" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#sleeptime"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,72">
+      <children xsi:type="editmodel:MethodEditModel" name="AnimatedSamplePane" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#AnimatedSamplePane()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#main([LString;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paintComponent" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#paintComponent(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="start" id="edu.ucla.stat.SOCR.gui/AnimatedSamplePane#start()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ccpBar" location="199,1182" id="edu.ucla.stat.SOCR.gui/ccpBar" runTimeClassModel="ccpBar()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:MethodEditModel" name="ccpBar" id="edu.ucla.stat.SOCR.gui/ccpBar#ccpBar()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PipeDialog" location="50,759" size="113,103" id="edu.ucla.stat.SOCR.gui/PipeDialog" runTimeClassModel="PipeDialog(Ljava.awt.Frame;Ljava.lang.String;Z),show(),PipeDialog(Ljava.awt.Dialog;Ljava.lang.String;Z)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="80,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PipeDialog" id="edu.ucla.stat.SOCR.gui/PipeDialog#PipeDialog(Ljava.awt.Dialog;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="PipeDialog" id="edu.ucla.stat.SOCR.gui/PipeDialog#PipeDialog(Ljava.awt.Frame;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="show" id="edu.ucla.stat.SOCR.gui/PipeDialog#show()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BarChart" location="50,1182" size="99,85" id="edu.ucla.stat.SOCR.gui/BarChart" runTimeClassModel="BarChart(Ljava.lang.String;II),paint(Ljava.awt.Graphics;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="74,36">
+      <children xsi:type="editmodel:MethodEditModel" name="BarChart" id="edu.ucla.stat.SOCR.gui/BarChart#BarChart(Ljava.lang.String;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paint" id="edu.ucla.stat.SOCR.gui/BarChart#paint(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PieChart" location="50,912" size="98,103" id="edu.ucla.stat.SOCR.gui/PieChart" runTimeClassModel="PieChart(Ljava.lang.String;),addItem(Ljava.lang.String;ILjava.awt.Color;),paint(Ljava.awt.Graphics;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="71,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PieChart" id="edu.ucla.stat.SOCR.gui/PieChart#PieChart(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addItem" id="edu.ucla.stat.SOCR.gui/PieChart#addItem(Ljava.lang.String;ILjava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paint" id="edu.ucla.stat.SOCR.gui/PieChart#paint(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BrowseButton" location="50,1065" size="131,67" id="edu.ucla.stat.SOCR.gui/BrowseButton" runTimeClassModel="BrowseButton(Ljavax.swing.text.JTextComponent;Ljavax.swing.JFileChooser;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,18">
+      <children xsi:type="editmodel:MethodEditModel" name="BrowseButton" id="edu.ucla.stat.SOCR.gui/BrowseButton#BrowseButton(Ljavax.swing.text.JTextComponent;Ljavax.swing.JFileChooser;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GraphBase" location="50,50" size="136,398" id="edu.ucla.stat.SOCR.gui/GraphBase" runTimeClassModel="right,getPreferredSize(),top,paint(Ljava.awt.Graphics;),addItem(Ljava.lang.String;ILjava.awt.Color;),title,addItem(Ljava.lang.String;I),edu.ucla.stat.SOCR.gui.GraphBase.GraphItem,GraphBase(Ljava.lang.String;),left,GraphBase(Ljava.lang.String;II),setBounds(IIII),bottom">
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="bottom" id="edu.ucla.stat.SOCR.gui/GraphBase#bottom"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="left" id="edu.ucla.stat.SOCR.gui/GraphBase#left"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="right" id="edu.ucla.stat.SOCR.gui/GraphBase#right"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="title" id="edu.ucla.stat.SOCR.gui/GraphBase#title"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="top" id="edu.ucla.stat.SOCR.gui/GraphBase#top"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,126">
+      <children xsi:type="editmodel:MethodEditModel" name="GraphBase" id="edu.ucla.stat.SOCR.gui/GraphBase#GraphBase(Ljava.lang.String;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="GraphBase" id="edu.ucla.stat.SOCR.gui/GraphBase#GraphBase(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addItem" id="edu.ucla.stat.SOCR.gui/GraphBase#addItem(Ljava.lang.String;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addItem" id="edu.ucla.stat.SOCR.gui/GraphBase#addItem(Ljava.lang.String;ILjava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPreferredSize" id="edu.ucla.stat.SOCR.gui/GraphBase#getPreferredSize()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paint" id="edu.ucla.stat.SOCR.gui/GraphBase#paint(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setBounds" id="edu.ucla.stat.SOCR.gui/GraphBase#setBounds(IIII)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,123">
+      <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="GraphItem" location="196,0" size="110,121" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem" runTimeClassModel="value,color,title,GraphItem(Ljava.lang.String;ILjava.awt.Color;)">
+        <children xsi:type="editmodel:CompartmentEditModel" size="78,54">
+          <children xsi:type="editmodel:AttributeEditModel" name="color" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem#color"/>
+          <children xsi:type="editmodel:AttributeEditModel" name="title" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem#title"/>
+          <children xsi:type="editmodel:AttributeEditModel" name="value" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem#value"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="80,18">
+          <children xsi:type="editmodel:MethodEditModel" name="GraphItem" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem#GraphItem(Ljava.lang.String;ILjava.awt.Color;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+      </children>
+    </children>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem@items+edu.ucla.stat.SOCR.gui/GraphBase@" source="//@children.6" target="//@children.6/@children.2/@children.0" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan" autoLocated="true">
+      <children xsi:type="editmodel:WireLabelEditModel" size="1,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="136,60" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem@items+edu.ucla.stat.SOCR.gui/GraphBase@|edu.ucla.stat.SOCR.gui/GraphBase#" attachSource="true" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="193,117" size="1,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="items" location="0,60" id="edu.ucla.stat.SOCR.gui/GraphBase$GraphItem@items+edu.ucla.stat.SOCR.gui/GraphBase@|edu.ucla.stat.SOCR.gui/GraphBase$GraphItem#items" multiplicityLabel="//@children.6/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ items" location="15,384" size="38,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="36,356" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" properties="wireOptions=2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

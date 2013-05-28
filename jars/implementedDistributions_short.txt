@@ -1,0 +1,17 @@
+# This file created by CreateImplementationFile,
+# current format is "name, classname"
+# there are 48 files in the package.edu.ucla.stat.SOCR.distributions.
+# Distribution.class is an abstract class
+# Domain.class is not a Distribution class
+# Functions.class is not a Distribution class
+# implementedDistributions.txt is not a Distribution class
+# IntervalData.class is not a Distribution class
+# LocationScaleDistribution.class seemed don't have a contructor
+# RandomVariable.class is not a Distribution class
+
+
+Exponential Distribution, edu.ucla.stat.SOCR.distributions.ExponentialDistribution
+
+#Normal Distribution, edu.ucla.stat.SOCR.distributions.NormalDistribution
+
+Poisson Distribution, edu.ucla.stat.SOCR.distributions.PoissonDistribution

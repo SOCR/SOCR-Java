@@ -1,0 +1,32 @@
+# http://wiki.stat.ucla.edu/socr/index.php/About_pages_for_SOCR_Analyses
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\ucla\stat\SOCR\analysis
+# current format is "name, classname"
+# there are 20 files in the package edu.ucla.stat.SOCR.analysis
+
+ANOVA - One Way , 				edu.ucla.stat.SOCR.analyses.gui.AnovaOneWay
+ANOVA - Two Way , 				edu.ucla.stat.SOCR.analyses.gui.AnovaTwoWay
+Chi-Square Test Contingency Table,	edu.ucla.stat.SOCR.analyses.gui.ChiSquareContingencyTable
+Chi-Square Model Goodness-of-Fit Test,	edu.ucla.stat.SOCR.analyses.gui.ChiSquareModelFit
+ConfidenceInterval,	edu.ucla.stat.SOCR.analyses.gui.ConfidenceIntervalAnalysis
+Fisher's Exact Test,		edu.ucla.stat.SOCR.analyses.gui.FisherExact
+Fligner Killeen,		edu.ucla.stat.SOCR.analyses.gui.FlignerKilleen
+Friedman's Test,	edu.ucla.stat.SOCR.analyses.gui.Friedman
+Hierarchical Clustering,	edu.ucla.stat.SOCR.analyses.gui.Clustering
+Kolmogorov Smirnoff,	edu.ucla.stat.SOCR.analyses.gui.KolmogorovSmirnoff
+Kruskal Wallis,	edu.ucla.stat.SOCR.analyses.gui.KruskalWallis
+Logistic Regression Analysis,		edu.ucla.stat.SOCR.analyses.gui.LogisticRegression
+Multiple Regression Analysis, 	edu.ucla.stat.SOCR.analyses.gui.MultiLinearRegression
+Normal Distribution Power, 		edu.ucla.stat.SOCR.analyses.gui.NormalPower
+Proportion Test (Dichotomous), 		edu.ucla.stat.SOCR.analyses.gui.DichotomousProportion
+One Sample T Test, 				edu.ucla.stat.SOCR.analyses.gui.OneT
+One Sample Z Test, 				edu.ucla.stat.SOCR.analyses.gui.OneZ
+Principal Component Analysis, 	edu.ucla.stat.SOCR.analyses.gui.PrincipalComponentAnalysis
+Simple Regression Analysis, 		edu.ucla.stat.SOCR.analyses.gui.SimpleLinearRegression
+Survival Analysis, 				edu.ucla.stat.SOCR.analyses.gui.Survival
+Two Independent Sample T Test (Pooled), 	edu.ucla.stat.SOCR.analyses.gui.TwoIndependentTPooled
+Two Independent Sample T Test (Unpooled), 	edu.ucla.stat.SOCR.analyses.gui.TwoIndependentTUnpooled
+Two Independent Sample Wilcoxon Rank Sum Test, 	edu.ucla.stat.SOCR.analyses.gui.TwoIndependentWilcoxon
+Two Paired Sample Sign-Test, 	edu.ucla.stat.SOCR.analyses.gui.TwoPairedSignTest
+Two Paired Sample Signed-Rank Test (Wilcoxon), 	edu.ucla.stat.SOCR.analyses.gui.TwoPairedSignedRank
+Two Paired Sample T Test, 			edu.ucla.stat.SOCR.analyses.gui.TwoPairedT

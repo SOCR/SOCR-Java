@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="noble-gas">
+   <name>Xenon</name>
+   <symbol>Xe</symbol>
+   <atomic-number>54</atomic-number>
+   <mass-number>131</mass-number>
+   <electronegativity>0.0</electronegativity>
+   <covalent-radius>1.31</covalent-radius>
+   <atomic-radius>1.24</atomic-radius>
+   <melting-point>161.36</melting-point>
+   <boiling-point>165.03</boiling-point>
+   <density>0.00588</density>
+   <specific-heat>0.158</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.0569e-3</thermal-conductivity>
+</element>

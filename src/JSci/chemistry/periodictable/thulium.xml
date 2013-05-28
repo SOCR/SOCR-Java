@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Thulium</name>
+   <symbol>Tm</symbol>
+   <atomic-number>69</atomic-number>
+   <mass-number>169</mass-number>
+   <electronegativity>1.25</electronegativity>
+   <covalent-radius>1.56</covalent-radius>
+   <atomic-radius>2.42</atomic-radius>
+   <melting-point>1818.0</melting-point>
+   <boiling-point>2220.0</boiling-point>
+   <density>9.33</density>
+   <specific-heat>0.16</specific-heat>
+   <electrical-conductivity>0.0150e6</electrical-conductivity>
+   <thermal-conductivity>0.168</thermal-conductivity>
+</element>

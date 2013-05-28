@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-earth-metal">
+   <name>Strontium</name>
+   <symbol>Sr</symbol>
+   <atomic-number>38</atomic-number>
+   <mass-number>88</mass-number>
+   <electronegativity>0.95</electronegativity>
+   <covalent-radius>1.92</covalent-radius>
+   <atomic-radius>2.45</atomic-radius>
+   <melting-point>1041.0</melting-point>
+   <boiling-point>1650.0</boiling-point>
+   <density>2.6</density>
+   <specific-heat>0.30</specific-heat>
+   <electrical-conductivity>0.0762e6</electrical-conductivity>
+   <thermal-conductivity>0.353</thermal-conductivity>
+</element>

@@ -1,0 +1,159 @@
+<project name="MotionCharts" default="all" basedir=".">
+
+    <!-- Initialisation. -->
+    <target name="initialise" description="Initialise required settings.">
+        <tstamp />
+        <property name="jfreechart.name" value="jfreechart" />
+        <property name="jfreechart.version" value="1.0.11" />
+        <property name="jcommon.name" value="jcommon" />
+        <property name="jcommon.version" value="1.0.14" />
+        <property name="itext.name" value="iText" />
+        <property name="itext.version" value="2.1.3" />
+        <property name="demo.name" value="demo" />
+        <property name="builddir" value="${basedir}/build" />
+        <property name="srcdir" value="${basedir}/src" />
+        <property name="jfreechart.jar" value="${basedir}/jars/${jfreechart.name}-${jfreechart.version}.jar" />
+        <property name="jfreechart-experimental.jar" value="${basedir}/lib/${jfreechart.name}-${jfreechart.version}-experimental.jar" />
+        <property name="jcommon.jar" value="${basedir}/jars/${jcommon.name}-${jcommon.version}.jar"/>
+        <property name="itext.jar" value="${basedir}/jars/${itext.name}-${itext.version}.jar"/>
+        <property name="project.name" value="motionchart"/>
+
+        <path id="build.classpath">
+            <pathelement location="${jfreechart.jar}"/>
+            <pathelement location="${jfreechart-experimental.jar}"/>
+            <pathelement location="${jcommon.jar}"/>
+            <pathelement location="${itext.jar}"/>
+        </path>
+        <fileset dir="${basedir}/src" id="sources">
+            <include name="edu/ucla/loni/LOVE/*.java"/>
+            <include name="edu/ucla/loni/LOVE/colormap/*.java"/>
+            <include name="edu/ucla/loni/LOVE/colormap/plugins/*.java"/>
+            <include name="edu/ucla/stat/SOCR/motionchart/*.java"/>
+            <include name="edu/ucla/stat/SOCR/motionchart/resources/*.*"/>
+            <include name="edu/ucla/stat/SOCR/util/tablemodels/*.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EditableHeader.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EditableHeaderTable.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EditableHeaderTableColumn.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EditableHeaderUI.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EnhancedDefaultTableModel.java"/>
+            <include name="edu/ucla/stat/SOCR/util/EnhancedExcelAdapter.java"/>
+            <include name="edu/ucla/stat/SOCR/util/ExcelAdapter.java"/>
+            <include name="edu/ucla/stat/SOCR/util/JScrollPaneAdjuster.java"/>
+            <include name="edu/ucla/stat/SOCR/util/JTableRowHeaderResizer.java"/>
+            <include name="edu/ucla/stat/SOCR/util/RowHeaderRenderer.java"/>
+            <include name="edu/ucla/stat/SOCR/util/RowHeaderTable.java"/>
+            <include name="edu/ucla/stat/SOCR/util/BrowserControl.java"/>
+        </fileset>
+        <pathconvert pathsep="," property="sources" refid="sources">
+          <map from="${srcdir}${file.separator}" to=""/>
+        </pathconvert>
+    </target>
+
+    <!-- Compile the demo classes -->
+    <target name="compile" depends="initialise"
+            description="Compile the code.">
+
+        <!-- create a temp build directory -->
+        <mkdir dir="${builddir}" />
+
+        <!-- compile the source -->
+        <javac srcdir="${srcdir}"
+               destdir="${builddir}"
+               sourcepath=""
+               source="1.5"
+               target="1.5"
+               includes="${sources}">
+            <classpath refid="build.classpath" />
+        </javac>
+        <copy todir="${builddir}/edu/ucla/stat/SOCR/motionchart/resources">
+            <fileset dir="${srcdir}/edu/ucla/stat/SOCR/motionchart/resources">
+                <include name="*.*"/>
+            </fileset>
+        </copy>
+
+        <!-- make the jar -->
+        <jar jarfile="${basedir}/jars/SOCR_MotionCharts.jar"
+             basedir="${builddir}">
+            <manifest>
+                <attribute name="Main-Class" value="edu.ucla.stat.SOCR.motionchart.MotionChartGUI" />
+                <attribute name="Class-Path" value="jars/${jfreechart.name}-${jfreechart.version}.jar lib/${jcommon.name}-${jcommon.version}.jar lib/${itext.name}-${itext.version}.jar lib/${jfreechart.name}-${jfreechart.version}-experimental.jar"/>
+            </manifest>
+        </jar>
+    	<signjar keystore="${basedir}/jars/SOCR_keystore" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${basedir}/jars/SOCR_MotionCharts.jar" alias="SOCR" />
+    			
+
+        <!-- make the jar with source code-->
+<!--        <copy todir="${builddir}/src">
+            <fileset refid="sources"/>
+        </copy>-->
+
+        <!-- make the jar -->
+        <jar jarfile="${basedir}/jars/${project.name}-all.jar"
+             basedir="${builddir}">
+            <manifest>
+                <attribute name="Main-Class" value="edu.ucla.stat.SOCR.motionchart.MotionChartGUI" />
+            </manifest>
+            <zipfileset src="${basedir}/jars/${jfreechart.name}-${jfreechart.version}.jar"/>
+            <zipfileset src="${basedir}/jars/${jfreechart.name}-${jfreechart.version}-experimental.jar"/>
+            <zipfileset src="${basedir}/jars/${jcommon.name}-${jcommon.version}.jar"/>
+            <zipfileset src="${itext.jar}"/>
+        </jar>
+
+    	<!-- delete the temp directory -->
+        <delete dir="${builddir}" />
+    </target>
+
+    <!-- Make .zip distribution for JFreeChart -->
+    <target name="zip" depends="initialise">
+
+        <!-- make a temporary distribution directory -->
+        <mkdir dir="${basedir}/distribution" />
+
+        <!-- copy across README -->
+<!--        <copy file="${basedir}/README.txt" tofile="${basedir}/distribution/README.txt" /> -->
+
+        <!-- copy across LICENCE -->
+<!--        <copy file="${basedir}/licence-LGPL.txt" tofile="${basedir}/distribution/licence-LGPL.txt" /> -->
+
+        <!-- copy across jars -->
+        <copy file="${basedir}/${project.name}.jar" tofile="${basedir}/distribution/${project.name}.jar" />
+        <copy file="${basedir}/lib/${jfreechart.name}-${jfreechart.version}.jar" tofile="${basedir}/distribution/lib/${jfreechart.name}-${jfreechart.version}.jar" />
+        <copy file="${basedir}/lib/${jfreechart.name}-${jfreechart.version}-experimental.jar" tofile="${basedir}/distribution/lib/${jfreechart.name}-${jfreechart.version}-experimental.jar" />
+        <copy file="${basedir}/lib/${jcommon.name}-${jcommon.version}.jar" tofile="${basedir}/distribution/lib/${jcommon.name}-${jcommon.version}.jar" />
+        <copy file="${itext.jar}" tofile="${basedir}/distribution/lib/${itext.name}-${itext.version}.jar" />
+
+        <!-- copy across source files -->
+        <copy todir="${basedir}/distribution/source">
+            <fileset refid="sources"/>
+        </copy>
+
+        <!-- copy across ant file -->
+        <copy todir="${basedir}/distribution/ant">
+            <fileset dir="${basedir}">
+                <include name="${project.name}.xml"/>
+            </fileset>
+        </copy>
+
+        <!-- convert end-of-line characters in text files -->
+        <fixcrlf srcdir="${basedir}/distribution/source"
+                 eol="crlf" eof="remove"
+                 excludes="**/*.jpg,**/*.png" />
+
+        <!-- make the zip file -->
+        <zip zipfile="${basedir}/${project.name}.zip">
+             <zipfileset dir="${basedir}/distribution"
+                         prefix="${project.name}" />
+        </zip>
+
+        <!-- delete the temporary distribution directory -->
+        <delete dir="${basedir}/distribution" />
+
+    </target>
+
+    <!-- ALL -->
+    <target name="all"
+            depends="compile,zip"
+            description="Packages up the JFreeChart premium demos.">
+    </target>
+
+</project>

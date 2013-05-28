@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Iridium</name>
+   <symbol>Ir</symbol>
+   <atomic-number>77</atomic-number>
+   <mass-number>192</mass-number>
+   <electronegativity>2.20</electronegativity>
+   <covalent-radius>1.27</covalent-radius>
+   <atomic-radius>1.87</atomic-radius>
+   <melting-point>2716.0</melting-point>
+   <boiling-point>4701.0</boiling-point>
+   <density>22.42</density>
+   <specific-heat>0.130</specific-heat>
+   <electrical-conductivity>0.197e6</electrical-conductivity>
+   <thermal-conductivity>1.47</thermal-conductivity>
+</element>

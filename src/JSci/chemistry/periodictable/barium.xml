@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-earth-metal">
+   <name>Barium</name>
+   <symbol>Ba</symbol>
+   <atomic-number>56</atomic-number>
+   <mass-number>137</mass-number>
+   <electronegativity>0.89</electronegativity>
+   <covalent-radius>1.98</covalent-radius>
+   <atomic-radius>2.78</atomic-radius>
+   <melting-point>1002</melting-point>
+   <boiling-point>2171</boiling-point>
+   <density>3.51</density>
+   <specific-heat>0.204</specific-heat>
+   <electrical-conductivity>0.030e6</electrical-conductivity>
+   <thermal-conductivity>0.184</thermal-conductivity>
+</element>

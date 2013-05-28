@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+
+<project default="compile" basedir=".">
+
+  <!-- =================================================================== -->
+  <!-- Initialization target                                               -->
+  <!-- =================================================================== -->
+  <target name="init">
+    <tstamp/>
+    <property name="Name" value="SOCRJSci"/>
+    <property name="name" value="SOCRJSci"/>
+    <property name="version" value="1.0"/>
+    <property name="year" value="2001-2005"/>
+
+    <echo message="---------------- ${Name} ${version} [${year}] -------------"/>
+
+    <property name="src.dir" value="."/>
+    <property name="docs.dir" value="docs.dir"/>
+    <property name="lib.dir" value="classes.dir\xercesImpl.jar:classes.dir\mathmldom.jar:xercesImpl.jar:mathmldom.jar"/>
+
+
+	<property name="classpath" value=".:classes.dir\:classes.dir\mathmldom.jar:classes.dir\xercesImpl.jar:classes.dir\xml-apis.jar:classes.dir\xmlParserAPIs.jar"/>
+
+    <property name="build.dir" value="..\..\"/>
+    <property name="build.src" value="."/>
+    <property name="build.dest" value="classes.dir"/>
+
+    <property name="property.dir" value="."/>
+    <property name="user.dir" value="."/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage" depends="init">
+    <echo message=""/>
+    <echo message=""/>
+    <echo message="${Name} Build file"/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=" available targets are:"/>
+    <echo message=""/>
+    <echo message="   package   --> generates the ${name}.jar file"/>
+    <echo message="   compile   --> compiles the source code"/>
+    <echo message="   apidocs   --> create apidocs"/>
+    <echo message="   dist      --> generates the ${Name} distribution as .tar.gz and .zip"/>
+    <echo message="   clean --> cleans up the directory"/>
+    <echo message="   run       --> runs Pipeline from compiled source"/>
+    <echo message="   usage     --> show this message (default)"/>
+    <echo message=""/>
+    <echo message=" See the comments inside the build.xml file for more details."/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=""/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares the build directory                                        -->
+  <!-- =================================================================== -->
+  <target name="prepare" depends="init">
+    <!-- create directories -->
+    <echo message="Preparing the build directories"/>
+    <mkdir dir="${build.dir}"/>
+    <!-- copy todir="${build.dest}/edu/ucla/loni/resources">
+          <fileset dir="${build.src}/resources" excludes="CVS/**" />
+    </copy -->
+    
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Update from CVS                                                     -->
+  <!-- =================================================================== -->
+
+  <target name="update" depends="prepare">
+    <echo message="Updating from CVS "/>
+    <cvs dest="${src.dir}"
+	 command="update"
+    />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the source directory                                       -->
+  <!-- =================================================================== -->
+
+  <target name="compile" depends="prepare">
+    <echo message="Compiling the sources using ${build.compiler}"/>
+    <!-- create directories -->
+    <mkdir dir="${build.dest}"/>
+
+    <javac srcdir="${build.src}"
+           destdir="${build.dest}"
+	   classpath="${classpath}" 
+           debug="true"
+	   optimize="false"
+           deprecation="off" 
+           verbose = "false" />
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Creates the class package  which include XMLParser                  -->
+  <!-- =================================================================== 
+	jar cfvm SOCR_Modeler.jar META-INF\MANIFEST.MF -C classes.dir .
+	   -->
+
+  <target name="package" depends="compile">
+
+  	
+  	
+    <echo message="Creating the jar file ${build.dir}/${name}.jar"/>
+
+    <jar jarfile="${build.dir}/${name}.jar"
+       basedir="${build.dest}"
+	 
+       manifest="META-INF\MANIFEST.MF"/>
+  	
+  	
+  </target>
+  
+  <!-- =================================================================== -->
+  <!-- Prepares the docs                                                   -->
+  <!-- =================================================================== -->
+  <target name="prepare-docs" depends="init">
+    <mkdir dir="${docs.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Create the docs                                                     -->
+  <!-- =================================================================== -->
+  <target name="apidocs" depends="init,prepare-docs">
+    <echo message="Creating api files" />
+    <!--javadoc packagenames="edu.ucla.loni.SOCRGraphDemo.*"-->
+    <javadoc packagenames="edu.ucla.stat.SOCR.SOCR_Modeler.*">
+	     sourcepath="${src.dir}"
+	     destdir= "${docs.dir}"
+	     author="true"
+	     use="true"
+	     windowtitle="SOCR_Modeler API Specification" >
+
+    </javadoc>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the class package                                           -->
+  <!-- =================================================================== -->
+  <target name="package_std" depends="compile">
+
+    <echo message="Creating the jar file ${build.dir}/${name}.jar"/>
+
+    <jar jarfile="${build.dir}/${name}.jar"
+         basedir="${build.dest}"
+         excludes="*.txt,*.bat,*.xml,*.sh"
+         manifest="${lib.dir}/mani.txt"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Clean targets                                                       -->
+  <!-- =================================================================== -->
+  <target name="clean" depends="init">
+    <delete >
+        <fileset dir="${build.dest}" excludes="**/image/*"/>
+    </delete>
+  </target>
+
+
+
+  <!-- =================================================================== -->
+  <!-- Run SOCR_Modeler from compiled sources                                  -->
+  <!-- =================================================================== -->
+  <target name="run" depends="compile">
+    <echo message="--- Executing SOCR_Modeler ---"/>
+    <java classname="edu.ucla.stat.SOCR.SOCR_Modeler.SOCR_MOdeler.class"
+	  fork="yes"
+          classpath="${classpath};${build.dest};">
+    </java>
+  </target>
+
+</project>
+
+<!-- End of file -->

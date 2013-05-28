@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Erbium</name>
+   <symbol>Er</symbol>
+   <atomic-number>68</atomic-number>
+   <mass-number>167</mass-number>
+   <electronegativity>1.24</electronegativity>
+   <covalent-radius>1.57</covalent-radius>
+   <atomic-radius>2.45</atomic-radius>
+   <melting-point>1795</melting-point>
+   <boiling-point>3136</boiling-point>
+   <density>9.05</density>
+   <specific-heat>0.17</specific-heat>
+   <electrical-conductivity>0.0117e6</electrical-conductivity>
+   <thermal-conductivity>0.143</thermal-conductivity>
+</element>

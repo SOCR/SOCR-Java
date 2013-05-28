@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Francium</name>
+   <symbol>Fr</symbol>
+   <atomic-number>87</atomic-number>
+   <mass-number>223</mass-number>
+   <electronegativity>0.7</electronegativity>
+   <melting-point>300</melting-point>
+   <boiling-point>950</boiling-point>
+   <specific-heat>3.6</specific-heat>
+   <electrical-conductivity>0.03e6</electrical-conductivity>
+   <thermal-conductivity>0.15</thermal-conductivity>
+</element>

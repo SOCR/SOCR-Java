@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Uranium</name>
+   <symbol>U</symbol>
+   <atomic-number>92</atomic-number>
+   <mass-number>238</mass-number>
+   <electronegativity>1.38</electronegativity>
+   <covalent-radius>1.42</covalent-radius>
+   <melting-point>1405.0</melting-point>
+   <boiling-point>4407.0</boiling-point>
+   <density>18.9</density>
+   <specific-heat>0.227</specific-heat>
+   <electrical-conductivity>0.038e6</electrical-conductivity>
+   <thermal-conductivity>0.276</thermal-conductivity>
+</element>

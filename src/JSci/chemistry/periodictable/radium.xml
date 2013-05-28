@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-earth-metal">
+   <name>Radium</name>
+   <symbol>Ra</symbol>
+   <atomic-number>88</atomic-number>
+   <mass-number>226</mass-number>
+   <electronegativity>0.9</electronegativity>
+   <melting-point>973.0</melting-point>
+   <boiling-point>1809.0</boiling-point>
+   <density>5.0</density>
+   <specific-heat>0.12</specific-heat>
+   <thermal-conductivity>0.186</thermal-conductivity>
+</element>

@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+
+<!--  Statistics Online Computational Resources Java Build File for "ant" compiling  
+		ant -f build.xml core package
+		
+		If you want to specify which JVM needs to be used in compiling SOCR (e.g., 1.4, 1.5 or 1.6)
+		modify the JAVA_HOME and compile SOCR using this shell script:
+		
+		build.bat
+-->
+
+<project name="SOCR" default="usage" basedir=".">
+
+	<!-- =================================================================== -->
+	<!-- Initialization target                                               -->
+	<!-- =================================================================== -->
+	<target name="init">
+		<tstamp />
+		<property name="Name" value="SOCR" />
+		<property name="name" value="SOCR" />
+		<property name="version" value="2.6" />
+		<property name="year" value="2001-2013" />
+		<property name="group" value="SOCR/I.D.Dinov" />
+
+		<echo message="---------------- ${Name} ${version} ${group} [${year}] -------------" />
+
+		<property name="build.dir" value="." />
+		<property name="build.src" value="src" />
+		<property name="build.dest" value="classes" />
+		<property name="lib" value="lib" />
+		<property name="jars" value="jars" />
+		<property name="docs" value="docs" />
+		<property name="classpath" value="./jars/SOCRJSci.jar:./jars/commons-math3-3.0.jar:./jars/Jama-1.0.2.jar:./src/JSci/classes.dir/:./src/JSci/mathmldom.jar:
+			./src/JSci/classes.dir/xercesImpl.jar:./src/JSci/classes.dir/xml-apis.jar:${build.dest}:${jars}/SOCR_jgraph.jar:${jars}/jfreechart-1.0.11.jar:
+			${jars}/jcommon-1.0.14.jar:${jars}/loniEditor.jar:${jars}/freehep-java3d-2.0.jar"/>
+		<property name="htmldir" value="." />
+		<property name="browser" location="C:/Program Files/Internet Explorer/iexplore.exe" />
+		<available file="${browser}" property="browser.found">
+		</available>
+		
+		<property name="jvm.ms" value="-Xms800M" />
+		<property name="jvm.mx" value="-Xms1800M" />
+		
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Help on usage                                                       -->
+	<!-- =================================================================== -->
+	<target name="usage" depends="init">
+		<echo message="" />
+		<echo message="" />
+		<echo message="${Name} Build file" />
+		<echo message="-------------------------------------------------------------" />
+		<echo message="" />
+		<echo message=" available targets are:" />
+		<echo message="" />
+		<echo message="   SOCRJSci 			--> compiles SOCR JSCI code and creates SOCRJSci.jar" />
+		<echo message="   core   			--> compiles SOCR core code and create SOCR_core.jar"/>
+		<echo message="   package			--> generates the SOCR.zip file" />
+		<echo message="   applications     	--> compiles SOCR Applications" />
+		<echo message="   charts   			--> compiles SOCR chart code and create SOCR_chart.jar"/>
+		<echo message="   packageCharts		--> jar-signs SOCR chart JFreeChart JAR files"/>
+		<echo message="   distributome		--> packages SOCR Distributome"/>
+		<echo message="   jfreecharts		--> Build JFreeCharts JAR" />
+		<echo message="   JGraph 			--> Build the JGraph JAR " />
+		<echo message="   clean     			--> cleans up the directory" />
+		
+		<echo message="   modeler     		--> run Modeler applets" />
+		<echo message="   analyses     		--> run Analyses applets" />
+		<echo message="   experiments     	--> run Experiments applets" />
+		<echo message="   emexperiments     --> run EMEexperiments applets" />
+		<echo message="   games     		--> run Games applets" />
+		<echo message="   distributions     --> run Distributions applets" />
+		<echo message="   apidocs     		--> Build the SOCR API documentation " />
+
+		<echo message="   gamestest     	--> run Games unit test applets" />
+		<echo message="   emexperimentstest --> run EMEexperiments unit test applets" />
+		<echo message="   distributionstest --> run Distributions unit test applets" />
+
+		<echo message="   usage     		--> show this message (default)" />
+		<echo message="" />
+		<echo message=" See the comments inside the build.xml file for more details." />
+		<echo message="-------------------------------------------------------------" />
+		<echo message="" />
+		<echo message="" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Prepares the build directory                                        -->
+	<!-- =================================================================== -->
+	<target name="prepare" depends="init">
+		<!-- create directories -->
+		<echo message="Preparing the build directories" />
+		<mkdir dir="${build.dest}" />
+		<mkdir dir="${jars}" />
+		<copy todir="${build.dest}">
+			<fileset dir="${build.src}/resources" excludes="CVS/**" />
+		</copy>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Compiles the SOCR CORE source directory                             -->
+	<!-- =================================================================== -->
+	<target name="compilecore" depends="prepare">
+		<echo message="Compiling the SOCR CORE sources" />
+		<javac srcdir="${build.src}" excludes="edu/ucla/stat/SOCR/TG_distributome/** edu/ucla/loni/** edu/ucla/stat/SOCR/motionchart/** edu/ucla/stat/SOCR/JRI/** edu/ucla/stat/SOCR/servlet/** edu/ucla/stat/SOCR/analyses/jri/** edu/ucla/stat/SOCR/analyses/xml/** JSci/** jfreechart/**" destdir="${build.dest}" 
+			classpath="${classpath}" debug="false" optimize="false" deprecation="on" 
+			verbose="false">
+			<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+		</javac>
+		<echo message="done Compiling the SOCR CORE sources" />
+	</target>
+	
+	<target name = "core" depends="compilecore">
+		<jar jarfile="${jars}/SOCR_core.jar" basedir="${build.dest}" includes="edu/ucla/stat/SOCR/core/**"/>
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_core.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+
+    </target>
+
+	<!-- =================================================================== -->
+	<!-- Compiles the SOCR Charts source directory                             -->
+	<!-- =================================================================== -->
+	<target name = "charts" depends="core">
+	
+		<echo message="Compiling the SOCR Charts sources" />
+		<copy todir="${build.dest}/edu/ucla/stat/SOCR/chart/demo/">
+			<fileset dir="${build.src}/edu/ucla/stat/SOCR/chart/demo/" excludes="CVS/** j3d/** *.java" />
+		</copy>
+		
+		<!--  this can fix the bad copyright comment
+		<echo message="replacing the bad copyright comment "/>
+		<replace dir="${build.src}" value=" ">
+				  <include name="**/*.java"/>
+				  <replacetoken><![CDATA[�]]></replacetoken>
+					</replace>
+		-->
+		
+		<javac srcdir="${build.src}/edu/ucla/stat/SOCR/chart" destdir="${build.dest}" 
+			excludes="{build.src}/edu/ucla/stat/SOCR/chart/j3d/**"
+			classpath="${classpath}" debug="false" optimize="false" deprecation="on" 
+			verbose="false">
+			<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+		</javac>
+		
+		<jar jarfile="${jars}/SOCR_chart.jar" basedir="${build.dest}" includes="edu/ucla/stat/SOCR/chart/**" excludes="edu/ucla/stat/SOCR/chart/j3d/**"/> 
+	    <signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_chart.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+						
+    </target>
+	<target name = "3dcharts" depends="core">
+		
+			<echo message="Compiling the SOCR Charts sources" />
+			<copy todir="${build.dest}/edu/ucla/stat/SOCR/chart/j3d/demo/">
+					<fileset dir="${build.src}/edu/ucla/stat/SOCR/chart/j3d/demo/" excludes="CVS/**  *.java" />
+				</copy>
+			<javac srcdir="${build.src}/edu/ucla/stat/SOCR/chart" destdir="${build.dest}" 
+				classpath="${classpath}" debug="false" optimize="false" deprecation="on" 
+				verbose="false">
+				<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+			</javac>
+			<javac srcdir="${build.src}/org/freehep" destdir="${build.dest}" 
+						classpath="${classpath}" debug="false" optimize="false" deprecation="on" 
+						verbose="false">
+						<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+			</javac>
+			
+			<jar jarfile="${jars}/SOCR_chart3d.jar" basedir="${build.dest}" includes="edu/ucla/stat/SOCR/chart/**,
+				org/freehep/**"/> 
+		    <signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_chart3d.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+						
+	    </target>
+	<!-- =================================================================== -->
+		<!-- Compiles the SOCR Applications source directory                             -->
+		<!-- =================================================================== -->
+		<target name = "applications" depends="core">
+		
+			<echo message="Compiling the SOCR Charts sources" />
+			<copy todir="${build.dest}/edu/ucla/stat/SOCR/applications/demo/">
+				<fileset dir="${build.src}/edu/ucla/stat/SOCR/applications/demo/" excludes="CVS/**" />
+			</copy>
+		
+			<javac srcdir="${build.src}/edu/ucla/stat/SOCR/applications" 
+				destdir="${build.dest}" classpath="${classpath}" 
+				debug="false" optimize="false" deprecation="on" verbose="false">
+				<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+			</javac>
+			<jar jarfile="${jars}/SOCR_applications.jar" basedir="${build.dest}" 
+				includes="edu/ucla/stat/SOCR/applications/** edu/ucla/stat/SOCR/chart/** edu/ucla/stat/SOCR/analyses/* edu/ucla/stat/SOCR/gui/*"
+				excludes="{build.src}/edu/ucla/stat/SOCR/chart/j3d/**"/> 
+			<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_applications.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+	    </target>
+	
+	
+	<!-- =================================================================== -->
+				<!-- Compiles the SOCR Distributome source directory                             -->
+				<!-- ===================================================================
+			<target name = "distributome" depends="init">
+				<echo message="Compiling the SOCR Distributome sources" />
+				<copy todir="${build.dest}/edu/ucla/stat/SOCR/TG_distributome/">
+					<fileset dir="${build.src}/edu/ucla/stat/SOCR/TG_distributome/" excludes="CVS/**" />
+				</copy>	
+				<copy todir="${build.dest}/edu/ucla/stat/SOCR/touchgraph">
+					<fileset dir="${build.src}/edu/ucla/stat/SOCR/touchgraph/" excludes="CVS/**"/>
+				</copy>
+				
+				<javac srcdir="${build.src}/edu/ucla/stat/SOCR/TG_distributome:${build.src}/edu/ucla/stat/SOCR/touchgraph" destdir="${build.dest}" classpath="${classpath}" 
+								debug="false" optimize="false" deprecation="on" verbose="false">
+								<compilerarg value="-Xlint:all,-serial"/>
+				</javac>
+				<! - - javac srcdir="${build.src}/org" destdir="${build.dest}" classpath="${classpath}" debug="false" optimize="false" deprecation="on" verbose="false" - - >	
+				<! - - jar jarfile="${jars}/SOCR_jgraph.jar" basedir="${build.dest}" includes="org/**"  - - > 
+				
+				<jar jarfile="${jars}/SOCR_distributome.jar" basedir="${build.dest}" includes="edu/ucla/stat/SOCR/TG_distributome/**, edu/ucla/stat/SOCR/touchgraph/**"/> 
+				<! - - signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_distributome.jar" alias="567a062f-58ef-468e-8461-82f47f331d38"/ - - >					
+			    <signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_distributome.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+			</target>	
+	       -->
+	<!-- =================================================================== -->
+		<!-- Compiles the SOCR CORE source directory                             -->
+		<!-- =================================================================== -->
+		
+	
+	<!-- =================================================================== -->
+	<!-- Creates the SOCR CORE class package  which include XMLParser        -->
+	<!-- =================================================================== -->
+	<target name="package" depends="core,charts,3dcharts,applications,jar_SOCRPlugins">
+		<echo message="Creating the SOCR zip file wich contains everything need online" />
+		<echo message="Auto signing the JAR SOCR_core.jar using the instructions in: Link2Instructions_AppletSigning.txt" />	
+	
+		
+		<!-- Using Java 1.5+ compiler - we need to sign the SOCR_chart.jar file, as well!!!! -->
+		<!-- signjar keystore="${jars}/SOCR_keystore" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_chart.jar" alias="SOCR" / -->
+		<!-- Also need to run "ant packageCharts" to sign the JFreeCharts JAR files, which is needed for file/image saving! -->
+
+		<!-- jarsigner -keystore SOCR_keystore -storepass SOCRstorepass -keypass SOCRkeypass SOCR_core.jar SOCR -->
+
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCRJSci.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/commons-math3-3.0.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+				
+		<zip destfile="SOCR.zip"
+		       basedir="${build.dir}"
+		       includes="jars/**, *.html, *.css, htmls/SOCRstyle.css"
+		  />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Creates the SOCR Charts package, which include XMLParser            -->
+	<!-- =================================================================== -->
+	<target name="packageCharts" depends="core,charts,jar_SOCRPlugins">
+		<echo message="Creating the Java Signed JAR file for SOCR Charts" />
+		<echo message="Auto signing the JAR jfreechart-1.0.11.jar, jcommon-1.0.14.jar, junit.jar using the instructions in: Link2Instructions_AppletSigning.txt"/>
+		<!-- signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jcommon-1.0.14.jar" alias="567a062f-58ef-468e-8461-82f47f331d38"/ -->					
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jfreechart-1.0.11.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jcommon-1.0.14.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jgraph.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/junit.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		
+		<!-- Sign PCA external classes -->
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/commons-math3-3.0.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/Jama-1.0.2.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		
+		<zip destfile="SOCR.zip"
+		       basedir="${build.dir}"
+		       includes="jars/**, *.html"
+		  />
+	</target>
+
+	<!-- =================================================================== -->
+		<!-- Creates the SOCR CORE class package  which include XMLParser                  -->
+		<!-- =================================================================== -->
+		<target name="packjars" depends="core,charts,jar_SOCRPlugins">
+			<echo message="Creating the jars zip file wich contains everything need online" />
+			<echo message="Auto signing the JAR SOCR_core.jar using the instructions in: Link2Instructions_AppletSigning.txt" />		
+			<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_core.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+
+			<zip destfile="SOCRjars.zip"
+			       basedir="${jars}"
+				  includes="*.jar"
+			  />
+		</target>
+	<!-- =================================================================== -->
+					<!-- Compiles the JFreeChart source directory                             -->
+					<!-- =================================================================== -->
+				<target name = "jfreechart" depends="init, clean">
+					<echo message="Compiling the jfreechart sources" />
+					<!--copy todir="${build.dest}/jfreechart/org/jfree/">
+						<fileset dir="${build.src}/jfreechart/org/jfree/" excludes="CVS/**" />
+					</copy-->
+					 
+
+					     
+					
+					<javac srcdir="${build.src}/jfreechart/org/jfree" destdir="${build.dest}" classpath="${classpath}" 
+									debug="false" optimize="false" deprecation="on" verbose="false" />
+					<!-- copy across .properties files -->
+										        <copy todir="${build.dest}/org/jfree/chart/">
+										            <fileset dir="${build.src}/jfreechart/org/jfree/chart">
+										                <include name="*.properties" />
+										            </fileset>
+										        </copy>
+										        <copy todir="${build.dest}/org/jfree/chart/plot">
+										            <fileset dir="${build.src}/jfreechart/org/jfree/chart/plot">
+										                <include name="*.properties" />
+										            </fileset>
+										        </copy>
+										        <copy todir="${build.dest}/org/jfree/chart/editor">
+										            <fileset dir="${build.src}/jfreechart/org/jfree/chart/editor">
+										                <include name="*.properties" />
+										            </fileset>
+										        </copy>
+					
+					<jar jarfile="${jars}/jfreechart-1.0.11.jar" basedir="${build.dest}" includes="org/jfree/**"/> 
+					<!-- signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jfreechart-1.0.11.jar" alias="567a062f-58ef-468e-8461-82f47f331d38"/ -->					
+					<!-- signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/jfreechart-1.0.11.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" / -->
+				</target>	
+
+	<!-- =================================================================== -->
+						<!-- Compiles the JFreeChart source directory                             -->
+						<!-- =================================================================== -->
+					<target name = "JGraph" depends="init, clean">
+						<echo message="Compiling the JGraph sources" />
+						<!--copy todir="${build.dest}/JGraph/org/jgraph/">
+							<fileset dir="${build.src}/JGraph/org/jgraph/" excludes="CVS/**" />
+						</copy-->
+						
+						<javac srcdir="${build.src}/JGraph/org/jgraph/" destdir="${build.dest}" classpath="${classpath}" 
+										debug="false" optimize="false" deprecation="on" verbose="false" />
+						
+						<jar jarfile="${jars}/SOCR_jgraph.jar" basedir="${build.dest}" includes="org/jgraph/**"/> 
+						<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_jgraph.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+		
+					</target>
+	<!-- =================================================================== -->
+	<!-- Prepares the docs                                                   -->
+	<!-- =================================================================== -->
+	<target name="prepare-docs" depends="init">
+		<mkdir dir="${docs}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Create the docs                                                     -->
+	<!-- =================================================================== -->
+	<target name="apidocs" depends="init,prepare-docs">
+		<echo message="Creating SOCR API files" />
+		<javadoc packagenames="edu.*" sourcepath="${build.src}" destdir="${docs}" 
+			author="true" use="true" windowtitle="SOCR API Specification"
+			maxmemory="800m">
+		</javadoc>
+	</target>
+
+
+	<target name="clean" depends="init">
+		<delete>
+			<fileset dir="${build.dest}" excludes="**/image/*" />
+		</delete>
+	</target>
+
+	<target name="modeler" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="${htmldir}/SOCR_Modeler.html" />
+		</exec>
+	</target>
+	
+	<target name="games" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="${htmldir}/SOCR_Games.html" />
+		</exec>
+	</target>
+	
+	<target name="analyses" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="${htmldir}/SOCR_Analyses.html" />
+		</exec>
+	</target>
+
+	<target name="distributions" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="${htmldir}/SOCR_Distributions.html" />
+		</exec>
+	</target>
+	
+
+	<target name="experiments" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="${htmldir}/SOCR_Experiments.html" />
+		</exec>
+	</target>
+	
+	<target name="jar_SOCRPlugins" depends="core">
+		<echo message="Compiling the SOCR Experiments,Games, Distributions, Analysis, Modeler sources" />
+		<copy todir="${build.dest}/edu/uah/math/devices/cards">
+					<fileset dir="${build.src}/edu/uah/math/devices/cards" excludes="CVS/**" />
+				</copy>
+		<copy todir="${build.dest}/edu/uah/math/devices/">
+					<fileset dir="${build.src}/edu/uah/math/devices/" includes="**/*.gif" excludes="CVS/** **/*.java" />
+				</copy>
+		<copy todir="${build.dest}/edu/uah/math/experiments/">
+					<fileset dir="${build.src}/edu/uah/math/experiments/" excludes="CVS/** **/*.java" />
+				</copy>
+		<copy todir="${build.dest}/edu/uah/math/games/">
+					<fileset dir="${build.src}/edu/uah/math/games/" excludes="CVS/** **/*.java" />
+				</copy>
+
+		<javac srcdir="${build.src}"  destdir="${build.dest}" classpath="${classpath}" 
+			excludes="org/** edu/ucla/stat/SOCR/core/** edu/ucla/stat/SOCR/distributome/** edu/ucla/stat/SOCR/TG_distributome/** edu/ucla/stat/SOCR/touchgraph/** edu/ucla/loni/** edu/ucla/stat/SOCR/motionchart/** edu/ucla/stat/SOCR/JRI/** edu/ucla/stat/SOCR/servlet/** edu/ucla/stat/SOCR/analyses/jri/** edu/ucla/stat/SOCR/analyses/xml/** JSci/** jfreechart/**" debug="false" optimize="false" 
+			deprecation="on" verbose="false">
+			<compilerarg value="-Xlint:all,-serial,-unchecked"/>
+		</javac>
+		<jar jarfile="${jars}/SOCR_plugin.jar" basedir="${build.dest}" excludes="org/** edu/ucla/stat/SOCR/core/** edu/ucla/stat/SOCR/TG_distributome/** edu/ucla/stat/SOCR/touchgraph/**  edu/ucla/stat/SOCR/chart/** edu/ucla/loni/** edu/ucla/stat/SOCR/motionchart/** edu/ucla/stat/SOCR/JRI/** edu/ucla/stat/SOCR/servlet/** edu/ucla/stat/SOCR/analyses/jri/** edu/ucla/stat/SOCR/analyses/xml/** JSci/** jfreechart/**"/>
+		<signjar keystore="${jars}/SOCR_2010_Comodo_Key.ks" storepass="SOCRstorepass" keypass="SOCRkeypass" jar="${jars}/SOCR_plugin.jar" alias="567a062f-58ef-468e-8461-82f47f331d38" />
+    </target>
+
+
+	<target name="gamestest" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="html4unittest/SOCR_Games.html" />
+		</exec>
+	</target>
+	
+	<target name="experimentstest" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="html4unittest/SOCR_Experiments.html" />
+		</exec>
+	</target>
+	
+	<target name="distributionstest" depends="jar_SOCRPlugins">
+		<exec executable="${browser}" spawn="true">
+			<arg file="html4unittest/SOCR_Distributions.html" />
+		</exec>
+	</target>
+
+</project>

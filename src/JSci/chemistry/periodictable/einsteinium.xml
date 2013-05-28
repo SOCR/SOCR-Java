@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Einsteinium</name>
+   <symbol>Es</symbol>
+   <atomic-number>99</atomic-number>
+   <mass-number>254</mass-number>
+   <electronegativity>1.3</electronegativity>
+   <thermal-conductivity>0.1</thermal-conductivity>
+</element>

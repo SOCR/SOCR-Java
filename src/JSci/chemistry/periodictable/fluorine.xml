@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="halogen">
+   <name>Fluorine</name>
+   <symbol>F</symbol>
+   <atomic-number>9</atomic-number>
+   <mass-number>19</mass-number>
+   <electronegativity>3.98</electronegativity>
+   <covalent-radius>0.64</covalent-radius>
+   <atomic-radius>0.57</atomic-radius>
+   <melting-point>53.48</melting-point>
+   <boiling-point>84.95</boiling-point>
+   <density>0.001696</density>
+   <specific-heat>0.82</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.000279</thermal-conductivity>
+</element>

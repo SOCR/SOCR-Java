@@ -1,0 +1,392 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   </head>
+   <body>
+      <table bgcolor="#CCCCFF" border="0" cellpadding="1" cellspacing="3" table-layout="fixed" width="100%">
+         <tr bgColor="#CCCCFF" width="100%">
+            <td width="72" align="center"><b><a href="overview-summary.html">Overview</a></b></td>
+            <td width="72" align="center"><b><a href="edu.ucla.stat.SOCR.modeler.html">
+                     Package
+                     </a></b></td>
+            <td bgColor="#00008B" width="72" align="center"><span style="color:#FFFFFF; font-weight:bold">Class</span></td>
+            <td width="72" align="center">
+               Diagram
+               
+            </td>
+            <td>&nbsp;</td>
+         </tr></tbody>
+      </table>
+      <hr>
+      <h2><font size="-1"><img src="icons/package.gif">edu.ucla.stat.SOCR.modeler</font></h2><img src="icons/class_public.gif"><span style="font-size:large; font-weight:bold">Class </span><span style="font-size:large; font-weight:bold">BetaFit_Modeler</span><br><br>public <b>BetaFit_Modeler</b><br><p>This class Designs a Beta model fitting curve.</p><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Field Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public edu.ucla.stat.SOCR.distributions.BetaGeneralDistribution</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#213">dBeta</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#214">minX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#215">maxX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double[]</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#216">modelX</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private double[]</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#217">modelY</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private javax.swing.ButtonGroup</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#218">buttonGroup</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#219">modelCt</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JCheckBox</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#220">estimateParams</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JCheckBox</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#221">userParams</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#222">leftParamField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#223">leftParamLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#224">rightParamField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#225">rightParamLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#226">leftLimitField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#227">leftLimitLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#228">rightLimitField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JLabel</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#229">rightLimitLabel</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public float</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#230">kernalVar</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#231">dataPts</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#232">runs</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public javax.swing.JTextField</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#233">kernalVarField</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>private int</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#234">modelType</a></code><br>          &nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Constructor Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#236">BetaFit_Modeler</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#237">BetaFit_Modeler</a>(javax.swing.JPanel controlpanel)</code><br>          &nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <td bgColor="#CCCCFF" colspan="2"><span style="font-size:large; font-weight:bold">Method Summary</span></td>
+         </tr>
+      </thead><tbody>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#239">addParams</a>(javax.swing.JPanel controlpanel)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#240">registerObservers</a>(edu.ucla.stat.SOCR.util.ObservableWrapper o)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#241">getLowerLimit</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#242">getUpperLimit</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#243">toggleParams</a>(boolean istrue)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#244">returnModelX</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#245">returnModelY</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public int </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#246">getModelCount</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public double[] </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#247">generateSamples</a>(int sampleCount)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#248">itemStateChanged</a>(java.awt.event.ItemEvent event)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public void </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#249">fitCurve</a>(float[] rawDat, float minx, float maxx, javax.swing.JTextArea resultPanelTextArea)</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public int </code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#250">getModelType</a>()</code><br>          &nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#251">getDescription</a>()</code><br>          <font>return the description for this modeler</font>&nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#252">getInstructions</a>()</code><br>          <font>return the instructions for using this modeler</font>&nbsp;
+            										
+         </td>
+      </tr>
+      <tr>
+         <td align="right" valign="top" width="1%"><font size="-1"><code>public java.lang.String</code></font>&nbsp;
+            										
+         </td>
+         <td><code><a href="#253">getResearch</a>()</code><br>          <font>return the references for this modeler</font>&nbsp;
+            										
+         </td>
+      </tr></tbody></table><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Field Detail</span></td>
+      </tr></table><a name="213"><span style="font-size:larger">dBeta</span></a><br><br><pre>public edu.ucla.stat.SOCR.distributions.BetaGeneralDistribution <b>dBeta</b></pre><br><dl></dl><br><hr><a name="214"><span style="font-size:larger">minX</span></a><br><br><pre>private double <b>minX</b></pre><br><dl></dl><br><hr><a name="215"><span style="font-size:larger">maxX</span></a><br><br><pre>private double <b>maxX</b></pre><br><dl></dl><br><hr><a name="216"><span style="font-size:larger">modelX</span></a><br><br><pre>private double[] <b>modelX</b></pre><br><dl></dl><br><hr><a name="217"><span style="font-size:larger">modelY</span></a><br><br><pre>private double[] <b>modelY</b></pre><br><dl></dl><br><hr><a name="218"><span style="font-size:larger">buttonGroup</span></a><br><br><pre>private javax.swing.ButtonGroup <b>buttonGroup</b></pre><br><dl></dl><br><hr><a name="219"><span style="font-size:larger">modelCt</span></a><br><br><pre>private int <b>modelCt</b></pre><br><dl></dl><br><hr><a name="220"><span style="font-size:larger">estimateParams</span></a><br><br><pre>public javax.swing.JCheckBox <b>estimateParams</b></pre><br><dl></dl><br><hr><a name="221"><span style="font-size:larger">userParams</span></a><br><br><pre>public javax.swing.JCheckBox <b>userParams</b></pre><br><dl></dl><br><hr><a name="222"><span style="font-size:larger">leftParamField</span></a><br><br><pre>public javax.swing.JTextField <b>leftParamField</b></pre><br><dl></dl><br><hr><a name="223"><span style="font-size:larger">leftParamLabel</span></a><br><br><pre>public javax.swing.JLabel <b>leftParamLabel</b></pre><br><dl></dl><br><hr><a name="224"><span style="font-size:larger">rightParamField</span></a><br><br><pre>public javax.swing.JTextField <b>rightParamField</b></pre><br><dl></dl><br><hr><a name="225"><span style="font-size:larger">rightParamLabel</span></a><br><br><pre>public javax.swing.JLabel <b>rightParamLabel</b></pre><br><dl></dl><br><hr><a name="226"><span style="font-size:larger">leftLimitField</span></a><br><br><pre>public javax.swing.JTextField <b>leftLimitField</b></pre><br><dl></dl><br><hr><a name="227"><span style="font-size:larger">leftLimitLabel</span></a><br><br><pre>public javax.swing.JLabel <b>leftLimitLabel</b></pre><br><dl></dl><br><hr><a name="228"><span style="font-size:larger">rightLimitField</span></a><br><br><pre>public javax.swing.JTextField <b>rightLimitField</b></pre><br><dl></dl><br><hr><a name="229"><span style="font-size:larger">rightLimitLabel</span></a><br><br><pre>public javax.swing.JLabel <b>rightLimitLabel</b></pre><br><dl></dl><br><hr><a name="230"><span style="font-size:larger">kernalVar</span></a><br><br><pre>public float <b>kernalVar</b></pre><br><dl></dl><br><hr><a name="231"><span style="font-size:larger">dataPts</span></a><br><br><pre>private int <b>dataPts</b></pre><br><dl></dl><br><hr><a name="232"><span style="font-size:larger">runs</span></a><br><br><pre>private int <b>runs</b></pre><br><dl></dl><br><hr><a name="233"><span style="font-size:larger">kernalVarField</span></a><br><br><pre>public javax.swing.JTextField <b>kernalVarField</b></pre><br><dl></dl><br><hr><a name="234"><span style="font-size:larger">modelType</span></a><br><br><pre>private int <b>modelType</b></pre><br><dl></dl><br><hr><br><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Constructor Detail</span></td>
+      </tr></table><span style="font-size:medium"><a name="236"><span style="font-size:medium">BetaFit_Modeler</span></a></span><br><pre>public <b>BetaFit_Modeler</b>()</pre><br><dl><br></dl>
+      <hr><span style="font-size:medium"><a name="237"><span style="font-size:medium">BetaFit_Modeler</span></a></span><br><pre>public <b>BetaFit_Modeler</b>()</pre><br><dl><br></dl>
+      <hr><br><br><br><br><table border="1" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+         <td bgColor="#CCCCFF"><span style="font-size:large; font-weight:bold">Method Detail</span></td>
+      </tr></table><a name="239"><span style="font-size:medium">addParams</span></a><br><br><pre>public  void  <b>addParams</b>()</pre><br><dl><br></dl>
+      <hr><a name="240"><span style="font-size:medium">registerObservers</span></a><br><br><pre>public  void  <b>registerObservers</b>()</pre><br><dl><br></dl>
+      <hr><a name="241"><span style="font-size:medium">getLowerLimit</span></a><br><br><pre>public  double  <b>getLowerLimit</b>()</pre><br><dl><br></dl>
+      <hr><a name="242"><span style="font-size:medium">getUpperLimit</span></a><br><br><pre>public  double  <b>getUpperLimit</b>()</pre><br><dl><br></dl>
+      <hr><a name="243"><span style="font-size:medium">toggleParams</span></a><br><br><pre>public  void  <b>toggleParams</b>()</pre><br><dl><br></dl>
+      <hr><a name="244"><span style="font-size:medium">returnModelX</span></a><br><br><pre>public  double[]  <b>returnModelX</b>()</pre><br><dl><br></dl>
+      <hr><a name="245"><span style="font-size:medium">returnModelY</span></a><br><br><pre>public  double[]  <b>returnModelY</b>()</pre><br><dl><br></dl>
+      <hr><a name="246"><span style="font-size:medium">getModelCount</span></a><br><br><pre>public  int  <b>getModelCount</b>()</pre><br><dl><br></dl>
+      <hr><a name="247"><span style="font-size:medium">generateSamples</span></a><br><br><pre>public  double[]  <b>generateSamples</b>()</pre><br><dl><br></dl>
+      <hr><a name="248"><span style="font-size:medium">itemStateChanged</span></a><br><br><pre>public  void  <b>itemStateChanged</b>()</pre><br><dl><br></dl>
+      <hr><a name="249"><span style="font-size:medium">fitCurve</span></a><br><br><pre>public  void  <b>fitCurve</b>()</pre><br><dl><br></dl>
+      <hr><a name="250"><span style="font-size:medium">getModelType</span></a><br><br><pre>public  int  <b>getModelType</b>()</pre><br><dl><br></dl>
+      <hr><a name="251"><span style="font-size:medium">getDescription</span></a><br><br><pre>public  java.lang.String <b>getDescription</b>()</pre><br><dl>
+         <p>return the description for this modeler</p><br></dl>
+      <hr><a name="252"><span style="font-size:medium">getInstructions</span></a><br><br><pre>public  java.lang.String <b>getInstructions</b>()</pre><br><dl>
+         <p>return the instructions for using this modeler</p><br></dl>
+      <hr><a name="253"><span style="font-size:medium">getResearch</span></a><br><br><pre>public  java.lang.String <b>getResearch</b>()</pre><br><dl>
+         <p>return the references for this modeler</p><br></dl>
+      <hr><br><br><table bgcolor="#CCCCFF" border="0" cellpadding="1" cellspacing="3" table-layout="fixed" width="100%">
+         <tr bgColor="#CCCCFF" width="100%">
+            <td width="72" align="center"><b><a href="overview-summary.html">Overview</a></b></td>
+            <td width="72" align="center"><b><a href="edu.ucla.stat.SOCR.modeler.html">
+                     Package
+                     </a></b></td>
+            <td bgColor="#00008B" width="72" align="center"><span style="color:#FFFFFF; font-weight:bold">Class</span></td>
+            <td width="72" align="center">
+               Diagram
+               
+            </td>
+            <td>&nbsp;</td>
+         </tr></tbody>
+      </table>
+      <hr><br><br><center><span style="font-size:xx-small">This documentation has been generated by EclipseUML.</span></center><br></body>
+</html>

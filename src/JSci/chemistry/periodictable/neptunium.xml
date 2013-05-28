@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Neptunium</name>
+   <symbol>Np</symbol>
+   <atomic-number>93</atomic-number>
+   <mass-number>237</mass-number>
+   <electronegativity>1.36</electronegativity>
+   <melting-point>910.0</melting-point>
+   <density>20.45</density>
+   <electrical-conductivity>0.00822e6</electrical-conductivity>
+   <thermal-conductivity>0.063</thermal-conductivity>
+</element>

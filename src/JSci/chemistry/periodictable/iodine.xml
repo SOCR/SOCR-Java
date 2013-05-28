@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="halogen">
+   <name>Iodine</name>
+   <symbol>I</symbol>
+   <atomic-number>53</atomic-number>
+   <mass-number>127</mass-number>
+   <electronegativity>2.66</electronegativity>
+   <covalent-radius>1.333</covalent-radius>
+   <atomic-radius>1.32</atomic-radius>
+   <melting-point>386.7</melting-point>
+   <boiling-point>458.4</boiling-point>
+   <density>4.93</density>
+   <specific-heat>0.214</specific-heat>
+   <electrical-conductivity>8.0e-10</electrical-conductivity>
+   <thermal-conductivity>0.00449</thermal-conductivity>
+</element>

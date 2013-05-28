@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="halogen">
+   <name>Chlorine</name>
+   <symbol>Cl</symbol>
+   <atomic-number>17</atomic-number>
+   <mass-number>35</mass-number>
+   <electronegativity>3.16</electronegativity>
+   <covalent-radius>0.99</covalent-radius>
+   <atomic-radius>0.97</atomic-radius>
+   <melting-point>172.16</melting-point>
+   <boiling-point>239.1</boiling-point>
+   <density>0.003214</density>
+   <specific-heat>0.48</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.089e-3</thermal-conductivity>
+</element>

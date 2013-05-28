@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Carbon</name>
+   <symbol>C</symbol>
+   <atomic-number>6</atomic-number>
+   <mass-number>12</mass-number>
+   <electronegativity>2.55</electronegativity>
+   <covalent-radius>0.77</covalent-radius>
+   <atomic-radius>0.91</atomic-radius>
+   <melting-point>3550.0</melting-point>
+   <boiling-point>4827.0</boiling-point>
+   <density>2.62</density>
+   <specific-heat>0.71</specific-heat>
+   <electrical-conductivity>0.61e9</electrical-conductivity>
+   <thermal-conductivity>1.29</thermal-conductivity>
+</element>

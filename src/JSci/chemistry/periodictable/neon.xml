@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="noble-gas">
+   <name>Neon</name>
+   <symbol>Ne</symbol>
+   <atomic-number>10</atomic-number>
+   <mass-number>20</mass-number>
+   <electronegativity>0.0</electronegativity>
+   <covalent-radius>0.71</covalent-radius>
+   <atomic-radius>0.51</atomic-radius>
+   <melting-point>24.553</melting-point>
+   <boiling-point>27.096</boiling-point>
+   <density>0.000901</density>
+   <specific-heat>0.904</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.000493</thermal-conductivity>
+</element>

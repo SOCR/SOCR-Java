@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Molybdenum</name>
+   <symbol>Mo</symbol>
+   <atomic-number>42</atomic-number>
+   <mass-number>96</mass-number>
+   <electronegativity>2.16</electronegativity>
+   <covalent-radius>1.29</covalent-radius>
+   <atomic-radius>2.01</atomic-radius>
+   <melting-point>2890.0</melting-point>
+   <boiling-point>4912.0</boiling-point>
+   <density>10.2</density>
+   <specific-heat>0.25</specific-heat>
+   <electrical-conductivity>0.187e6</electrical-conductivity>
+   <thermal-conductivity>1.38</thermal-conductivity>
+</element>

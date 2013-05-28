@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE SOCRDistributome SYSTEM "./distributome.dtd"-->
+<!--
+  - www.SOCR.ucla.edu
+  - SOCR Distributome XML File
+  -->
+  
+<!--# Distributome Resource Database
+-#
+-# http://Distributome.org
+-# http://Distributome.org/jars/implementedDistributome.txt
+-# current Node format is "ID; Name; type,type; formula_ID; URL; Keywords; references" 
+-# current Edge format is "label; Name; type,type; formula_ID; from_nodeID; to_nodeID; references" 
+-#
+-# Node (distribution) Types will be (full-Name & abbreviation): 
+-# 0 No Type Given 
+-# 1 Convolution (Conv) 
+-# 2 Memoryless (Mless) 
+-# 3 Inverse (Inv) 
+-# 4 Linear Combination (LinComb) 
+-# 5 Minimum (min) 
+-# 6 Maximum (max) 
+-# 7 Product (Prod) 
+-# 8 Conditional ResIDual (CondRes) 
+-# 9 Scaling (Scale) 
+-# 10 Simulate (Sim) 
+-# 11 Variate Generation(VGen)
+-#
+-# Edge Types (directional distribution relations) will be: 
+-# 0 No Type Given 
+-# 1 Special Case (SC) 
+-# 2 Transform (T) 
+-# 3 Limiting (Lim) 
+-# 4 Bayesian (Bayes) 
+ -->
+
+<SOCRDistributome version ="1.0">
+
+<Distributions URLPrefix ="http://socr.ucla.edu/htmls/dist/"> 
+	<Node ID="1" Name="Standard Normal" Types="0" FormulaID="1" URL="Normal_Distribution.html" Keywords="continuous, symmetric, infinite, exponential" Refs="1, 2, 3"/> 
+	<Node ID="2" Name="General Normal" Types="1,4,9" FormulaID="2" URL="Normal_Distribution.html" Keywords="continuous, symmetric, infinite, exponential" Refs="1, 2, 3, 4"/>	
+	<Node ID="3" Name="Chi" Types="0" FormulaID="3" URL="Chi_Distribution.html" Keywords="continuous, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="4" Name="Chi-Square" Types="1" FormulaID="4" URL="ChiSquare_Distribution.html" Keywords="continuous, nonsymmetric, positive" Refs="2, 3, 4"/>	
+	<Node ID="5" Name="Gamma" Types="1,9" FormulaID="5" URL="Gamma_Distribution.html" Keywords="continuous, nonsymmetric, positive, exponential" Refs="2, 3, 6"/>	
+	<Node ID="6" Name="Beta" Types="0" FormulaID="6" URL="Beta_Distribution.html" Keywords="continuous, nonsymmetric, finite" Refs="2, 3, 5, 6"/>	
+	<Node ID="7" Name="Student's T" Types="0" FormulaID="7" URL="StudentT_Distribution.html" Keywords="continuous, symmetric, infinite" Refs="2, 3"/>	
+	<Node ID="8" Name="Poisson" Types="1" FormulaID="8" URL="Poisson_Distribution.html" Keywords="discrete, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="9" Name="General Cauchy" Types="1,3,9,10" FormulaID="9" URL="GeneralCauchy_Distribution.html" Keywords="continuous, symmetric, infinite" Refs="2, 3"/>	
+	<Node ID="10" Name="Cauchy" Types="3,9,10" FormulaID="10" URL="Cauchy_Distribution.html" Keywords="continuous, symmetric, infinite" Refs="2, 3"/>	
+	<Node ID="11" Name="Exponential" Types="2,5,8,9,10" FormulaID="11" URL="Exponential_Distribution.html" Keywords="continuous, nonsymmetric, positive, exponential" Refs="2, 3"/>	
+	<Node ID="12" Name="Fisher's F" Types="3" FormulaID="12" URL="Fisher_Distribution.html" Keywords="continuous, nonsymmetric, infinite" Refs="2, 3, 5"/>	
+	<Node ID="13" Name="Bernoulli" Types="5,6,7" FormulaID="13" URL="Bernoulli_Distribution.html" Keywords="discrete, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="14" Name="Binomial" Types="1" FormulaID="14" URL="Binomial_Distribution.html" Keywords="discrete, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="15" Name="Negative Binomial" Types="1" FormulaID="15" URL="NegativeBinomial_Distribution.html" Keywords="discrete, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="16" Name="Geometric" Types="2,5,11" FormulaID="16" URL="Geometric_Distribution.html" Keywords="discrete, nonsymmetric, positive" Refs="2, 3"/>	
+	<Node ID="17" Name="Erlang" Types="9" FormulaID="17" URL="Erlang_Distribution.html" Keywords="continous, positive, nonsymmetric, exponential" Refs="2, 3"/>	
+	<Node ID="18" Name="Laplace" Types="11" FormulaID="18" URL="Laplace_Distribution.html" Keywords="continuous, symmetric, infinite, exponential" Refs="2, 3"/>	
+	<Node ID="19" Name="Continuous Uniform" Types="8,11" FormulaID="19" URL="ContinuousUniform_Distribution.html" Keywords="continuous, symmetric, positive, finite" Refs="2, 3"/>	
+	<Node ID="20" Name="Discrete Uniform" Types="8,11" FormulaID="20" URL="DiscreteUniform_Distribution.html" Keywords="discrete, symmetric, positive, finite" Refs="2, 3"/>	
+	<Node ID="21" Name="Logarithmic-Series" Types="0" FormulaID="21" URL="LogarithmicSeries_Distribution.html" Keywords="discrete, nonsymmetric, infinite" Refs="2, 7"/>	
+	<Node ID="22" Name="Logistic" Types="9, 11" FormulaID="22" URL="Logistic_Distribution.html" Keywords="continuous, symmetric, infinite" Refs="2, 3"/>	
+	<Node ID="23" Name="Logistic-Exponential" Types="9" FormulaID="23" URL="LogisticExponential_Distribution.html" Keywords="continuous, infinite" Refs="2, 8"/>	
+	<Node ID="24" Name="Power-Function" Types="6,9" FormulaID="24" URL="PowerFunction_Distribution.html" Keywords="continuous, nonsymmetric, finite" Refs="2, 12"/>	
+	<Node ID="25" Name="Benford's Law" Types="0" FormulaID="25" URL="Benford_Distribution.html" Keywords="continuous, nonsymmetrical, infinite" Refs="2, 10"/>	
+	<Node ID="26" Name="Pareto" Types="5" FormulaID="26" URL="Pareto_Distribution.html" Keywords="continuous, nonsymmetric, finite" Refs="2, 3"/>	
+	<Node ID="27" Name="Student's T Non-Central" Types="0" FormulaID="27" URL="StudentT_Distribution.html" Keywords="continuous, symmetric, infinite" Refs="2"/>	
+	<Node ID="28" Name="ArcSine" Types="0" FormulaID="28" URL="ArcSine_Distribution.html" Keywords="continuous, symmetric, finite" Refs="2,3"/>	
+	<Node ID="29" Name="Half Circle" Types="0" FormulaID="29" URL="Circle_Distribution.html" Keywords="continuous, symmetric, finite" Refs="0"/>	
+	<Node ID="30" Name="U-Quadratic" Types="0" FormulaID="30" URL="UQuadratic_Distribution.html" Keywords="continuous, symmetric, finite" Refs="0"/>	
+	<Node ID="31" Name="Standard Uniform" Types="0" FormulaID="31" URL="ContinuousUniform_Distribution.html" Keywords="continuous, symmetric, finite" Refs="2, 3"/>	
+	<Node ID="32" Name="Zipf" Types="0" FormulaID="32" URL="ZipfMandelbrot_Distribution.html" Keywords="continuous, nonsymmetric, finite" Refs="3"/>	
+	<Node ID="33" Name="Inverted Gamma" Types="0" FormulaID="33" URL="InverseGamma_Distribution.html" Keywords="continuous, nonsymmetric, finite, positive" Refs="2"/>	
+	<Node ID="34" Name="Fisher-Tippett" Types="0" FormulaID="34" URL="FisherTippett_Distribution.html" Keywords="continuous, nonsymmetric, finite, positive" Refs="0"/>	
+	<Node ID="35" Name="Gumbel" Types="0" FormulaID="35" URL="Gumbel_Distribution.html" Keywords="continuous, nonsymmetric, finite, positive" Refs="0"/>	
+	<Node ID="36" Name="Hypergeometric" Types="0" FormulaID="36" URL="HyperGeometric_Distribution.html" Keywords="discrete, nonsymmetric, finite, positive" Refs="2,3"/>	
+	<Node ID="37" Name="Log-Normal" Types="7" FormulaID="37" URL="LogNormal_Distribution.html" Keywords="continuous, nonsymmetric, infinite, positive" Refs="2, 3"/>	
+	<Node ID="38" Name="Gibrat's" Types="0" FormulaID="38" URL="Gilbrats_Distribution.html" Keywords="continuous, nonsymmetric, finite, positive" Refs="0"/>	
+	<Node ID="39" Name="Hyperbolic Secant" Types="10" FormulaID="39" URL="HyperbolicSecant_Distribution.html" Keywords="continuous, symmetric, infinite, positive" Refs="2"/>	
+	<Node ID="40" Name="Gompertz" Types="0" FormulaID="40" URL="Gompertz_Distribution.html" Keywords="continuous, nonsymmetric, finite, positive" Refs="0"/>	
+	<Node ID="41" Name="Standard Cauchy" Types="3,9,10" FormulaID="41"  Keywords="continuous; symmetric, finite" Refs="2, 3">	
+	 	<NodeURL>
+	 	<![CDATA[Cauchy_Distribution.html]]>
+	 	</NodeURL>
+	</Node>
+	<Node ID="42" Name="MultiNomial" Types="0,1" FormulaID="42" URL="Multinomial_Distribution.html" Keywords="discrete, nonsymmetric, finite, positive" Refs="2,3"/>	
+	<Node ID="43" Name="NegativeMultiNomial" Types="0,1" FormulaID="43" URL="NegativeMultinomial_Distribution.html" Keywords="discrete, nonsymmetric, finite, positive" Refs="2,3,14"/>	
+</Distributions>
+
+<Relations>
+	<Edge ID ="1" Name="Standard Normal to General Normal Transformation" Types="1,2" FormulaID="1001" FromNodeID="1" ToNodeID="2" Refs="1, 2, 3"/>
+	<Edge ID ="2" Name="General Normal to Standard Normal Transformation" Types="2" FormulaID="1002" FromNodeID="2"  ToNodeID="1" Refs="1, 2, 3"/>
+	<Edge ID="3" Name="Standard Normal to Chi Transformation" Types="2" FormulaID="1003" FromNodeID="1" ToNodeID="3" Refs="2, 3"/>
+	<Edge ID="4" Name="Standard Normal to Chi-Square Transformation" Types="2" FormulaID="1004" FromNodeID="1" ToNodeID="4" Refs="2, 3, 4"/>
+	<Edge ID="5" Name="Gamma to Normal Transformation" Types="3" FormulaID="1005" FromNodeID="5" ToNodeID="2" Refs="2, 3"/>
+	<Edge ID="6" Name="Gamma to Exponential Transformation" Types="1" FormulaID="1006" FromNodeID="5" ToNodeID="11" Refs="2, 3"/>
+	<Edge ID="7" Name="Gamma to Beta Transformation" Types="2" FormulaID="1007" FromNodeID="5" ToNodeID="6" Refs="2, 3, 6"/>
+	<Edge ID="8" Name="Student's T to Standard Normal Transformation" Types="3" FormulaID="1008" FromNodeID="7" ToNodeID="1" Refs="2, 3"/>
+	<Edge ID="9" Name="Student's T to Cauchy Transformation" Types="1" FormulaID="1009" FromNodeID="7" ToNodeID="10" Refs="2, 3"/>
+	<Edge ID="10" Name="Cauchy to General Cauchy Transformation" Types="1,2" FormulaID="1010" FromNodeID="10" ToNodeID="9" Refs="2, 3"/>
+	<Edge ID="11" Name="General Cauchy to Cauchy Transformation" Types="2" FormulaID="1011" FromNodeID="9" ToNodeID="10" Refs="2, 3"/>
+	<Edge ID="12" Name="Fisher's F to Student's T Transformation" Types="2" FormulaID="1012" FromNodeID="12" ToNodeID="7" Refs="2, 3"/>
+	<Edge ID="13" Name="Student's T to Fisher's F Transformation" Types="2" FormulaID="1013" FromNodeID="7" ToNodeID="12" Refs="2, 3"/>
+	<Edge ID="14" Name="Bernoulli to Binomial Transformation" Types="1,2" FormulaID="1014" FromNodeID="13" ToNodeID="14" Refs="2, 3"/>
+	<Edge ID="15" Name="Binomial to Bernoulli Transformation" Types="1,2" FormulaID="1015" FromNodeID="14" ToNodeID="13" Refs="2, 3"/>
+	<Edge ID="16" Name="Binomial to General Normal Transformation" Types="3" FormulaID="1016" FromNodeID="14" ToNodeID="2" Refs="2, 3"/>
+	<Edge ID="17" Name="Binomial to Poisson Transformation" Types="3" FormulaID="1017" FromNodeID="14" ToNodeID="2" Refs="2, 3"/>
+	<Edge ID="18" Name="Negative Binomial to Geometric Transformation" Types="1" FormulaID="1018" FromNodeID="15" ToNodeID="16" Refs="2, 3"/>
+	<Edge ID="19" Name="Erlang to Exponential Transformation" Types="1" FormulaID="1019" FromNodeID="17" ToNodeID="11" Refs="2, 3"/>
+	<Edge ID="20" Name="Erlang to Chi-Squared Transformation" Types="1" FormulaID="1020" FromNodeID="17" ToNodeID="4" Refs="2 ,3"/>
+	<Edge ID="21" Name="Laplace to Exponential Transformation" Types="1, 2" FormulaID="1021" FromNodeID="18" ToNodeID="11" Refs="2, 3"/>
+	<Edge ID="22" Name="Exponential to Laplace Transformation" Types="1" FormulaID="1022" FromNodeID="11" ToNodeID="18" Refs="2, 3"/>
+	<Edge ID="23" Name="Beta to Arcsine Transformation" Types="0" FormulaID="1023" FromNodeID="6" ToNodeID="28" Refs="2, 3"/>
+	<Edge ID="24" Name="Noncentral Student's T to Normal" Types="3" FormulaID="1024" FromNodeID="27" ToNodeID="2" Refs="2,3"/>
+	<Edge ID="25" Name="Noncentral Student's T to Student's T" Types="1" FormulaID="1025" FromNodeID="27" ToNodeID="7" Refs="2,3"/>
+	<Edge ID="26" Name="Pareto to Exponential" Types="2" FormulaID="1026" FromNodeID="26" ToNodeID="11" Refs="2,3"/>
+	<Edge ID="27" Name="Logistic Exponential to Exponential" Types="1" FormulaID="1027" FromNodeID="23" ToNodeID="11" Refs="2, 8"/>
+	<Edge ID="28" Name="Standard Uniform to Pareto" Types="2" FormulaID="1028" FromNodeID="31" ToNodeID="26" Refs="2"/>
+	<Edge ID="29" Name="Standard Uniform to Benford" Types="2" FormulaID="1029" FromNodeID="31" ToNodeID="25" Refs="2"/>
+	<Edge ID="30" Name="Standard Uniform to Exponential" Types="2,3" FormulaID="1030" FromNodeID="31" ToNodeID="11" Refs="2, 3"/>
+	<Edge ID="31" Name="Standard Uniform to Logistic Exponential" Types="2" FormulaID="1031" FromNodeID="31" ToNodeID="23" Refs="2"/>
+	<Edge ID="32" Name="Standard Uniform to Beta" Types="1" FormulaID="1032" FromNodeID="31" ToNodeID="6" Refs="2, 3"/>
+	<Edge ID="33" Name="Continuous Uniform to Standard Uniform" Types="1" FormulaID="1033" FromNodeID="19" ToNodeID="31" Refs="2, 3"/>
+	<Edge ID="34" Name="Zipf to Discrete Uniform" Types="1" FormulaID="1034" FromNodeID="32" ToNodeID="20" Refs="2"/>
+	<Edge ID="35" Name="Poisson to Normal" Types="3" FormulaID="1035" FromNodeID="8" ToNodeID="1" Refs="2, 3"/>
+	<Edge ID="36" Name="Binomial to Poisson" Types="3" FormulaID="1036" FromNodeID="14" ToNodeID="8" Refs="2, 3"/>
+	<Edge ID="37" Name="Gamma to Inverted Gamma" Types="2" FormulaID="1037" FromNodeID="5" ToNodeID="33" Refs="2"/>
+	<Edge ID="38" Name="Fisher-Tippett to Gumbel" Types="1" FormulaID="1038" FromNodeID="34" ToNodeID="35" Refs="0"/>
+	<Edge ID="39" Name="Hypergeometric to Binomial" Types="3" FormulaID="1039" FromNodeID="36" ToNodeID="14" Refs="2,3"/>
+	<Edge ID="40" Name="Log-Normal to Normal" Types="2" FormulaID="1040" FromNodeID="37" ToNodeID="2" Refs="2,3"/>
+	<Edge ID="42" Name="Log-Normal to Gibrat's" Types="1" FormulaID="1042" FromNodeID="37" ToNodeID="38" Refs="0"/>
+	<Edge ID="43" Name="Cauchy to Standard Cauchy" Types="1" FormulaID="1043" FromNodeID="10" ToNodeID="41" Refs="2,3"/>
+	<Edge ID="44" Name="Standard Cauchy to Cauchy" Types="2" FormulaID="1044" FromNodeID="41" ToNodeID="10" Refs="2,3"/>
+	<Edge ID="45" Name="Standard Cauchy to Hyperbolic Secant" Types="2" FormulaID="1045" FromNodeID="41" ToNodeID="39" Refs="2"/>
+	<Edge ID="46" Name="Multinomial to Binomial" Types="2" FormulaID="1046" FromNodeID="42" ToNodeID="14" Refs="13"/>
+	<Edge ID="47" Name="Negative-Multinomial to Negative-Binomial" Types="2" FormulaID="1047" FromNodeID="43" ToNodeID="15" Refs="14"/>
+</Relations>
+
+<Formulas DensityPrefix="http://wiki.stat.ucla.edu/socr/uploads/math/">
+	<Formula ID="1" Density="0/c/a/0cab65bf1790276ad1d97ab46a40567f.png" Equation="f(x)= {e^{-x^2} \over \sqrt{2 \pi}}"/>
+	<Formula ID="2" Density="9/8/7/987fd149835d1de389765cdf2d03e247.png" Equation="f(x)= {e^{{-(x-\mu)^2} \over 2\sigma^2} \over \sqrt{2 \pi\sigma^2}}"/>
+	<Formula ID="3" Density="d/7/1/d71a0585ec10d96b0398de15a17647d9.png" Equation="\frac{2^{1-k/2}x^{k-1}e^{-x^2/2}}{\Gamma(k/2)}"/>
+	<Formula ID="4" Density="b/e/f/bef279b2cb4f25a855b38092b3dc671b.png" Equation="\frac{(1/2)^{k/2}}{\Gamma(k/2)} x^{k/2 - 1} e^{-x/2}\,"/>
+	<Formula ID="5" Density="2/b/1/2b123f5be4f5c152db65389455d3e2de.png" Equation="x^{k-1} \frac{\exp{\left(-x/\theta\right)}}{\Gamma(k)\,\theta^k}\,\!"/>
+	<Formula ID="6" Density="5/8/b/58b0965234c4a32bf55111fe2ad12535.png" Equation="\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\, x^{\alpha-1}(1-x)^{\beta-1}\!"/>
+	<Formula ID="7" Density="f/6/d/f6dbd1429a3d5f065980c11ed57254b1.png" Equation="\frac{\Gamma(\frac{\nu+1}{2})} {\sqrt{\nu\pi}\,\Gamma(\frac{\nu}{2})} \left(1+\frac{x^2}{\nu} \right)^{-(\frac{\nu+1}{2})}\!"/>
+	<Formula ID="8" Density="9/9/2/9928c50bbeac8192fa2414d10faf1377.png" Equation="\frac{e^{-\lambda} \lambda^k}{k!}\!"/>
+	<Formula ID="9" Density="a/9/2/a9260c6814d86ac3231f3934db752577.png" Equation="\frac{1}{\pi\gamma \left[1 + \left(\frac{x-x_0}{\gamma}\right)^2\right]}"/>
+	<Formula ID="10" Density="a/9/2/a9260c6814d86ac3231f3934db752577.png" Equation="\frac{1}{\pi\gamma \left[1 + \left(\frac{x-x_0}{\gamma}\right)^2\right]}"/>
+	<Formula ID="11" Density="1/7/6/1764a5aca4ec3b78d60d46a724dcd5ec.png" Equation="\lambda e^{-\lambda x},\; x \ge 0"/>
+	<Formula ID="12" Density="b/b/b/bbb4079319994e3d46d43ae12510e74b.png" Equation="\frac {(\frac {d_1 x}{d_1 x + d_2})^{ d_1/2} ( 1 - \frac {d_1 x} {d_1 x + d2}) ^ {d_2/2}} { xB(d_1/2 , d_2/2) }"/>
+	<Formula ID="13" Density="8/6/7/867103cbcf2d8f2a84e015ae4297df74.png" Equation="f(k;p) \begin{cases} \mbox{p if k = 1,} \mbox{1 - p if k = 0,} \mbox{0 otherwise} \end{cases} "/>
+	<Formula ID="14" Density="4/6/f/46faf4c680409bf76d69404e34a678d0.png" Equation="\begin{pmatrix} n  \\ k \end{pmatrix} p^k (1-p)^{n-k}"/>
+	<Formula ID="15" Density="8/1/f/81f96673ef90b51ab48d3ca77f310ac8.png" Equation="\begin{pmatrix} k + r - 1 \\ k \end{pmatrix} p^r(1-p)^k"/>
+	<Formula ID="16" Density="a/4/a/a4a4a23832ba0edbdaf9e226c2ac02c1.png" Equation="\begin{pmatrix} 1-p \end{pmatrix} ^{k-1}p"/>
+	<Formula ID="17" Density="a/0/2/a0244739ba01e615049257a28de4fdd5.png" Equation="\frac {\lambda x^{k-1}e^{-\lambda x}} {(k-1)!}"/>
+	<Formula ID="18" Density="a/d/3/ad36da6a4fcc7c6f4acd08062ca9fdab.png" Equation="\frac {1}{2b} \exp (- \frac{|x-\mu|}{b})"/>
+	<Formula ID="19" Density="8/6/6/8669d896dcbf0134e37cff56ff424f61.png">
+		<FormulaEquation>
+			<![CDATA[f(x) = \begin{cases} \frac{1}{b-a} \mbox{ for } a \le x \le b \\ 0 \mbox{ for } x < a \mbox{ or } x > b \end{cases}]]>
+		</FormulaEquation>
+	</Formula>	
+	<Formula ID="20" Density="2/5/7/2579584dc45cf3f73dea42ba8265062e.png" Equation="f(x) = \begin{cases} 1/n \mbox{ for } a \le x \le b, \\  0 \mbox{ otherwise} \end{cases}"/>
+	<Formula ID="21" Density="f/2/0/f2061904fabaa091a2a6de94d67ad00d.png" Equation="f(k) = \frac{-1}{ln(1-p)} \frac{p^k}{k}"/>
+	<Formula ID="22" Density="5/3/a/53ad61d172e22491bbd974961830ed60.png" Equation="f(x;u,s) = \frac{e^{-(x-\mu)/s}} {s(1+e^{-(x-\mu)/s})^2}"/>
+	<Formula ID="23" Density="c/0/b/c0bbb7c859640450d9e0f2598a4565c9.png" Equation="f(x;\beta) = \frac { \beta e^x(e^x - 1)^{\beta-1}} {(1+(e^x-1)^\beta))^2} \mbox{   }\mbox{   }x, \beta > 0"/>
+	<Formula ID="24" Density="c/8/3/c83d7f43422655121c3a3a5c2adb4037.png" Equation="f(x) = \frac {\alpha(x-a)^{\alpha-1}} {(b-a)^\alpha}"/>
+	<Formula ID="25" Density="e/2/e/e2e118712196bf2670a51e0e59655f6f.png" Equation="P(d) = \log_b(d + 1)- \log_b(d) = \log_b(\frac{d + 1}{d})"/>
+	<Formula ID="26" Density="5/d/2/5d2eb18ae43752138f3189ca9f7e7f8e.png" Equation="\frac {kx^k_m} {x^{k+1}}"/>
+	<Formula ID="27" Density="e/3/7/e37a9ea8dea4ca3d0d7d55f76aaa430b.png" Equation="f(t)=\frac{\nu^{\nu/2}e^{-\nu\mu^2/2(t^2+\nu)}} {\sqrt{\pi}\Gamma(\nu/2)2^{(\nu-1)/2}(t^2+\nu)^{(\nu+1)/2}} \times\int\limits_0^\infty x^\nu\exp\left[-\frac{1}{2}\left(x-\frac{\mu t}{\sqrt{t^2+\nu}}\right)^2\right]dx"/>
+	<Formula ID="28" Density="1/4/7/147aa81e110d81ed11d1f3d51169bc78.png" Equation="f(x) = \frac{1}{\pi \sqrt{x(1-x)}}"/>
+	<Formula ID="29" Density="4/5/a/45a7876ef35972bf28385be926c52b62.png" Equation="f(x)={2\sqrt{r^2 - x^2}\over \pi r^2 }, \forall x \in [-r , r]"/>
+	<Formula ID="30" Density="f/f/7/ff76cc91a9caab7bead2efe8e5d9402f.png" Equation="\alpha \left ( x - \beta \right )^2"/>
+	<Formula ID="31" Density="8/d/e/8dea828028c02208956348d4f00bb3e3.png" Equation="U(0,1) = f(x) = \begin{cases} {1} \mbox{ for } 0 \le x \le 1 \\ 0 \mbox{ for } x \less 0 \mbox{ or } x > 1 \end{cases}"/>
+	<Formula ID="32" Density="d/9/7/d97d3fd7535620600d05c161b9864817.png" Equation="\frac{1/k^s}{H_{N,s}}"/>
+	<Formula ID="33" Density="6/c/1/6c1d1b87912709db4a5adb09e5ed05bb.png" Equation="\frac{\beta^\alpha}{\Gamma(\alpha)} x^{-\alpha - 1} \exp \left(\frac{-\beta}{x}\right)"/>
+	<Formula ID="34" Density="5/3/d/53dee9edf9ef4de0fe9f8b9db33c0518.png">
+		<FormulaEquation>
+			<![CDATA[\frac{z\,e^{-z}}{\beta}\!</math><br /> where <math>z = e^{-\frac{x-\mu}{\beta}}\!]]>
+		</FormulaEquation>
+	</Formula>
+	<Formula ID="35" Density="8/9/1/891506209f21b971fa769f3dcffcb344.png" Equation="f(x) = e^{-x} e^{-e^{-x}}."/>
+	<Formula ID="36" Density="d/5/0/d50065813c1ddcec7fada21d7da3e8b2.png" Equation="{{{m \choose k} {{N-m} \choose {n-k}}}\over {N \choose n}}"/>
+	<Formula ID="37" Density="b/3/f/b3f2a95779f28c24a5a265ba6498ceec.png" Equation="\frac{1}{x\sigma\sqrt{2\pi}}\exp\left[-\frac{\left(\ln(x)-\mu\right)^2}{2\sigma^2}\right]"/>
+	<Formula ID="38" Density="d/0/3/d03d955b51d917ba307deef3c7e277a0.png" Equation="\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{\left(\ln(x)\right)^2}{2\sigma^2}\right]"/>
+	<Formula ID="39" Density="f/d/7/fd732311789b812437374f24b9a435f1.png" Equation="\frac12 \; \operatorname{sech}\!\left(\frac{\pi}{2}\,x\right)\!"/>
+	<Formula ID="40" Density="4/e/f/4efe11d1016f67a67761bf1697fb5a9b.png" Equation="b e^{-bx} e^{-\eta e^{-bx}}\left[1 + \eta\left(1 - e^{-bx}\right)\right]"/>
+	<Formula ID="41" Density="3/f/6/3f633b544c30394c3315b0bcc8952a7c.png" Equation="f(x; 0,1) = \frac{1}{\pi (1 + x^2)}. \!"/>
+	<Formula ID="42" Density="d/c/0/dc0e197e385f351f4951cee83c114326.png" Equation="f(x_1, x_2, \cdots, x_k)={n\choose x_1,x_2,\cdots, x_k}p_1^{x_1}p_2^{x_2}\cdots p_k^{x_k}"/>
+	<Formula ID="43" Density="b/4/5/b4539e11334a5e0f70b389ffab23f619.png" Equation="f(k_o, \cdots, k_r) = \Gamma(k_o + \sum_{i=1}^r{k_i}) \frac{p_o^{k_o}}{\Gamma(k_o)} \prod_{i=1}^r{\frac{p_i^{k_i}}{k_i!}}"/>
+
+<!-- Formulas for relations!!!  -->
+
+	<Formula ID="1001" Density="8/0/d/80dced834e1436711a7c36c750f3f735.png" Equation="\mu+\sigma\times X"/>
+	<Formula ID="1002" Density="8/3/5/83553ea7c89c2fb1bc767b20b6621bc8.png" Equation="X-\mu \over \sigma"/>
+	<Formula ID="1003" Density="0/e/8/0e82d932802db75c69457c1f70121647.png" Equation="|\ X |"/>
+	<Formula ID="1004" Density="7/7/d/77ddc26ca6d31693cf7a799fd68bcd71.png" Equation="\sum_{k=1}^{\nu} X_k^2"/>
+	<Formula ID="1005" Density="a/6/8/a688ec35461cfae90a022ca0def20859.png" Equation="\mu=\alpha\times\beta;\sigma^2=\alpha^2\times\beta;\beta\longrightarrow\infty"/>
+	<Formula ID="1006" Density="8/a/b/8ab1451dcf17a3ba153506f89132f7fe.png" Equation="{\Gamma}(k=1, \theta=1/\lambda)\, is equivalent to exponential Exp(\lambda)"/>
+	<Formula ID="1007" Density="f/8/e/f8ed04a68db9bbcc413df33606112a0f.png" Equation="X_1 \over X_1 + X_2"/>
+	<Formula ID="1008" Density="b/0/d/b0dfc554d084bc343bf4263ca603c03e.png" Equation="n\longrightarrow\infty"/>
+	<Formula ID="1009" Density="0/6/5/0657cf55d0b10d52b3e187d641de6abe.png" Equation="n=1"/>
+	<Formula ID="1010" Density="e/c/a/ecacf76de371e76659d34ad635216b91.png" Equation="a + \alpha\times X"/>
+	<Formula ID="1011" Density="1/a/f/1af78bbc514c0c56cad9728118652f1c.png" Equation="a=0; \alpha=1"/>
+	<Formula ID="1012" Density="9/c/7/9c7309b01498ce159946ef1b1d0b8b34.png" Equation="\sqrt X"/>
+	<Formula ID="1013" Density="9/c/7/9c7309b01498ce159946ef1b1d0b8b34.png" Equation="X^2"/>
+	<Formula ID="1014" Density="5/2/3/52375f2d577439414ce23e89c0e90245.png" Equation="\sum X_i"/>
+	<Formula ID="1015" Density="3/0/9/309b6cc83615c322d03dd3a81146ccf7.png" Equation="\begin{pmatrix} n = 1 \end{pmatrix}"/>
+	<Formula ID="1016" Density="e/3/e/e3ee1b225f54d61cae44f421a343d150.png" Equation="\begin{vmatrix} \mu = np \\ \sigma^2 = np(1-p) \\n \rightarrow \infty \end{vmatrix}"/>
+	<Formula ID="1017" Density="a/c/b/acbb91e21faa9372b5e4c84b67e88563.png" Equation="\begin{vmatrix}\mu = np \\ n \rightarrow \infty \end{vmatrix}"/>
+	<Formula ID="1018" Density="8/2/8/828d7447db469527f59027af2f0436fe.png" Equation="\begin{pmatrix} r = 1 \end{pmatrix} "/>
+	<Formula ID="1019" Density="1/d/9/1d97b0f3e191093d465db35e15ee3f5f.png" Equation="\begin{pmatrix} k = 1 \end{pmatrix}"/>
+	<Formula ID="1020" Density="f/4/c/f4c904dda6bf90e107ce01600450ff32.png" Equation="\begin{pmatrix} \alpha = 2 \end{pmatrix}"/>
+	<Formula ID="1021" Density="e/e/4/ee4c20b42a0a181b39363183c4a8cee9.png" Equation="\begin{pmatrix} \begin{vmatrix} X \end{vmatrix} \\ \alpha_1 = \alpha_2 \end{pmatrix}"/>
+	<Formula ID="1022" Density="b/2/a/b2a02a4fe050cf31125044e15375af66.png" Equation="x_1 - x_2"/>
+	<Formula ID="1023" Density="a/7/f/a7fbf470b9c6ca3cd95013edac0a0ec7.png" Equation="\alpha = \beta = \frac{1}{2}"/>
+	<Formula ID="1024" Density="c/5/9/c597e03be18f6338e0e9569b2421d1b5.png" Equation="Z=\lim_{\nu\to\infty}T"/>
+	<Formula ID="1025" Density="4/5/5/45514bf83c017240216ab94cd4f9858a.png" Equation="\mu = 0"/>
+	<Formula ID="1026" Density="5/2/4/524374e103e44732a253e8768e5215e6.png" Equation="log(X/\lambda)"/>
+	<Formula ID="1027" Density="4/7/8/4787ad09fc48180d72782c7a077a25c3.png" Equation="\beta = 1"/>
+	<Formula ID="1028" Density="b/a/d/bad4767e39b51fd92b1da59cb7383e25.png" Equation="\lambda X ^{-1/K}"/>
+	<Formula ID="1029" Density="0/9/1/091ed70e275fbcc3297246784860f1de.png" Equation="10^X"/>
+	<Formula ID="1030" Density="e/c/f/ecf7482949cf856fecdcde907ceb2b87.png" Equation="n(1-X_{(n)}), n \to \infty"/>
+	<Formula ID="1031" Density="b/b/1/bb14e96da3be11b8bee63fcfbb54fefa.png" Equation="\frac{log[1+(\frac{X}{1-X})^{1/K}]}{\lambda}"/>
+	<Formula ID="1032" Density="f/1/2/f123f58ac6492e4f86b14d0cc3707716.png" Equation="Y = 1 - X^{1/n}"/>
+	<Formula ID="1033" Density="e/d/d/edd898dff31897ca649d0b4590d84043.png" Equation="a = 0, b = 1"/>
+	<Formula ID="1034" Density="5/e/6/5e67a79804119a79ed78668db6b4b9a6.png" Equation="a = 0, a = 1, b = n"/>
+	<Formula ID="1035" Density="f/b/b/fbba1fb57c6fbbf25e2ed13f23e8d87d.png" Equation="\sigma ^2 = \mu , \mu \to \infty"/>
+	<Formula ID="1036" Density="a/a/3/aa38f2dab9b50225c09796bdcd578203.png" Equation="\mu = np, \mu \to \infty"/>
+	<Formula ID="1037" Density="a/8/8/a88fc269c828b5b436c0ef1022203c8a.png" Equation="\frac{1}{X}"/>
+	<Formula ID="1038" Density="f/a/6/fa67fd23924241eef6f37bc79d8cfbac.png" Equation="\mu = 0, \beta = 1"/>
+	<Formula ID="1039" Density="e/5/7/e5727837d8333f3201799fc4bee09c7d.png" Equation="p = \frac{n_1}{n_3}, n = n_2, n_3, n \to \infty"/>
+	<Formula ID="1040" Density="8/3/e/83e0d6816bafc1712cd7d548f9ded3dd.png" Equation="log(X)"/>
+	<Formula ID="1041" Density="6/5/9/659484f2421a5ee6582f5178672ee773.png" Equation="e^X"/>
+	<Formula ID="1042" Density="9/e/f/9efceaf8845cb579afa3453960f66389.png" Equation="\mu = 0, x = 1"/>
+	<Formula ID="1043" Density="d/b/3/db380d1c063dc3bd351557edfa81541c.png" Equation="\gamma = 1, x_0 = 0"/>
+	<Formula ID="1044" Density="7/5/a/75a3819467ee5722defef46dd440b8d3.png" Equation="x_0 + \gamma X"/>
+	<Formula ID="1045" Density="5/f/f/5ff443153b990aa41250fc4d2ac7b3b2.png" Equation="\frac{log|x|}{\pi}"/>
+	<Formula ID="1046" Density="8/e/0/8e082a92ff25aa4587cda5661265c56a.png" Equation="k=2"/>
+	<Formula ID="1047" Density="8/e/0/8e082a92ff25aa4587cda5661265c56a.png" Equation="k=2"/>
+</Formulas>
+
+<References>
+ 	<Ref ID ="1" Author="Ivo D. Dinov, Nicolas Christou, Juana Sanchez"  Year="2008" Title="Central Limit Theorem: New SOCR Applet and Demonstration Activity"  Journal ="Journal of Statistics Education" Page= "Volume 16, Number 2" URL ="http://www.amstat.org/publications/jse/v16n2/dinov.html"/>
+ 	<Ref ID ="2" Author="Leemis ML, McQueston JT"  Year="2008" Title="Univariate Distribution Relationships"  Journal="Americal Statistician" Page= "62(1), 45-53" URL ="http://www.ingentaconnect.com/content/asa/tas/2008/00000062/00000001/art00008"/>
+	<Ref ID ="3" Author="Song, WT"  Year="2005" Title="Relationships Among Some Univariate Distributions"  Journal="IIE Transaction" Page= "37, 651-656" URL ="http://pdfserve.informaworld.com/316347_770849120_714035367.pdf#T from Z and chi square"/>
+	<!--#T from Z and chi square-->
+	<Ref ID= "4" Author="Evans, M., Hastings, N., and Peacock, B." Year="2000"  Title="Statistical Distributions (3rd ed.)" Journal="Measurement Science and Technology" Page= "Volume 12, p.117" URL="http://www.iop.org/EJ/abstract/0957-0233/12/1/702"/>
+	<!--#Beta Distribution from F-->
+	<Ref ID= "5" Author="Hogg, R.V., McKean, J.W., and Craig., A.T."  Year="2005" Title="Introduction to Mathematical Statistics (6th ed.)"  Journal ="journal" Page="volume" URL ="http://math.bnu.edu.cn/~chj/lect-1.pdf"/>
+	<!--#Beta From Gamma-->
+	<Ref ID= "6" Author="Stacy, E.W."  Year="1962" Title="A Generalization of the Gamma Distribution"  Journal ="Annals of Mathematical Statistics" Page= "33, 1187-1192">
+		 <RefURL>
+			<![CDATA[http://www.projecteuclid.org/DPubS?verb=Display&version=1.0&service=UI&handle=euclid.aoms/1177704481&page=record]]>
+		 </RefURL>
+	 </Ref>
+	<!--#Logarithmic-->
+	<Ref ID= "7" Author="Johnson, N.L., Kemp, A.W., and Kotz, S."  Year="2005" Title="Univariate Discrete Distributions (3rd ed.)"  Journal ="New York: Wiley." Page= "Volume">
+		<RefURL>
+			<![CDATA[http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470383372.html]]>
+		</RefURL>
+	</Ref>
+	<!--#logistic-exponential distribution-->
+	<Ref ID= "8" Author="Lan, L., and Leemis, L. "  Year="2007" Title="The Logistic Exponential Survival Distributionl"  Journal ="Naval Research Logistics (NRL)" Page= "Volume 55 Issue 3, Pages 252 - 264">
+	 <RefURL>
+	 <![CDATA[http://www3.interscience.wiley.com/journal/117924447/abstract?CRETRY=1&SRETRY=0]]>
+	 </RefURL>
+	</Ref>
+	<!--#arctan distribution (glen and gleemis)-->
+	<Ref ID= "9" Author="Glen, A., and Leemis, L.M."  Year="1997" Title="The Arctangent Survival Distributio"  Journal ="Journal of Quality Technology" Page= "29, 205-210" URL ="http://www.asq.org/qic/display-item/index.html?item=11493"/>
+	<!--#Benford distribution -->
+	<Ref ID= "10" Author="Benford, F. "  Year="1938" Title="The Law of Anomalous Numbers"  Journal ="Proceedings of the American Philosophical Society" Page= "78(4), 551-572" URL ="http://www.jstor.org/pss/984802"/>
+	<!--#exponential power distribution (smith and Bain)-->
+	<Ref ID= "11" Author="Smith, R.M., and Bain, L.J."  Year="1975" Title="An Exponential Power Life-Testing Distribution"  Journal ="Communications in Statistics - Simulation and Computation" Page= "Volume 4, Issue 5 1975 , pages 469 - 481" URL ="http://www.informaworld.com/smpp/content~content=a791522781~db=all"/> 
+	<!--#power distribution (balakrishnan and nevzorov)-->
+	<Ref ID= "12" Author="Balakrishnan, N., and Nevzorov, V.B."  Year="2003" Title="A Primer on Statistical Distributions"  Journal ="Journal of the American Statistical Association" Page= "Volume 99, Number 466, 1 June 2004 , pp. 568-568(1)" URL ="http://www.ingentaconnect.com/content/asa/jasa/2004/00000099/00000466/art00039"/>
+
+	<!--#Multinomial distribution (Evans, Hastings and Peacock)-->
+	<Ref ID= "13" Author="Evans, Merran; Hastings, Nicholas; Peacock, Brian"  Year="2000" Title="Statistical Distributions"  Journal ="New York: Wiley" Page= "pp. 134-136" URL ="http://books.google.com/books?id=zAApTi9kAg4C"/>
+	<Ref ID= "14" Author="Le Gall, Francoise"  Year="2006" Title="The modes of a negative multinomial distribution"  Journal ="Statistics &amp; Probability Letters" Page= "76(6) 619-624" URL ="http://dx.doi.org/10.1016/j.spl.2005.09.009"/>
+
+</References>
+
+</SOCRDistributome>

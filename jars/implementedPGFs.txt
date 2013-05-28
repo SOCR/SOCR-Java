@@ -1,0 +1,12 @@
+# http://wiki.stat.ucla.edu/socr/index.php/About_pages_for_SOCR_Functors_PGF
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\ucla\stat\SOCR\core
+# current format is "name, classname"
+# there are currently 6 SOCR PGF Functors in the package edu.ucla.stat.SOCR.distributions
+
+Bernoulli Distribution, edu.ucla.stat.SOCR.distributions.BernoulliDistribution
+Binomial Distribution, edu.ucla.stat.SOCR.distributions.BinomialDistribution
+Geometric Distribution, edu.ucla.stat.SOCR.distributions.GeometricDistribution
+Logarithmic-Series Distribution, edu.ucla.stat.SOCR.distributions.LogarithmicSeriesDistribution 
+Negative-Binomial Distribution, edu.ucla.stat.SOCR.distributions.NegativeBinomialDistribution
+Poisson Distribution, edu.ucla.stat.SOCR.distributions.PoissonDistribution

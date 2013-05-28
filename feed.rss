@@ -1,0 +1,441 @@
+<?xml version="1.0" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics Online Computational Resource (SOCR)</title>
+    <link>http://www.SOCR.ucla.edu</link>
+    <description>Statistics Online Computational Resource</description>
+    <atom:link href="http://www.socr.ucla.edu/feed.rss" rel="self" type="application/rss+xml" />
+    <image>
+        <title>Statistics Online Computational Resource (SOCR)</title>
+	  <url>http://www.socr.ucla.edu/images.dir/SOCR_Logo.gif</url>
+        <link>http://www.SOCR.ucla.edu</link>
+    </image>
+
+    <item>
+      	<title>SOCR News, Events and Announcements</title>
+		<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_News</guid>
+		<pubDate>19 Sep 2012 09:00:00 -0800</pubDate>
+		<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_News</link> 
+      	<description>Up-to-date SOCR news, events, announcements are available on the SOCR News page (http://wiki.stat.ucla.edu/socr/index.php/SOCR_News). </description>
+    </item>
+
+
+	<item>
+      	<title>The Signed SOCR Java Applets Updated to JVM 6.39 to Resolve Security Vulnerability (February 2013)</title>
+		<guid>http://socr.ucla.edu</guid>
+		<pubDate>07 Feb 2013 22:00:00 -0800</pubDate>
+		<link>http://socr.ucla.edu</link> 
+      	<description>Due to the discovery of recent Java security problems Oracle 
+      		recommends all users update their JVM/Java version 7.11+ (or version 6.39+). 
+      		This update raises the default security level for Java applets from 
+      		Medium to High, which means that the user is always warned before any
+      		unsigned application is run to prevent silent exploitation. To help with
+      		resolving such vulnerabilities, the entire SOCR Java applet suite was
+      		recompiled to include the latest updates. As a result, some of the SOCR 
+      		applets, and their functionalities, may appear different.
+      		</description>
+    </item>
+    
+	<item>
+      	<title>PCA added to SOCR Analyses (January 2013)</title>
+		<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_AnalysisActivities_PCA</guid>
+		<pubDate>29 Jan 2013 21:00:00 -0800</pubDate>
+		<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_AnalysisActivities_PCA</link> 
+      	<description>Principal Component Analysis (PCA) is a mathematical procedure that 
+      		allows significant reduction of dimensionality in multivariate data.
+      		PCA transforms a number of possibly correlated variables into a fewer number 
+      		of uncorrelated variables using orthogonal transformations. We added PCA to
+      		the list of SOCR Analyses as it is a useful statistical technique that 
+      		has many applications. 
+      	</description>
+    </item>
+
+	<item>
+      	<title>Prototype SOCR HTML5 Resampling, Simulation and Randomization Webapp (September 2012)</title>
+		<guid>http://socr.ucla.edu/htmls/HTML5/SOCR_Resampling_Webapp/</guid>
+		<pubDate>19 Sep 2012 09:00:00 -0800</pubDate>
+		<link>http://socr.ucla.edu/htmls/HTML5/SOCR_Resampling_Webapp/</link> 
+      	<description>A new SOCR HTML5 Resampling and Simulation webapp was developed as a GSoC collaborative 
+      	project. This application runs on any device within a JavaScript-enabled browser. </description>
+    </item>
+    
+	<item>
+      	<title>SOCR HTML5 MotionChart Webapp (September 2012)</title>
+		<guid>http://socr.ucla.edu/htmls/HTML5/MotionChart/</guid>
+		<pubDate>15 Sep 2012 10:00:00 -0800</pubDate>
+		<link>http://socr.ucla.edu/htmls/HTML5/MotionChart/</link> 
+      	<description>A new SOCR HTML5 MotionCharts webapp was developed as a GSoC collaborative 
+      	project. This application runs on any device within a JavaScript-enabled browser. </description>
+    </item>
+
+	<item>
+      	<title>SOCR Hierarchical Clustering Applet is Released (August 2012)</title>
+		<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_AnalysisActivities_HierarchicalClustering</guid>
+		<pubDate>19 Aug 2012 09:00:00 -0800</pubDate>
+		<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_AnalysisActivities_HierarchicalClustering</link> 
+      	<description>A new SOCR Analysis applet - Hierarchical Clustering - is made available with the latest release of SOCR tools (using Java/JVM 1.6 deployment). </description>
+    </item>
+
+	<item>
+      <title>SOCR Bivariate Normal Distribution Webapp is Released (July 2012)</title>
+	<guid>http://socr.ucla.edu/htmls/HTML5/BivariateNormal/</guid>
+	<link>http://socr.ucla.edu/htmls/HTML5/BivariateNormal/</link> 
+      <description>A new SOCR HTML5-compatible webapp is developed, validated and released for modeling 2D Gaussian/Normal distribution joint, marginal and conditional probability. A parallel learning activity (http://wiki.stat.ucla.edu/socr/index.php/SOCR_BivariateNormal_JS_Activity) provides additional theoretical background and applications. </description>
+    </item>
+	
+	<item>
+      <title>SOCR Packages upgraded to Java/JVM 1.6 (July 2012)</title>
+	<guid>http://forums.stat.ucla.edu/read.php?20,393</guid>
+	<link>http://forums.stat.ucla.edu/read.php?20,393</link> 
+      <description>All SOCR libraries are compiled and updated to use Java/JVM 1.6. See this SOCR Forum posting (http://forums.stat.ucla.edu/read.php?20,393) for additional information. The old Java/JVM 1.5 libraries are still available under the SOCR Legacy tools (http://www.socr.ucla.edu/legacy/), however all users are strongly encouraged to update their systems to JVM 1.6+. </description>
+    </item>
+
+	<item>
+      <title>SOCR Analyses Try-It-Now via the Pipeline Graphical Workflow Environment (May 2012)</title>
+	<guid>http://ucla.in/Ie80ps</guid>
+	<link>http://ucla.in/Ie80ps</link> 
+      <description>SOCR Analyses are utilized as the key statistical computing library part of the Pipeline Graphical Workflow Environment. One example is the use of the SOCR Multivariate Linear Regression and False Discovery Rate (FDR) utilities for analyzing multidimensional neuroimaging data (http://ucla.in/Ie80ps). </description>
+    </item>
+
+	<item>
+      <title>SOCR Logistic Regression Analysis (April 2012)</title>
+	<guid>http://www.socr.ucla.edu/htmls/ana/LogisticRegression_Analysis.html</guid>
+	<link>http://www.socr.ucla.edu/htmls/ana/LogisticRegression_Analysis.html</link> 
+      <description>SOCR introduced a new analysis applet implementing multivariate logistic regression (logit) analysis. </description>
+    </item>
+    
+	<item>
+      <title>SOCR Projects are part of GSoC 2012 (March 2012)</title>
+	<guid>http://www.google-melange.com/gsoc/org/google/gsoc2012/socr</guid>
+	<link>http://www.google-melange.com/gsoc/org/google/gsoc2012/socr</link> 
+      <description>SOCR is one of the high-profile projects included in the 2012 Google Summer of Code (GSoC). As part of this program, SOCR is looking for highly-motivated, technologically-savvy and result-oriented students to work on expanding the large suite of SOCR computational libraries, designing and implementing novel open-source HTML5/JavaScript/JQuery webapps and web-resources for improving science education. </description>
+    </item>
+
+	<item>
+      <title>SOCR Applications in Human Brain Mapping (September 2011)</title>
+	<guid>http://onlinelibrary.wiley.com/doi/10.1002/hbm.21349/abstract</guid>
+	<link>http://onlinelibrary.wiley.com/doi/10.1002/hbm.21349/abstract</link> 
+      <description>Human brain mapping investigators use SOCR resources and tools to investigate frontal, temporal, and ventricular dysmorphology in schizophrenia, putamen/pallidum enlargements, medication exposure in early studies, and genetic predisposition for schizophrenia. This study reveals the role of specific genetic or environmental risk factors toward altered brain morphology in schizophrenia. </description>
+    </item>
+
+	<item>
+      <title>New EBook Chapter: Additional Continuous Distributions (August 2011)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/EBook</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/EBook</link> 
+      <description>The SOCR Ebook was expanded to include a new chapter on continuous distributions. </description>
+    </item>
+
+	<item>
+      <title>California ozone pollution activity published in JMEST (June 2011)</title>
+	<guid>http://dx.doi.org/10.1080/0020739X.2011.562315</guid>
+	<link>http://dx.doi.org/10.1080/0020739X.2011.562315</link> 
+      <description>The SOCR Group publishes a new manuscript entitled: Web-based tools for modeling and analysis of multivariate data: California ozone pollution activity, in the International Journal of Mathematical Education in Science and Technology (JMEST), iFIRST:1-17, DOI: 10.1080/0020739X.2011.562315. </description>
+    </item>
+
+	<item>
+      <title>SOCR Confidence Interval applet and activity paper published in PLoS ONE (June 2011)</title>
+	<guid>http://dx.plos.org/10.1371/journal.pone.0019178</guid>
+	<link>http://dx.plos.org/10.1371/journal.pone.0019178</link> 
+      <description>SOCR Team publishes a manuscript entitled: Confidence Interval Based Parameter Estimation - A New SOCR Applet and Activity, in the PLoS ONE journal, 6(5): e19178. doi:10.1371/journal.pone.0019178. </description>
+    </item>
+
+	<item>
+      <title>SOCR Cartography and Spatial Statistics Project is Released (May 2011)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/Help_pages_for_SOCR_Cartography</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/Help_pages_for_SOCR_Cartography</link> 
+      <description>The newly released SOCR Cartography and Spatial Statistics project provides a mechanism for interactive and dynamic visualization of multivariate spatial, cartographic and Geographic Information Systems (GIS) data. </description>
+    </item>
+
+	<item>
+      <title>SOCR Users: Real-Time Geographic Map and Summary Statistics of SOCR Resource Utilization (April 2011)</title>
+	<guid>http://www.socr.ucla.edu/SOCR_UserGoogleMap.html</guid>
+	<link>http://www.socr.ucla.edu/SOCR_UserGoogleMap.html</link>
+      <description>The updated SOCR Usage maps provides a real-time, dynamic and comprehensive view of the utilization of the SOCR resources by users across the Globe. This includes a geographic maps as well as complete logs of hourly visits, popular pages, keyword search analyses, visitor paths and web browsers. </description>
+    </item>
+
+	<item>
+      <title>NSF Funds the Distributome Project (October 2010)</title>
+	<guid>http://www.Distributome.org</guid>
+	<link>http://www.Distributome.org</link> 
+      <description>The National Science Foundation (NSF) funds the multi-institutional collaborative research project entitled:  Distributome -- An Interactive Web-based Resource for Probability Distributions. </description>
+    </item>
+
+    <item>
+      <title>SOCR Probability and Statistics EBook is on K12HSN Network (September 2010)</title>
+	<guid>http://www.k12hsn.org/calaxy/wikis.php/calaxy/Probability_and_Statistics_EBook</guid>
+	<link>http://www.k12hsn.org/calaxy/wikis.php/calaxy/Probability_and_Statistics_EBook</link> 
+      <description>In a SOCR - High Speed Network partnership with K-12 educators, the SOCR Probability and Statistics EBook (http://wiki.stat.ucla.edu/socr/index.php/EBook) is posted on the K12HSN network and made freely and openly available to the entire K-12 educational community. </description>
+    </item>
+
+    <item>
+      <title>2010 SOCR AP Statistics Continuing Education Workshop (August 13, 2010)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_Aug2010</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_Aug2010</link> 
+      <description>The 2010 SOCR continuing statistics education workshop will take place at UCLA on August 13, 2010. This 1-day intensive training workshop will cover most of the AP statistics curriculum and demonstrate many of the interactive SOCR tools and hands-on activities. </description>
+    </item>
+
+    <item>
+      <title>SOCR Resource is reviewed, certified and included in the Softpedia Encyclopedia. (June 2010)</title>
+	<guid>http://www.socr.ucla.edu/htmls/SOCR_Recognitions.html</guid>
+	<link>http://www.socr.ucla.edu/htmls/SOCR_Recognitions.html</link> 
+      <description>SOCR receives the Softpedia "100% Free and Clean" award. SOCR V2.6 was last tested in the Softpedia Labs on June 09, 2010 and is certified as free of all forms of malware, including spyware, viruses, trojans and backdoors. Therefore, all SOCR tools can be used and installed with no concern by any computer user.</description>
+    </item>
+
+    <item>
+      <title>The largest neuroimaging study of obesity and brain tissue loss uses SOCR libraries. (April 2010)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_FTO_Obesity_Neuroimaging2010</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_FTO_Obesity_Neuroimaging2010</link> 
+      <description>Reporting in the journal Proceedings of the National Academy of Sciences, UCLA investigators found that the FTO obesity gene is associated with a loss of brain tissue. This puts more than a third of the U.S. population at risk for a variety of diseases, such as Alzheimer's. This study used the SOCR computational libraries and SOCR Analyses to identify multivariate relations between subject demographics and imaging data. </description>
+    </item>
+
+    <item>
+      <title>SOCR User Web-Statistics (March 2010)</title>
+	<guid>http://www.socr.ucla.edu/SOCR_UserGoogleMap.html</guid>
+	<link>http://www.socr.ucla.edu/SOCR_UserGoogleMap.html</link> 
+      <description>In March 2010, we upgraded the SOCR user web-statistics mechanism. Now we provide anonymous access to dynamic and complete statistics on the web-users of the main SOCR server (www.SOCR.ucla.edu). The new SOCR web-statistics architecture allows anyone to see anytime the locations and types of the last 500 SOCR users. Each user is uniquely counter daily, irrespective of usage-time or number of SOCR resources they used. Other servers have separate tracking mechanisms (see: http://wiki.stat.ucla.edu/socr/index.php/SOCR_Servers). </description>
+    </item>
+
+    <item>
+      <title>SOCR Distributions Upgrade (February 2010)</title>
+	<guid>http://www.socr.ucla.edu/htmls/dist/</guid>
+	<link>http://www.socr.ucla.edu/htmls/dist/</link> 
+      <description>The SOCR Distributions (http://www.socr.ucla.edu/htmls/dist/) collection was extended by including Kolmogorov, Anderson-Darling and Johnson-Family distributions. Also, some extensions and bug fixes to other SOCR distributions were made to improve the SOCR Distributions resource. </description>
+    </item>
+
+    <item>
+      <title>SOCR Modeler Upgrade (January 2010)</title>
+	<guid>http://socr.ucla.edu/htmls/SOCR_Modeler.html</guid>
+	<link>http://socr.ucla.edu/htmls/SOCR_Modeler.html</link> 
+      <description>We upgraded SOCR Modeler to include 8 new distribution models that can be fit to any graphically or numerically specified data. We also improved the Gaussian Mixture model fit and included statistical tests quantifying the quality of the model. More details are available here: http://forums.stat.ucla.edu/list.php?16. </description>
+    </item>
+
+    <item>
+      <title>SOCR Servers and Mirrors (January 2010)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Servers</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Servers</link> 
+      <description>We generated a summary of the main SOCR servers and the known remote mirror-sites. The public, open and distributed nature of the entire SOCR project allows us to only identify some of the private or off-site public servers which deploy, support or maintain SOCR materials, data, tools and web-services.</description>
+    </item>
+
+    <item>
+      <title>SOCR Analyses Upgrade (October 2009)</title>
+	<guid>http://socr.ucla.edu/htmls/SOCR_Analyses.html</guid>
+	<link>http://socr.ucla.edu/htmls/SOCR_Analyses.html</link> 
+      <description>A new major upgrade of SOCR Analyses is released that fixed the appearance of the tabs on all SOCR analysis applets. The new version only shows the tabs that are appropriate for the specific SOCR Analysis chosen by the user. This upgrade of Analyses resolves this inconsistency and makes the navigation to data-input, variable-mapping and result-interpretation much more intuitive and user-friendly.</description>
+    </item>
+
+    <item>
+      <title>Books Referencing SOCR Resources (October 2009)</title>
+	<guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Books</guid>
+	<link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Books</link> 
+      <description>As of October 10, 2009, there are at least 7 published textbooks referencing various types of SOCR resources (excluding the 3 books published by the SOCR team). </description>
+    </item>
+
+    <item>
+      <title>SOCR Forum (September 2009)</title>
+	<guid>http://forums.stat.ucla.edu/socr</guid>
+	<link>http://forums.stat.ucla.edu/socr</link> 
+      <description>A new SOCR forum is introduced (http://forums.stat.ucla.edu/socr). Users, instructors, students and developers may use this forum to post questions, learn about various SOCR datasets, tools, learning materials, and contribute to the SOCR knowledgebase. </description>
+    </item>
+
+    <item>
+      <title>Daily Bruin Article About SOCR (August 2009)</title>
+	<guid>http://www.dailybruin.com/articles/2009/8/10/ucla-professors-host-workshop-open-source-projects/</guid>
+	<link>http://www.dailybruin.com/articles/2009/8/10/ucla-professors-host-workshop-open-source-projects/</link> 
+      <description>The Daily Bruin published an article about SOCR, summarizing the project scope and interviewing Ivo Dinov and Nicolas Christou. </description>
+    </item>
+
+    <item>
+      <title>SOCR V.2.6 is released: May 2009</title>
+	<guid>http://www.socr.ucla.edu/</guid>
+	<link>http://www.socr.ucla.edu/</link> 
+      <description>SOCR V.2.6 is released in May 2009. The entire SOCR source code is distributed as a GoogleCode project (http://socr.googlecode.com). This new version includes many fixes and extensions to SOCR Charts, as well as a suite of new command-line executable interfaces to SOCR Analysis that can be used to statistically analyze volumetric and shape-based data (http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_AnalysesCommandLine). </description>
+    </item>
+
+    <item>
+      <title>SOCR Motion Charts(January, 2009)</title>
+	<guid>http://www.socr.ucla.edu/SOCR_MotionCharts/</guid>
+	<link>http://www.socr.ucla.edu/SOCR_MotionCharts/</link> 
+      <description>SOCR Motion Charts (V 1.0) are released (http://www.socr.ucla.edu/SOCR_MotionCharts/). Motion Charts provide a new paradigm for 
+	visualization of multidimensional, multivariate, longitudinal and temporal data in a spreadsheet format. </description>
+    </item>
+
+    <item>
+      <title>SOCR Hyperbolic Wheel Navigator (January, 2009)</title>
+	<guid>http://www.socr.ucla.edu/SOCR_HW_Viewer.html</guid>
+	<link>http://www.socr.ucla.edu/SOCR_HW_Viewer.html</link> 
+      <description>SOCR released the new Hyperbolic-Wheel Navigator (http://www.socr.ucla.edu/SOCR_HW_Viewer.html). The Hyperbolic Wheel navigator
+	provides a new graphical user interface to all SOCR learning materials, computational tools and instructional resources. </description>
+    </item>
+
+    <item>
+      <title>SOCR 3D Carousel Viewer (January, 2009)</title>
+	<guid>http://socr.ucla.edu/Carousel/</guid>
+	<link>http://socr.ucla.edu/Carousel/</link> 
+      <description>SOCR releases a new 3D Carousel Widget for navigating the core SOCR Resources (http://socr.ucla.edu/Carousel/).</description>
+    </item>
+
+    <item>
+      <title>Upgraded SOCR Charts and Analyses (December 23, 2008)</title>
+	<guid>http://socr.ucla.edu/</guid>
+	<link>http://socr.ucla.edu/</link> 
+      <description>SOCR Analyses (http://socr.ucla.edu/htmls/ana/) and SOCR Charts (http://socr.ucla.edu/htmls/SOCR_Charts.html) were upgraded to reflect the update of JFreeCharts to V.1.0.11.</description>
+    </item>
+
+    <item>
+      <title>Improved SOCR Mixture Modeling Distribution is released (October 23, 2008)</title>
+	<guid>http://socr.ucla.edu/htmls/dist/Mixture_Distribution.html</guid>
+	<link>http://socr.ucla.edu/htmls/dist/Mixture_Distribution.html</link> 
+      <description>A significantly improved SOCR Mixture distribution is released, which enables the user to specify the number of mixture Normal distributions and their parameters (means and standard deviations). This new applet demonstrates how unimodal-distributions come together as building-blocks to form the backbone of many complex processes. In addition, this applet allows computing probability and critical values for these mixture distributions, and enables inference on such complicated processes. Extensive demonstrations of mixture modeling in 1D, 2D and 3D are available on the SOCR Wiki pages (http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_Activities_2D_PointSegmentation_EM_Mixture).</description>
+    </item>
+
+    <item>
+      <title>SOCR Hyperbolic Wheel Viewer is released (October 21, 2008)</title>
+	<guid>http://socr.ucla.edu/test/SOCR_HT_ResourceViewer.html</guid>
+	<link>http://socr.ucla.edu/test/SOCR_HT_ResourceViewer.html</link> 
+      <description>On October 21, 2008, the SOCR team released the first complete, functional, portable and interactive Hyperbolic-Wheel viewer of hierarchical data http://socr.ucla.edu/test/SOCR_HT_ResourceViewer.html. This viewer enables the graphical display of large tree-like data structures (e.g., directories/files, web-pages, organizational data, categorical structures, etc.) The Hyperbolic-Wheel viewer is used to display the web of SOCR resources (tools, libraries, wiki pages and other resources). The user may explore, search, traverse and discover SOCR materials and resources by keyword searches or by manually navigating the wheel-graph. </description>
+    </item>
+
+    <item>
+      <title>SOCR Java Resources Update (October 01, 2008)</title>
+	<guid>http://socr.ucla.edu</guid>
+	<link>http://socr.ucla.edu</link> 
+       <description>On October 01, 2008, the entire suite of SOCR Java applets was updated. The latest version of SOCR is V.2.5 and it is built using Java 1.5 update 10. All applets available online at http://www.SOCR.ucla.edu now require Java 1.5-enabled browsers. For backwards compatibility, the (old) Java 1.4-built applets are still available online at http://socr.ucla.edu/legacy/. Users are strongly encouraged to update their JVM and browsers for smooth usage of the latest SOCR applets.</description>
+    </item>
+
+    <item>
+       <title>SOCR Source Code released on Google Code</title>
+	<guid>http://socr.ucla.edu</guid>
+	<link>http://socr.googlecode.com</link> 
+       <description>In September 2008, the complete SOCR source code, v.2.5, was publically released via the SOCR Google Code project page (http://socr.googlecode.com). This new release contains the latest version of the SOCR libraries and all additional resources needed to revise, compile, package and deploy the entire SOCR resource on the Internet.</description>
+    </item>
+
+    <item>
+       <title>SOCR Resource Open and Anonymous Web-Survey Solicits User Feedback</title>
+	<guid>http://socr.ucla.edu</guid>
+	<link>http://www.esurveyspro.com/Survey.aspx?id=79ba4c38-b7d0-4530-aa00-12fdd32b6609</link> 
+       <description>In July 2008, a live web-based e-Survey will begin collecting feedback, critiques and recommendations from the wide SOCR user community to improve existent and develop new SOCR tools, materials and resources.</description>
+    </item>
+
+    <item>
+       <title>The SOCR Tools and EBook were included in the Engineering Pathway NEEDS library</title>
+	 <guid>http://socr.ucla.edu</guid>   	<link>http://www.engineeringpathway.com/ep/learning_resource/summary/?id=AD10FA82-3097-41FC-8887-067F0C0B6A5C</link> 
+       <description>In June 2008, various SOCR tools and the SOCR EBook were reviewed and included in the Engineering Pathway NEEDS library.</description>
+    </item>
+
+    <item>
+       <title>Nicolas Christou receives the  prestigious 2008 Brian Copenhaver Award</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Awards_Christou_BC2008</link> 
+       <description>UCLA Vice Provost, Judith Smith, announced on March 11, 2008, that Dr. Nicolas Christou is awarded the prestigious Brian P. Copenhaver Award for Innovation in Teaching with Technology for 2008. Dr. Christou will be honored on Monday, May 19th, 2008 at a reception, starting at 3:30 PM in the California Room of the Faculty Center.</description>
+    </item>
+
+    <item>
+       <title>Expansion of the SOCR Modeler (01/12/2008)</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_Modeler.html</link> 
+       <description>January 12, 2008: The SOCR Group significantly expanded the collection of models available for data modeling and fitting. Ultimately, all SOCR distributions will be added as available models to fit to user provided data.</description>
+    </item>
+
+    <item>
+       <title>SOCR Distribution Functors Added (01/08/2008)</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_DistributionFunctors.html</link> 
+       <description>January 08, 2008: Rahul Gidwani and Ivo Dinov added a new SOCR Package - Distribution Functors. This tool allows visualization, computation and inference based on one of several distribution functionals, or functors, e.g., MGF, PGF, CF, etc.</description>
+    </item>
+
+    <item>
+       <title>SOCR is a Facebook Application</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://apps.facebook.com/socrapp</link> 
+       <description>December 19, 2007: SOCR was added as a Facebook Application and made available as a tool/plug-in to all FaceBook Users.</description>
+    </item>
+
+    <item>
+       <title>Dr. Dinov was interviewed and quoted in An article in the Wall Street Journal</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://online.wsj.com/article/SB119698695198016514.html</link> 
+       <description>December 07, 2007: SOCR PI, Dr. Dinov, was interviewed by the Wall Street Journal about a paper by Leif Nelson (NYU) and Joseph Simmons (Yale) entitled Moniker Maladies: When Names Sabotage Success. In this article the authors present experimental designs and data to support hypotheses that unconscious behavior can insidiously undermine conscious pursuits.</description>
+    </item>
+
+    <item>
+       <title>The National Science Foundation extends funding for the SOCR project (2007-2011)</title>
+	 <guid>http://socr.ucla.edu</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_Funding.html</link> 
+       <description>September 2007: On September 24, 2007, the National Science Foundation (NSF) extended the funding for the SOCR project for another 4 years (2007-2011). This is a great accomplishment for the SOCR team and recognition of the SOCR Resource achievements since 2002. In the next 4 years, SOCR will design, test, validate, and disseminate 1) tools (applets, demos, GUI interfaces), 2) educational materials (activities, class notes, tutorials), and 3) resources (Statistics Online Computational Resource Wiki, consulting, workshops, etc.)</description>
+    </item>
+
+    <item>
+       <title>FREE acknowledges the SOCR Resource</title>
+	 <guid>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</guid>
+       <link>http://free.ed.gov/</link> 
+       <description>September 2007: The Federal Resources for Educational Excellence (FREE) completed its review of the SOCR resources and included them as part of its library. </description>
+    </item>
+
+    <item>
+       <title>EROD completes a review of SOCR</title>
+	 <guid>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</guid>
+       <link>http://wdcrobcolp01.ed.gov/Programs/EROD/queries/word_specific_results.cfm?Word=SOCR</link> 
+       <description>September 2007: SOCR was included in the Educational Resource Organizations Directory (EROD). </description>
+    </item>
+
+    <item>
+       <title>US Department of Education and ERIC review the SOCR resource</title>
+	 <guid>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</guid>
+       <link>http://www.eric.ed.gov/ERICWebPortal/recordDetail?accno=ED493359</link> 
+       <description>September 2007: SOCR is reviewed and included in the Educational Resource Information Center archive (ERIC). </description>
+    </item>
+
+    <item>
+       <title>NSF Extends SOCR Funding through 2011</title>
+	 <guid>http://www.SOCR.ucla.edu/TBD</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</link> 
+       <description>August 2007: The National Science Foundation (www.NSF.org) extends the federal
+	funding for the Statistics Online Computational Resource (2007-2011). This funding
+	allows SOCR to continue the development
+	of tools, materials and resource for statistical computing and statistics education. </description>
+    </item>
+
+    <item>
+       <title>2007 SOCR/CAUSE Continuing Statistics Education with Technology Workshop</title>
+	 <guid>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_Aug2007</guid>
+       <link>http://wiki.stat.ucla.edu/socr/index.php/SOCR_Events_Aug2007</link> 
+       <description>August 06-08, 2007: The Joint SOCR/CAUSE Continuing
+	Statistics Education with Technology Workshop takes place at UCLA. Over 35 attendees
+	and 7 instructors take part of this workshop. The workshop in streamed life and complete 
+	video archive is available on the web.</description>
+    </item>
+
+    <item>
+       <title>SOCR Reviewed and Included in iLumina</title>
+	 <guid>http://www.ilumina-dlib.org/</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</link> 
+       <description>August 2007: The Statistics Online Computational Resource was reviewed and approved for inclusion
+	in the iLumina Digital Library (http://www.ilumina-dlib.org/). iLumina is a digital library of sharable 
+	undergraduate teaching materials for chemistry, biology, physics, mathematics, and computer science. </description>
+    </item>
+
+    <item>
+       <title>SOCR Awarded a Web Award</title>
+	 <guid>http://www.worldwidewebawards.net/gjuly2007.htm</guid>
+       <link>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</link> 
+       <description>July 2007: SOCR received the prestigious World Wide Web Awards "Gold" Award. </description>
+    </item>
+
+    <item>
+       <title>SOCR Handbook Reviewed and posted on e-Library</title>
+	 <guid>http://e-library.net/item.php?n=11440</guid>
+       <link>http://e-library.net/item.php?n=11440</link> 
+       <description>July 2007: The 2007 SOCR/CAUSE Handbook on Continuing Statistics Education
+	with Technology Workshop at UCLA (August 06-08, 2007) was posted and reviewed received 
+	at e-Library (http://e-library.net/item.php?n=11440). </description>
+    </item>
+
+    <item>
+       <title>SOCR is included in the OER Commons</title>
+	 <guid>http://socr.ucla.edu/htmls/SOCR_Recognitions.html</guid>
+       <link>http://www.oercommons.org/courses/statistics-online-compute-resources/</link> 
+       <description>2006: The Open Educational Resources (OER) Commons included SOCR in its archive of mathematics and statistics free online resources. OERs include teaching and learning materials that are freely available online for everyone to use, whether you are an instructor, student, or self-learner.</description>
+    </item>
+
+  </channel>
+</rss>

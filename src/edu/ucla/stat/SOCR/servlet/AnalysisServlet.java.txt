@@ -1,0 +1,231 @@
+/****************************************************
+Statistics Online Computational Resource (SOCR)
+http://www.StatisticsResource.org
+ 
+All SOCR programs, materials, tools and resources are developed by and freely disseminated to the entire community.
+Users may revise, extend, redistribute, modify under the terms of the Lesser GNU General Public License
+as published by the Open Source Initiative http://opensource.org/licenses/. All efforts should be made to develop and distribute
+factually correct, useful, portable and extensible resource all available in all digital formats for free over the Internet.
+ 
+SOCR resources are distributed in the hope that they will be useful, but without
+any warranty; without any explicit, implicit or implied warranty for merchantability or
+fitness for a particular purpose. See the GNU Lesser General Public License for
+more details see http://opensource.org/licenses/lgpl-license.php.
+ 
+http://www.SOCR.ucla.edu
+http://wiki.stat.ucla.edu/socr
+ It s Online, Therefore, It Exists! 
+****************************************************/
+/*
+Annie Che. 2006.
+Somehow this class has to be compiled by Java 1.4 but NOT 1.5 because
+when I use 1.5's compiler to get the class file, apache tomcat (version 5.0.27)
+doesn't seem to accept it and generate 500 server error: Unsupported Class Exception.
+*/
+
+
+package edu.ucla.stat.SOCR.servlet;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+
+import java.util.*;
+import java.text.*;
+import java.net.*;
+import java.security.*;
+import java.security.spec.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+
+import edu.ucla.stat.SOCR.servlet.analyses.*;
+import edu.ucla.stat.SOCR.util.*;
+import edu.ucla.stat.SOCR.servlet.util.*;
+
+import java.io.*;
+import java.math.BigInteger;
+import java.security.*;
+import java.security.spec.*;
+import java.security.interfaces.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import javax.crypto.interfaces.*;
+import com.sun.crypto.provider.SunJCE;
+
+public class AnalysisServlet extends HttpServlet {
+	//private String outputXmlStringR = "some test.";
+	private static String DEFAULT_USER_NAME = "SoCr";
+	private static String DEFAULT_PASSWORD = "StatistiCS";
+
+	private String userName = "";
+	private String password = "";
+	private String stringAttachment = "";
+	private String decryptedResult = "";
+	private boolean infoVerified = false;
+
+	public void init() {
+	}
+	public void doGet (HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException    {
+		response.setContentType("text/html");
+		//PrintWriter pw = response.getWriter();
+		System.out.println("AnalysisServlet starts");
+
+		try {
+			//PrintWriter pw = response.getWriter();
+
+			System.out.println("AnalysisServlet try starts");
+
+			ObjectInputStream inputFromApplet = new ObjectInputStream(request.getInputStream());
+
+			// read the serialized student data from applet
+			ClientObject clientObject = (ClientObject) inputFromApplet.readObject();
+
+			inputFromApplet.close();
+
+			Key clientKey = clientObject.getKey();
+			stringAttachment = clientObject.getStringAttachment();
+			userName = clientObject.getUserName();
+			password = clientObject.getPassword();
+
+			//String decryptedResult = CryptoUtil.decrypt(stringAttachment.getBytes(), clientKey);
+			decryptedResult = stringAttachment;
+			System.out.println("AnalysisServlet decryptedResult = " + decryptedResult);
+			System.out.println("AnalysisServlet userName = " + userName);
+			System.out.println("AnalysisServlet password = " + password);
+			if (userName.equals(DEFAULT_USER_NAME) && password.equals(DEFAULT_PASSWORD)) {
+				infoVerified = true;
+			}
+			System.out.println("AnalysisServlet infoVerified = " + infoVerified);
+
+
+			if (infoVerified) {
+
+				System.out.println("AnalysisServlet call RInterface");
+				edu.ucla.stat.SOCR.servlet.analyses.RInterface ri = new edu.ucla.stat.SOCR.servlet.analyses.RInterface();
+
+				//outputXmlStringR = ri.getRAnalysisResult(stringAttachment); // do something to get the R result XML.
+				System.out.println("AnalysisServlet done call RInterface");
+
+				//ServerObject serverObject = new ServerObject(clientKey, decryptedResult);
+
+				// REMEMBER TO CHANGE TO outputXmlStringR after R interface is done.
+				String outputString = null;
+				// for testing only
+
+				if (decryptedResult.indexOf("LINEAR_MODEL")>=0) {
+					outputString = outputXmlLinearModelTest;
+				}
+				else if (decryptedResult.indexOf("LOGISTIC")>=0) {
+					outputString = outputXmlLogisticTest;
+				}
+				ServerObject serverObject = new ServerObject(clientKey, outputString); //outputXmlLogisticTest
+				System.out.println("AnalysisServlet serverObject.getStringAttachment = " + serverObject.getStringAttachment());
+				ServletOutputStream servletOutputStream = response.getOutputStream();
+				ObjectOutputStream outputToClient = new ObjectOutputStream(servletOutputStream);
+
+				// serialize the object
+				outputToClient.writeObject(serverObject);
+				outputToClient.flush();
+				outputToClient.close();
+			}
+			else {
+				ServerObject serverObject = new ServerObject(clientKey, errorMessage);
+				System.out.println("AnalysisServlet errorMessage = " + errorMessage);
+				ServletOutputStream servletOutputStream = response.getOutputStream();
+				ObjectOutputStream outputToClient = new ObjectOutputStream(servletOutputStream);
+
+				// serialize the object
+				outputToClient.writeObject(serverObject);
+				outputToClient.flush();
+				outputToClient.close();
+			}
+/*
+			pw.print("AnalysisServlet start calling RInterface"  );
+			edu.ucla.stat.SOCR.servlet.analyses.RInterface ri = new edu.ucla.stat.SOCR.servlet.analyses.RInterface();
+
+			outputXmlStringR = ri.getRAnalysisResult(pw, inputXmlString);//stringAttachment);
+			//pw.print(decryptedResult + " " + decryptedResult);
+			//System.out.println("SEND THIS TO CLIENT: " + outputXmlString);
+			pw.print("AnalysisServlet outputXmlStringR = " + outputXmlStringR);
+
+			//pw.print(" test  = " + test);
+
+*/
+			//pw.close();
+		} catch (java.lang.Exception e) { //ClassNotFoundException
+			System.out.println("AnalysisServlet Exception " + e);
+			//pw.print("AnalysisServlet Exception " + e);
+
+		}
+
+	}
+
+
+	/******************* end decryptor ************************/
+	public void doPost ( HttpServletRequest request, HttpServletResponse response )
+		throws ServletException, IOException    {
+			doGet(request, response);
+	}
+	private String inputXmlLinearModelTest = "<analysis_input><analysis_model><analysis_name>LINEAR_MODEL</analysis_name></analysis_model><data><variable><variable_name>x</variable_name><variable_type>INDENPEDENT</variable_type><data_type>QUANTITATIVE</data_type><data_value>68.0, 49.0, 60.0, 68.0, 97.0, 82.0, 59.0, 50.0, 73.0, 39.0, 71.0, 95.0, 61.0, 72.0, 87.0, 40.0, 66.0, 58.0, 58.0 77.0</data_value></variable><variable><variable_name>t</variable_name><variable_type>DENPEDENT</variable_type><data_type>QUANTITATIVE</data_type><data_value>75.0, 63.0, 57.0, 88.0, 88.0, 79.0, 82.0, 73.0, 90.0, 62.0, 70.0,96.0, 76.0, 75.0, 85.0, 40.0, 74.0, 70.0, 75.0, 72.0</data_value></variable></data></analysis_input>";
+
+	private String inpurXmlStringLogisticTest = "<analysis_input><analysis_model><analysis_name>LOGISTIC</analysis_name></analysis_model><data><independent><variable><name>var_x</name><data_type>QUANTITATIVE</data_type>                     <data_value>20,23,24,25,25,26,26,28,28,29,30,30,30,30,30,30,32,32,33,33,34,34,34,34,34,35,35,36,36,36,37,37,37,38,38,39,39,40,40,41,41,42,42,42,42,43,43,43,44,44,44,44,45,45,46,46,47,47,47,48,48,48,49,49,49,50,50,51,52,52,53,53,54,55,55,55,56,56,56,57,57,57,57,57,57,58,58,58,59,59,60,60,61,62,62,63,64,64,65,69</data_value><data_type>QUALITATIVE</data_type><data_value>0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0,1,0,0,1,1,1,1,0,1,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1</data_value></variable></dependent></data></analysis_input>";
+
+
+	private String outputXmlLinearModelTest = "<analysis_output>" +
+		"<linear_regression_result>" +
+			"<coefficients>" +
+				"<intercept>" +
+					"<estimate>14.43</estimate>" +
+					"<standard_error>14.2</standard_error>" +
+					"<t_value>1.021</t_value>" +
+					"<p_value>0.3218</p_value>" +
+				"</intercept>" +
+				"<predictor>" +
+					"<variable_name>X</variable_name>" +
+					"<estimate>0.268</estimate>" +
+					"<standard_error>0.157</standard_error>" +
+					"<t_value>1.702</t_value>" +
+					"<p_value>0.107</p_value>" +
+				"</predictor>" +
+			"</coefficients>" +
+			"<statistics>" +
+				"<residual_standard_error>" +
+					"<value>" + "</value>" +
+					"<degrees_freedom_residual>" + "</degrees_freedom_residual>" +
+				"</residual_standard_error>" +
+				"<multiple_r_squared>" + "</multiple_r_squared>" +
+				"<adjusted_r_squared>" + "</adjusted_r_squared>" +
+				"<f_statistics>" +
+					"<value>" + "</value>" +
+					"<degrees_freedom_model>" + "</degrees_freedom_model>" +
+					"<degrees_freedom_error>" + "</degrees_freedom_error>" +
+					"<p_value>" + "</p_value>" +
+				"</f_statistics>" +
+			"</statistics>" +
+			"<plot_data>" +
+				"<fitted>" +"291.0241 413.0855 499.3122 600.7222 695.8560 123.456 567.891 100.123 99.234"+
+				"</fitted>"+
+				"<residuals>"+"8.9758502 -13.0854827 0.6878046 -0.7221948 4.1440228 3.44 5.66 -3.12 -4.6"+
+				"</residuals>"+
+				"<normal_scores>" +
+					"<theoretical_quantiles>" + "</theoretical_quantiles>" +
+					"<standardized_residuals>" + "</standardized_residuals>" +
+				"</normal_scores>" +
+				"<root_standardized_residuals>" + "</root_standardized_residuals>" +
+				"<cooks_distance>" + "</cooks_distance>" +
+			"</plot_data>" +
+		"</linear_regression_result>" +
+	"</analysis_output>" ;
+	private String errorMessage =
+	"<analysis_output>" +
+		"<error>" +
+			"<error_code>" + "</error_code>" +
+			"<error_message>AUTHORIZATION ERROR</error_message>" +
+		"</error>" +
+	"</analysis_output>" ;
+	private String outputXmlLogisticTest = "<analysis_output><linear_regression_result><coefficients><intercept><estimate>-5.3094534</estimate><standard_error>1.13365365</standard_error><z_value>-4.683488</z_value><p_value>2.820338e-06</p_value></intercept><predictor><name>var_x</name><estimate>0.1109211</estimate><standard_error>0.02405982</standard_error><z_value>4.610224</z_value><p_value>4.022356e-06</p_value></predictor></coefficients><statistics><residual_standard_error><value/><degrees_freedom_residual/></residual_standard_error></statistics><plot_data><fitted>0.04347876 0.05962145 0.06615278 0.07334379 0.07334379 0.08124847 0.08124847  0.09942218 0.09942218 0.10980444 0.12112505 0.12112505 0.12112505 0.12112505  0.12112505 0.12112505 0.14679324 0.14679324 0.16123662 0.16123662 0.17680662  0.17680662 0.17680662 0.17680662 0.17680662 0.19353324 0.19353324 0.21143583  0.21143583 0.21143583 0.23052110 0.23052110 0.23052110 0.25078125 0.25078125  0.27219215 0.27219215 0.29471199 0.29471199 0.31828021 0.31828021 0.34281708  0.34281708 0.34281708 0.34281708 0.36822381 0.36822381 0.36822381 0.39438351  0.39438351 0.39438351 0.39438351 0.42116276 0.42116276 0.44841400 0.44841400  0.47597858 0.47597858 0.47597858 0.50369030 0.50369030 0.50369030 0.53137935  0.53137935 0.53137935 0.55887652 0.55887652 0.58601724 0.61264546 0.61264546  0.63861714 0.63861714 0.66380304 0.68809096 0.68809096 0.68809096 0.71138714  0.71138714 0.71138714 0.73361695 0.73361695 0.73361695 0.73361695 0.73361695  0.73361695 0.75472490 0.75472490 0.75472490 0.77467399 0.77467399 0.79344462  0.79344462 0.81103299 0.82744940 0.82744940 0.84271622 0.85686593 0.85686593  0.86993915 0.91246455 </fitted><residuals>-1.045450 -1.063397 -1.070835 -1.079145 13.634372 -1.088430 -1.088430 -1.110395  -1.110395 -1.123346 -1.137815 -1.137815 -1.137815 -1.137815 -1.137815  8.255910  -1.172046 -1.172046 -1.192229 -1.192229 -1.214779 -1.214779  5.655887 -1.214779  -1.214779 -1.239975 -1.239975 -1.268126  4.729561 -1.268126 -1.299579  4.337992  -1.299579 -1.334722 -1.334722 -1.373988  3.673872 -1.417859  3.393141 -1.466877  -1.466877 -1.521646 -1.521646 -1.521646  2.917006 -1.582838 -1.582838  2.715739  -1.651210 -1.651210  2.535602  2.535602 -1.727601  2.374379 -1.812954  2.230082  -1.908319 -1.908319  2.100935 -2.014871  1.985347  1.985347 -2.133922 -2.133922   1.881895 -2.266939  1.789304 -2.415560 -2.581614  1.632265  1.565883  1.565883   1.506471 -3.206062  1.453296  1.453296  1.405704  1.405704  1.405704 -3.753991  -3.753991  1.363109  1.363109  1.363109  1.363109 -4.077053  1.324985  1.324985   1.290865  1.290865 -4.841313  1.260326  1.232994  1.208532  1.208532  1.186638  -6.986447  1.167042  1.149504  1.095930 </residuals><normal_scores><theoretical_quantiles>  0.16365849  0.13830421  0.11303854  0.08784484  2.57582930  0.03760829   0.06270678 -0.01253347  0.01253347 -0.03760829 -0.16365849 -0.13830421  -0.11303854 -0.08784484 -0.06270678  2.17009038 -0.21470157 -0.18911843  -0.26631061 -0.24042603 -0.37185609 -0.34512553  1.95996398 -0.31863936  -0.29237490 -0.42614801 -0.39885507 -0.48172685  1.81191067 -0.45376219  -0.53883603  1.69539771 -0.51007346 -0.59776013 -0.56805150 -0.62800601   1.59819314 -0.65883769  1.51410189 -0.72247905 -0.69030882 -0.82389363  -0.78919165 -0.75541503  1.43953147 -0.89647336 -0.85961736  1.37220381  -0.97411388 -0.93458929  1.25356544  1.31057911 -1.01522203  1.20035886  -1.05812162  1.15034938 -1.15034938 -1.10306256  1.10306256 -1.20035886   1.01522203  1.05812162 -1.31057911 -1.25356544  0.97411388 -1.37220381   0.93458929 -1.43953147 -1.51410189  0.89647336  0.82389363  0.85961736   0.78919165 -1.59819314  0.72247905  0.75541503  0.62800601  0.65883769   0.69030882 -1.81191067 -1.69539771  0.51007346  0.53883603  0.56805150   0.59776013 -1.95996398  0.45376219  0.48172685  0.39885507  0.42614801  -2.17009038  0.37185609  0.34512553  0.29237490  0.31863936  0.26631061  -2.57582930  0.24042603  0.21470157  0.18911843</theoretical_quantiles><standardized_residuals>-0.2864880 -0.3368999 -0.3554857 -0.3750239  2.1963203 -0.3955511 -0.3955511  -0.4397153 -0.4397153 -0.4634209 -0.4882518 -0.4882518 -0.4882518 -0.4882518  -0.4882518  1.9742245 -0.5414033 -0.5414033 -0.5697729 -0.5697729 -0.5993642  -0.5993642  1.7886318 -0.5993642 -0.5993642 -0.6301910 -0.6301910 -0.6622610   1.6937984 -0.6622610 -0.6955761  1.6460219 -0.6955761 -0.7301315 -0.7301315  -0.7659148  1.5500272 -0.8029063  1.5019373 -0.8410779 -0.8410779 -0.8803938  -0.8803938 -0.8803938  1.4059329 -0.9208097 -0.9208097  1.3581764 -0.9622735  -0.9622735  1.3106950  1.3106950 -1.0047256  1.2635755 -1.0480993  1.2169059  -1.0923217 -1.0923217  1.1707746 -1.1373146  1.1252685  1.1252685 -1.1829954  -1.1829954  1.0804728 -1.2292786  1.0364689 -1.2760765 -1.3233009  0.9511383   0.9099479  0.9099479  0.8698200 -1.4666637  0.8308047  0.8308047  0.7929440   0.7929440  0.7929440 -1.5628231 -1.5628231  0.7562718  0.7562718  0.7562718   0.7562718 -1.6108516  0.7208136  0.7208136  0.6865875  0.6865875 -1.7064792   0.6536036  0.6218649  0.5913680  0.5913680  0.5621034 -1.8945436  0.5340561   0.5072066  0.4112647 </standardized_residuals></normal_scores><root_standardized_residuals>0.5362699 0.5817969 0.5977004 0.6139679 1.4858125 0.6305975 0.6305975 0.6649296  0.6649296 0.6826218 0.7006556 0.7006556 0.7006556 0.7006556 0.7006556 1.4089025  0.7377111 0.7377111 0.7567108 0.7567108 0.7760083 0.7760083 1.3405451 0.7760083  0.7760083 0.7955891 0.7955891 0.8154377 1.3040885 0.8154377 0.8355374 1.2853202  0.8355374 0.8558703 0.8558703 0.8764177 1.2467820 0.8971596 1.2270527 0.9180754  0.9180754 0.9391431 0.9391431 0.9391431 1.1867947 0.9603395 0.9603395 1.1663206  0.9816402 0.9816402 1.1456551 1.1456551 1.0030193 1.1248281 1.0244493 1.1038695  1.0459009 1.0459009 1.0828091 1.0673435 1.0616760 1.0616760 1.0887445 1.0887445  1.0404983 1.1100704 1.0193035 1.1312864 1.1523573 0.9769665 0.9558745 0.9558745  0.9348655 1.2143514 0.9139630 0.9139630 0.8931898 0.8931898 0.8931898 1.2543406  1.2543406 0.8725685 0.8725685 0.8725685 0.8725685 1.2738479 0.8521211 0.8521211  0.8318692 0.8318692 1.3117780 0.8118337 0.7920347 0.7724915 0.7724915 0.7532220  1.3829250 0.7342429 0.7155696 0.6441798 </root_standardized_residuals><cooks_distance>0.0008632379 0.0013083297 0.0014912159 0.0016922923 0.0580428657 0.0019115803  0.0019115803 0.0024023893 0.0024023893 0.0026712373 0.0029528561 0.0029528561  0.0029528561 0.0029528561 0.0029528561 0.0482778209 0.0035420549 0.0035420549  0.0038422444 0.0038422444 0.0041408752 0.0041408752 0.0368767291 0.0041408752  0.0041408752 0.0044342505 0.0044342505 0.0047194867 0.0308716499 0.0047194867  0.0049951510 0.0279724461 0.0049951510 0.0052619923 0.0052619923 0.0055237273  0.0226229834 0.0057878202 0.0202529795 0.0060661812 0.0060661812 0.0063756931  0.0063756931 0.0063756931 0.0162593303 0.0067384705 0.0067384705 0.0146599983  0.0071817615 0.0071817615 0.0133240791 0.0133240791 0.0077374168 0.0122378028  0.0084408810 0.0113788129 0.0093297025 0.0093297025 0.0107179875 0.0104416044  0.0102215885 0.0102215885 0.0118122164 0.0118122164 0.0098535554 0.0134726135  0.0095777552 0.0154468506 0.0177497026 0.0091698284 0.0089815500 0.0089815500  0.0087751868 0.0266041864 0.0085366376 0.0085366376 0.0082575194 0.0082575194  0.0082575194 0.0338836799 0.0338836799 0.0079346308 0.0079346308 0.0079346308  0.0079346308 0.0378018000 0.0075691556 0.0075691556 0.0071657153 0.0071657153  0.0458856247 0.0067313702 0.0062746584 0.0058047362 0.0058047362 0.0053306657  0.0611715360 0.0048608688 0.0044027494 0.0027904653</cooks_distance></plot_data></linear_regression_result><error><error_code/><error_message/></error></analysis_output>";
+
+}

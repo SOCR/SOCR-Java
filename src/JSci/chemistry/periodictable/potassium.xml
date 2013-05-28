@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Potassium</name>
+   <symbol>K</symbol>
+   <atomic-number>19</atomic-number>
+   <mass-number>39</mass-number>
+   <electronegativity>0.82</electronegativity>
+   <covalent-radius>2.025</covalent-radius>
+   <atomic-radius>2.77</atomic-radius>
+   <melting-point>336.35</melting-point>
+   <boiling-point>1032.0</boiling-point>
+   <density>0.862</density>
+   <specific-heat>0.75</specific-heat>
+   <electrical-conductivity>0.139e6</electrical-conductivity>
+   <thermal-conductivity>1.024</thermal-conductivity>
+</element>

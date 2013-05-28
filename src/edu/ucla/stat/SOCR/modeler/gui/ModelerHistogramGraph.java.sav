@@ -1,0 +1,948 @@
+/****************************************************
+Statistics Online Computational Resource (SOCR)
+http://www.StatisticsResource.org
+ 
+All SOCR programs, materials, tools and resources are developed by and freely disseminated to the entire community.
+Users may revise, extend, redistribute, modify under the terms of the Lesser GNU General Public License
+as published by the Open Source Initiative http://opensource.org/licenses/. All efforts should be made to develop and distribute
+factually correct, useful, portable and extensible resource all available in all digital formats for free over the Internet.
+ 
+SOCR resources are distributed in the hope that they will be useful, but without
+any warranty; without any explicit, implicit or implied warranty for merchantability or
+fitness for a particular purpose. See the GNU Lesser General Public License for
+more details see http://opensource.org/licenses/lgpl-license.php.
+ 
+http://www.SOCR.ucla.edu
+http://wiki.stat.ucla.edu/socr
+ It s Online, Therefore, It Exists! 
+****************************************************/
+
+/* modified by annie che 20060515. i also added some comments. */
+package edu.ucla.stat.SOCR.modeler.gui;
+
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import edu.ucla.stat.SOCR.core.SOCRModeler;
+import edu.ucla.stat.SOCR.distributions.Domain;
+import edu.ucla.stat.SOCR.distributions.IntervalData;
+import edu.ucla.stat.SOCR.modeler.Modeler;
+import edu.ucla.stat.SOCR.modeler.gui.ModelerColor;
+import edu.ucla.stat.SOCR.modeler.gui.ModelerConstant;
+import edu.ucla.stat.SOCR.util.Graph;
+
+/**This class models an interactive histogram.  The user can click on the horizontal axes to add points
+ to the data set.*/
+public class ModelerHistogramGraph extends Graph implements MouseListener {
+	
+	protected boolean plotWithMargin= false;  //pad with 20% or  not on the XAxis
+	public double plotxMin, plotxMax, plotyMin, plotyMax;  // plot area
+
+	//Constants
+	public final static int FREQ = 0, REL_FREQ = 1, DENSITY = 2; // looks like relative frequency.
+	public final static int NONE = 0, MSD = 1, BOX = 2, MAD = 3, MMM = 4;
+	//Variables
+ 	protected int axisType, summaryStats = 1, type = REL_FREQ, intervals;
+//	protected int bins = SOCRModeler.binDefault;
+	//Objects
+
+ 	protected IntervalData data;
+	public Vector<Double> rawDat;
+	Dimension winSize;
+	private Vector<Double> values = new Vector<Double>();
+	private int valCount = 0;
+
+	/**This general constructor creates a new data graph with a specified data set and axis type.*/
+	protected ArrayList listOfTicks = new ArrayList();
+	//Variables
+	static final double pi = 3.14159265358979323846;	
+	//store input data in graph panel
+	private Vector<Double> graphInputDataX;
+	private Vector<Integer> graphInputDataY;
+		
+	protected int modelType;
+	public double[] modelX = null, modelY = null;
+	public double[] modelX1 = null, modelY1 = null;
+	public double[] modelX2 = null, modelY2 = null;
+	
+	protected int modelCount = 1;
+	//private static boolean zoomIn = false;
+//	private static boolean zoomOut = false;
+	protected static int MULTIPLE_DEFAULT_VALUE = 3;
+	private Color outlineColor;
+	private Color outlineColor1;
+	private Color outlineColor2;
+	protected boolean drawUserClicks = true, updateGuiSlider= false;
+	
+	protected ModelerGui modelerGuiLink;
+
+	/**
+	 * This general constructor creates a new interactive histogram
+	 * corresponding to a specified domain.
+	 */
+	public ModelerHistogramGraph(double a, double b, double w) {
+		this.addMouseListener(this);
+	//	winSize = this.getSize();
+	//	winSize.width = (int) w;
+		plotxMin = a;
+		plotxMax = b;
+		plotyMin = 0;
+		plotyMax = ModelerConstant.GRAPH_DEFAULT_Y_MAX;
+		
+		xMin = a;
+		xMax = b;
+		yMin = 0;
+		yMax = ModelerConstant.GRAPH_DEFAULT_Y_MAX;
+		
+		resetIntervalData(a, b, w);
+		
+		rawDat = new Vector<Double>(10, 10);
+		graphInputDataX = new Vector<Double>(10, 10);
+		graphInputDataY = new Vector<Integer>(10, 10);
+	}
+	
+	public ModelerHistogramGraph() {
+		super();
+	}
+	
+	public void setGuiLink(ModelerGui link){
+		modelerGuiLink = link;
+	}
+	
+	public void setDrawUserClicks(boolean flag) {
+		this.drawUserClicks = flag;
+	}
+	
+	public void setPlotWithMargin(boolean t){
+		plotWithMargin= t;
+	}
+	/*public void setLeft(double input) {
+		System.out.println("ModelerHistgram setLeft "+input);
+		this.xMax = input;
+	}
+	public void setRight(double input) {
+		
+		this.xMax = input;
+	}*/
+	
+	public void setDataLeft(double input) {
+		System.out.println("graph setDataLeft "+input);
+		this.xMin = input;
+	}
+	
+	public void setDataRight(double input) {
+		System.out.println("graph setDataRight "+input);
+		this.xMax = input;
+	}
+	
+	public void setGraphLeft(double input) {
+		System.out.println("graph setGraphLeft "+input);
+		this.plotxMin = input;
+	}
+	
+	public void setGraphRight(double input) {
+		System.out.println("graph setGraphRight "+input);
+		this.plotxMax = input;
+	}
+	
+	public void setGraphTop(double input) {
+		System.out.println("graph setGraphTop "+input+ " yMax="+yMax);
+		this.plotyMax = input;
+	}
+	
+	public void setGraphButtom(double input) {
+		this.plotyMin = input;
+	}
+
+	private void setHist() {
+		data.reset();		
+		if (values.size()<1) return;
+		
+		double min=Double.valueOf(values.elementAt(0).toString()).doubleValue();
+		double max=Double.valueOf(values.elementAt(0).toString()).doubleValue();
+		double temp = 0;
+		
+		for (int i = 0; i < values.size(); i++) {
+		//	System.out.println("ModelHistogram setHist value = " + values.elementAt(i).toString()); // values is of type Vector.
+			temp = Double.valueOf(values.elementAt(i).toString()).doubleValue();
+			if (min>temp) min=temp;
+			if (max<temp) max=temp;
+			
+		//	System.out.println("data setValue=" + temp);
+			
+			data.setValue(temp);
+		} 
+		
+		setDataLeft(min-(max-min)/10);
+		setDataRight(max+(max-min)/10);
+		
+		repaint();
+	}
+	
+	public void resetIntervalData() {
+		double w = data.getDomain().width;
+		data = new IntervalData(xMin, xMax, w);
+		repaint();
+	}
+	
+	public void setIntervalData(IntervalData d){
+		data = d;
+		repaint();
+	}
+	
+	public void resetIntervalData(double xmin, double xmax, double w) {
+		xMin = xmin;
+		xMax = xmax;
+		data = new IntervalData(xmin, xmax, w);
+		repaint();
+	}
+	
+	public void setZoomInIntervalData() {
+	//	zoomIn = true;
+	//	double w = data.getDomain().width;
+	//	data = new IntervalData(xMin, xMax, 2 * w);
+		plotxMin = plotxMin/2;
+		plotxMax = plotxMax/2;
+		repaint();
+
+	}
+	public void setZoomOutIntervalData() {
+	//	zoomOut = true;
+		//double w = data.getDomain().width;
+		//data = new IntervalData(xMin, xMax, .5*w);
+		plotxMin = 2*plotxMin;
+		plotxMax = 2*plotxMax;
+		repaint();
+	}
+
+	public void updateBins() {
+		//width = (xMax - left) / n;
+		setWidth();
+		resetIntervalData();
+	}
+
+	public void setWidth(){
+		double width = (xMax-xMin) / modelerGuiLink.histBinNos;
+		width /= 2;
+		System.out.println("*graph setWidth ing width="+width);
+		setWidth(width);
+	}
+	
+	/**
+	 * This method sets the width of the domain. A new interval data set is
+	 * created, and the values are added to the data set.
+	 */
+	public void setWidth(double width) {
+	
+		double xmin = data.getMinValue();
+		double xmax = data.getMaxValue();
+		data = new IntervalData(xmin, xmax, width);
+	
+		for (int i = 0; i < values.size(); i++) {
+			//System.out.println("ModelHistogram setWidth value = " + values.elementAt(i).toString());
+			data.setValue(((Double) values.elementAt(i)).doubleValue());
+		}
+		repaint();
+	}
+	
+	
+	/**This method sets the minimum and maximum values on the x and y axes*/
+	public void setPlotArea(double x0, double x1, double y0, double y1){
+		System.out.println("Graph setPlotArea plotxmax = " + x1+" plotyMax="+y1 + " updateGuiSlider ="+ updateGuiSlider);
+		//Exception e = new Exception();
+		//e.printStackTrace();
+		plotxMin = x0; plotxMax = x1;
+		plotyMin = y0; plotyMax = y1;
+		//double w = data.getDomain().width;
+		//if(modelerGuiLink!=null && updateGuiSlider==true ){
+	//		bins = (int) ((xMax-xMin)/(2*w));
+		//	System.out.println("Graph setScale bins="+bins);
+	//		modelerGuiLink.updateScale(xMin, xMax, yMin, yMax, bins);
+	//	}
+	
+	}
+	
+/*	public void panRight() {
+		xMax = xMax + data.getDomain().width;
+		xMin = xMin - data.getDomain().width;
+		resetIntervalData();
+		//////System.out.println("ModelerHistogram panRight call setHist");
+
+		setHist();
+		repaint();
+	}
+
+	public void panLeft() {
+		xMin = xMin - data.getDomain().width;
+		xMax = xMax + data.getDomain().width;
+		resetIntervalData();
+		//////System.out.println("ModelerHistogram panLeft call setHist");
+
+		setHist();
+		repaint();
+	}
+*/
+	public int zoomIn() {
+		int ret = 0;
+		double w = data.getDomain().width;
+		if (xMax - xMin > w) {
+			xMin = xMin + w;
+			xMax = xMax - w;
+			setZoomInIntervalData();
+			ret = 1;
+		}
+		return ret;
+
+	}
+
+	int getPanelHeight() {
+		return winSize.height / 3;
+	}
+
+	public int zoomOut() {
+		int ret = 0;
+		//   if(xMax-xMin>width) {
+		double w = data.getDomain().width;
+		xMin = xMin - w;
+		xMax = xMax + w;
+		setZoomOutIntervalData();
+		ret = 1;
+		return ret;
+	}
+
+	public void setModelType(int modelType) {	
+		this.modelType = modelType;
+	}
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		////System.out.println("modelerHistogram paintComponent" );
+		double x, d;
+		int size = data.getSize();
+		Domain domain = data.getDomain();
+		
+	
+		intervals = domain.getSize();
+		//Determine yMax
+		System.out.println("before modelerHistogram  yMax="+yMax);
+		if (type == DENSITY) {
+			yMax = data.getMaxDensity();
+		}
+		else if (type == REL_FREQ) {
+			yMax = data.getMaxRelFreq();
+		}
+
+		if (yMax == 0) {
+			yMax = 1; // why???
+		}
+		System.out.println("after modelerHistogram  yMax="+yMax);
+          
+		System.out.println(" modelerHistogram  plotyMax="+plotyMax+" plotxMax="+plotxMax+" type"+type);
+		System.out.println(" modelerHistogram xMin="+xMin+" yMax="+yMax);
+		//setScale(xMin, xMax, 0, yMax);
+		g.setColor(ModelerColor.HISTOGRAM_AXIS); // this is the coordinate grids.
+		if (modelType == Modeler.FOURIER_TYPE || modelType == Modeler.WAVELET_TYPE) {
+			xMin = 0;
+			setPlotArea(plotxMin, plotxMax, -plotyMax, plotyMax);
+	
+	 		drawAxis(g, -plotyMax, plotyMax, 0.1 * plotyMax, plotxMin, VERTICAL); // 6 args
+	 		drawAxis(g, plotxMin, plotxMax, (plotxMax - plotxMin) / 10, 0, HORIZONTAL, axisType, listOfTicks); // c must be 0.
+
+		} else {
+	 		drawAxis(g, -plotyMax, plotyMax, 0.1 * plotyMax, plotxMin, VERTICAL); // 6 args
+	 		drawAxis(g, plotxMin, plotxMax, (plotxMax - plotxMin) / 10, 0, HORIZONTAL, axisType, listOfTicks); // c must be 0.
+		}
+	//	System.out.println("modelerHistogram drawAxis with margin " +xMin+" "+xMax+" yMax="+yMax);
+		//Draw data
+	//System.out.println("ModelerHistogram paintComponent fillBox intervals = " + intervals);
+	//System.out.println("modelerHistogram paintComponent modelType = " + this.modelType );
+   // System.out.println("modelerHistogram paintComponent size = " + size);
+//System.out.println("modelerHistogram paintComponent data = " + data);
+
+	//	width = (xMax - xMin) / 10; // 10 looks good on graph.
+
+		double width = domain.getWidth();
+	//	System.out.println("ModelerHistogramGraph paint width="+width+"  bin ="+bins+" xSize="+(xMax-xMin));
+		
+		if (size > 0){
+			for (int i = 0; i < intervals; i++){
+				x = domain.getValue(i);
+				if (type == FREQ) {
+					d = data.getFreq(x);
+					////////System.out.println("modelerHistogram fillBox type == FREQ");
+				}
+				else if (type == REL_FREQ) {
+					d = data.getRelFreq(x);
+					////////System.out.println("modelerHistogram fillBox type == REL_FREQ");
+
+				}
+				else  {
+					d = data.getDensity(x);
+					////////System.out.println("modelerHistogram fillBox else");
+
+				}
+			//	System.out.println("modelerHistogram x="+x+" d="+d);
+				if (modelType == Modeler.CONTINUOUS_DISTRIBUTION_TYPE
+					|| modelType == Modeler.DISCRETE_DISTRIBUTION_TYPE) {
+					g.setColor(ModelerColor.HISTOGRAM_BAR_FILL); // Color.red. This is the bar fill-in. annie che.
+					if (d > 0){
+						System.out.println("modelerHistogram fillBox x = " + x + ", x - width / 2 = " + (x - width / 2) + ", x + width / 2 = " + (x + width / 2) + ", d = " + d);
+						fillBox(g, x - width / 2, 0, x + width / 2, d);
+					}
+					g.setColor(ModelerColor.HISTOGRAM_BAR_OUTLINE); // Color.black. This is the bar border. annie che.
+					drawBox(g, x - width / 2, 0, x + width / 2, d);
+				}
+
+			}
+			//Draw summary statistics
+			if (modelType == Modeler.CONTINUOUS_DISTRIBUTION_TYPE
+				|| modelType == Modeler.DISCRETE_DISTRIBUTION_TYPE) {
+
+				g.setColor(ModelerColor.MODEL_OUTLINE); // Color.red
+				int j = getSize().height - 10;
+				switch(summaryStats){
+				case 1:		//True mean and standard deviation
+					fillBoxPlot(g, data.getMean(), data.getSD(), j);
+					break;
+				case 2:		//Interval mean and standard deviation
+					fillBoxPlot(g, data.getIntervalMean(), data.getIntervalSD(), j);
+					break;
+				case 3:		//Five number summary
+					fillBoxPlot(g, data.getMinValue(), data.getQuartile(1), data.getMedian(), data.getQuartile(3), data.getMaxValue(), j);
+					break;
+				case 4:		//mMedian and mean absolute deviation
+					fillBoxPlot(g, data.getMedian(), data.getMAD(), j);
+					break;
+				}
+			}
+  		}
+		
+		/**** end from varHistogram2*********/
+
+		Graphics2D G2 = (Graphics2D) g;
+		G2.setStroke(new BasicStroke(3));
+		float[] HSBVal = new float[3];
+		if (modelX != null && modelX.length > 0) {
+			double maxXVal = modelX[0], maxYVal = modelY[0];
+			int terms = modelY.length; // how many dx.
+
+		// look for the max value of x (r.v. values) and max of density. (to rescale?)
+			for (int j=1; j< terms; j++)
+			{
+				if ( modelX[j] > maxXVal )
+					maxXVal = modelX[j];
+				if ( modelY[j] > maxYVal)
+					maxYVal = modelY[j];
+			}
+		//	System.out.println("maxYVal="+maxYVal);
+		//	yMax = maxYVal; // why needed?  comment out by Jenny
+		//	System.out.println("ModelerHistogram here yMax="+yMax);
+			//////////////System.out.println("ModelerHistogram paintComponent maxXVal = " + maxXVal + "; maxYVal = " + maxYVal);
+			// enlarge all the values 3 times. (why??)
+			boolean rescale = false;
+			int MULTIPLE = MULTIPLE_DEFAULT_VALUE; // was 3.
+			if (modelType == Modeler.FOURIER_TYPE || modelType == Modeler.WAVELET_TYPE) {
+				MULTIPLE = MULTIPLE_DEFAULT_VALUE;
+				rescale = true;
+			}
+
+			if (rescale) {
+				for (int j=1; j< terms; j++)
+				{
+					if ( modelX[j] ==  maxXVal )
+						modelX[j] = MULTIPLE;
+					else
+						modelX[j] = (float)(modelX[j]/maxXVal)* MULTIPLE;
+					if ( modelY[j] ==  maxYVal )
+						modelY[j] = MULTIPLE;
+					else
+						modelY[j] = (float)(modelY[j]/maxYVal)* MULTIPLE;
+				}
+			}
+			for (int j=1; j< terms; j++) {
+				if (modelY[j] == Float.POSITIVE_INFINITY) {
+					modelY[j] = (float)(yMax - 0.01);
+				}
+			}
+
+
+			/*********************************************************/
+			/************ start  block modelCount = 8, 7, 6, 5 *******/
+
+			/*********************************************************/
+			/************ end block modelCount = 8, 7, 6, 5 **********/
+			////////////System.out.println("ModelerHistogram end block 5,6 ,7 ,8");
+			double xa, ya;
+			int subLth = 0;
+			double[] modelLineOfY = new double[modelY.length];
+			double[] dataLineOfY = new double[modelY.length];
+			double[] modelLineOfX = new double[modelY.length];
+			if (modelType == Modeler.FOURIER_TYPE || modelType == Modeler.WAVELET_TYPE) {
+				subLth = (int) (modelX.length);
+
+
+				double xMaxData = 0, yMaxData = -10000, yMinData = 10000;
+				double xMaxModel = 0, yMaxModel = -10000, yMinModel = 10000;
+				double yMaxPlot = 0, yMinPlot = 0, xMinPlot = 0, xMaxPlot = subLth + 1;
+				for (int i = 0; i < subLth; i++) {
+					dataLineOfY[i] = modelX[i];//midy + (int) (ymult * modelX[i]);
+					modelLineOfY[i] = modelY[i];//midy + (int) (ymult * modelY[i]);
+					modelLineOfX[i] = i;//periodWidth * (i+1) / subLth;
+				 	yMaxData = Math.max(yMaxData, Math.max(dataLineOfY[i], yMaxData));
+					yMinData = Math.min(yMinData, Math.min(dataLineOfY[i], yMinData));
+				 	yMaxModel = Math.max(yMaxData, Math.max(modelLineOfY[i], yMaxData));
+					yMinModel = Math.min(yMinData, Math.min(modelLineOfY[i], yMinModel));
+				}
+
+				yMaxPlot = Math.max(yMaxData, yMaxModel);
+				yMinPlot = Math.max(yMinData, yMinModel);
+				setxMin(xMinPlot);
+				setxMax(xMaxPlot);
+				setyMin(yMinPlot - 1);
+				setyMax(yMaxPlot + 1);
+
+				// End Change modelX and modelY.
+
+				double x1 = (double) modelX[0];
+				double y1 = (double) modelY[0];
+				// first draw data
+				for (int j = 1; j < subLth; j++) {
+					x1 = modelLineOfX[j-1];
+					y1 = dataLineOfY[j-1];
+					xa = modelLineOfX[j];
+					ya = dataLineOfY[j];
+					G2. setColor(ModelerColor.HISTOGRAM_FOURIER_DATA);
+					G2.setStroke(new BasicStroke(2f));
+
+					drawLine(G2, xa, ya, x1, y1); // when modelCount == any #
+				}
+
+				// next draw model
+				int m = 1; // test
+
+				for (int j = 1; j < subLth; j++) {
+					x1 = modelLineOfX[j-1];
+					y1 = modelLineOfY[j-1];
+					xa = modelLineOfX[j];
+					ya = modelLineOfY[j];
+					G2. setColor(ModelerColor.HISTOGRAM_FOURIER_MODEL);
+					G2.setStroke(new BasicStroke(2f));
+					drawLine(G2, xa, ya, x1, y1);
+				}
+			}
+			else {
+				subLth = (int) (modelX.length / modelCount);
+				for (int j = 0; j < modelCount; j++) {
+					if (j == 0) {
+						// model curve
+						G2.setStroke(new BasicStroke(3f));
+						G2.setColor(this.getOutlineColor());
+
+					} else { // for more than one model such as mixed normal.
+						G2.setStroke(new BasicStroke(2f));
+						Color.RGBtoHSB((int) Math.floor((Math.random() * 256)),
+								(int) Math.floor((Math.random() * 256)), (int) Math.floor((Math.random() * 256)), HSBVal);
+						G2.setColor(Color.getHSBColor(HSBVal[0], HSBVal[1],
+								HSBVal[2]));
+					}
+					double x1 = (double) modelX[0 + j * subLth];
+					double y1 = (double) modelY[0 + j * subLth];
+
+					for (int i = 1; i < subLth; i++) {
+						xa = modelX[i + j * subLth];
+						ya = modelY[i + j * subLth];
+						drawLine(G2, x1, y1, xa, ya); // when modelCount == any #
+						x1 = xa;
+						y1 = ya;
+					}
+				}
+			} // not fourier or wavelet.
+		}
+	}
+
+	
+
+	/** This method resets the interactive histogram. */
+	public void clear() {
+		values.removeAllElements();
+		data.reset();
+		modelX = null;
+		modelY = null;
+		repaint();
+	}
+	public void resetGraphLimits() {
+		this.plotxMin = ModelerConstant.GRAPH_LOWER_LIMIT;
+		this.plotxMax = ModelerConstant.GRAPH_UPPER_LIMIT;
+
+	}
+
+	/** This method returns the values from the data set. */
+	public double getValue(int i) {
+		if (i < 0)
+			i = 0;
+		else if (i >= values.size())
+			i = values.size() - 1;
+		return ((Double) values.elementAt(i)).doubleValue();
+	}
+
+	/** This method returns the last value. */
+	public double getValue() {
+		return getValue(values.size() - 1);
+	}
+
+	/** This method handles the events corresponding to mouse clicks. */
+	public void mouseClicked(MouseEvent event) {
+		
+		if (drawUserClicks) {
+			int y0 = yGraph(0);
+			int y = (int) Math.ceil(yScale(event.getY()));
+			double x = xScale(event.getX());
+			double XDom = data.getDomainValue(x);
+
+			int ydash = y - data.getFreq(XDom);
+			valCount = valCount + ydash;
+			
+			
+			//add new graph input data
+			graphInputDataX.add(XDom);
+			graphInputDataY.add(y);
+					
+			//padding 20% for data close to the current limit
+			
+			padding(x, y);
+		
+			if (ydash > 0) {
+				System.out.println("ModelerHistogram mouseClicked values.add XDom = " + XDom+" ydash="+ydash);
+				for (int i = 0; i < ydash; i++) {			
+					values.add(new Double(XDom));
+				}
+				//////System.out.println("ModelerHistogram mouseClicked if call setHist");
+
+				setHist();
+			} else {
+				for (int i = 0; i < -ydash; i++) {
+					values.removeElement(new Double(XDom));
+				}
+				//System.out.println("ModelerHistogram mouseClicked else call setHist");
+
+				setHist();
+			}
+		}
+	}
+
+	protected void padding(double x, double y){
+		System.out.println("padding for x="+x+" y="+y+" xmin="+xMin+" xMax="+xMax+" yMax="+yMax+"yMin="+yMin);
+		boolean changed = false;
+		if(y>yMax){
+			plotyMax= y*1.2;
+			changed=true;
+		}else if((plotyMax-y)<plotyMax*0.1){
+			plotyMax= plotyMax*1.2;
+			changed=true;
+		}
+		
+		if((plotxMax-x)<(plotxMax-plotxMin)*0.2){
+			plotxMax= plotxMax*1.2;
+			plotxMin = plotxMin*1.2;
+			changed=true;
+		}
+		else if((x-plotxMin)<(plotxMax-plotxMin)*0.2){
+			plotxMin = plotxMin*1.2;
+			plotxMax = plotxMax*1.2;
+			changed=true;
+		}
+		
+	//	System.out.println("after padding for x="+x+" y="+y+" xmin="+xMin+" xMax="+xMax+" yMax="+yMax+"yMin="+yMin);
+		if(changed){
+			double width = width = (xMax- xMin) / modelerGuiLink.histBinNos;
+			width/=2;
+			data.setDomain(new Domain(xMin, xMax, width));
+			updateGuiSlider= true;
+			//setScale(xMin, xMax, yMin, yMax);
+			updateGuiSlider= false;
+		}
+	}
+	//The following method correspond to mouse events that are not handled.
+	public void mouseEntered(MouseEvent event) {
+	}
+
+	public void mouseExited(MouseEvent event) {
+	}
+
+	public void mousePressed(MouseEvent event) {
+	}
+
+	public void mouseReleased(MouseEvent event) {
+	}
+
+	
+
+	public void addDataPoint() {
+
+	}
+
+/*	public void setModel(int cnt, float[] xMod, float[] yMod) {
+		modelX = xMod;
+		modelY = yMod;
+		repaint();
+	}
+*/
+	public void setModel(int cnt, double[] xMod, double[] yMod) {
+		modelX = xMod;
+		modelY = yMod;
+		repaint();
+	}
+
+	public void setTwoModel(int cnt, double[] xMod1, double[] yMod1, double[] xMod2, double[] yMod2) {
+		int length1 = xMod1.length;
+		int length2 = xMod2.length;
+
+		int lengthSum = length1 + length2;
+		modelX = new double[lengthSum];
+		modelY = new double[lengthSum];
+		for (int i = 0; i < length1; i++) {
+			modelX[i] = xMod1[i];
+			modelY[i] = yMod1[i];
+
+		}
+
+		for (int i = 0; i < length2; i++) {
+			modelX[length1 + i] = xMod2[i];
+			modelY[length1 + i] = yMod2[i];
+		}
+		repaint();
+	}
+	public void setTwoModel(int cnt, double[] xMod1, double[] yMod1, double[] xMod2, double[] yMod2, Color color1, Color color2) {
+		this.setOutlineColor1(color1);
+		this.setOutlineColor2(color2);
+
+		modelX1 = xMod1;
+		modelY1 = yMod1;
+		modelX2 = xMod2;
+		modelY2 = yMod2;
+
+		repaint();
+	}
+
+	public int getdataCursor() {
+		return values.size();
+	}
+
+
+	public float[] getXData() {
+		//System.out.println("ModelerHistogram getXData data.domain lower="+data.getDomain().lowerBound);
+		float[] xRang = new float[data.getDomain().getSize()];
+		for (int i = 0; i < data.getDomain().getSize(); i++) {
+			xRang[i] = (float) data.getDomain().getValue(i);
+		}
+		return xRang;
+	}
+
+	public float[] getYData() {
+		float[] yRang = new float[data.getDomain().getSize()];
+		for (int i = 0; i < data.getDomain().getSize(); i++) {
+			yRang[i] = (float) data.getFreq(data.getDomain().getValue(i));
+		}
+		return yRang;
+	}
+
+	public void setxy(float[] raw) {
+		
+		//System.out.println("Histogram: inside setxy");
+		clear();
+
+		double XDom = 0;
+		for (int i = 0; i < raw.length; i++) {
+			//////System.out.println("ModelerHistogram setxy raw["+i+"] = " + raw[i]);
+			if (modelType == Modeler.DISCRETE_DISTRIBUTION_TYPE) {
+				XDom = raw[i] + 0.5;
+				////System.out.println("ModelerHistogram setxy DISCRETE_DISTRIBUTION_TYPE XDom = " + XDom);
+			}
+			else {
+				// assume all the other distributions are continuous until we add more. annie che.
+				XDom = data.getDomainValue(raw[i]);
+			}
+
+			//System.out.println("XDom=" + XDom);
+			values.add(new Double(XDom));
+		}
+		
+		//System.out.println("ModelerHistogram setxy call setHist");
+		setHist();
+	}
+
+	public void setXExtrema(float a, float b) {
+	}
+
+	public void setYExtrema(float a, float b) {
+	}
+
+	public double getMinX() {
+		return (float) xMin;
+	}
+
+	public double getMaxX() {
+		return (float) xMax;
+	}
+
+	public double getMinY() {
+		return 0;
+	}
+
+	public double getMaxY() {
+		return yMax;
+	}
+
+	public double minV(Vector<Double> vals) {
+		//  Double.valueOf(svals.elementAt(0).toString()
+		double temp = Double.valueOf(vals.elementAt(0).toString())
+				.doubleValue();
+		for (int i = 0; i < vals.size(); i++) {
+			if (Double.valueOf(vals.elementAt(i).toString()).doubleValue() < temp)
+				temp = Double.valueOf(vals.elementAt(i).toString())
+						.doubleValue();
+		}
+		return temp;
+	}
+
+	public double maxV(Vector<Double> vals) {
+		double temp = Double.valueOf(vals.elementAt(0).toString())
+				.doubleValue();
+		for (int i = 0; i < vals.size(); i++) {
+			if (Double.valueOf(vals.elementAt(i).toString()).doubleValue() > temp)
+				temp = Double.valueOf(vals.elementAt(i).toString())
+						.doubleValue();
+		}
+		return temp;
+	}
+
+	public void setModelCount(int ct) {
+		modelCount = ct;
+	}
+
+	public void setModelX(double[] input) {
+		this.modelX = input;
+	}
+	public void setModelY(double[] input) {
+		this.modelY = input;
+	}
+	public void setOutlineColor(Color color) {
+		this.outlineColor = color;
+
+	}
+	public Color getOutlineColor() {
+		return this.outlineColor;
+
+	}
+	public void setOutlineColor1(Color color) {
+		this.outlineColor1 = color;
+
+	}
+	public Color getOutlineColor1() {
+		return this.outlineColor1;
+
+	}
+	public void setOutlineColor2(Color color) {
+		this.outlineColor2 = color;
+
+	}
+	public Color getOutlineColor2() {
+		return this.outlineColor2;
+
+	}
+	public void setHistogramRight(double input) {
+		this.xMax = input;
+	}
+	public void setHistogramLeft(double input) {
+		this.xMin = input;
+	}
+	
+	
+	//used to implement flexible graph
+	public double getMaxInputX(){
+		double temp = 0;
+		for(int i = 0; i < graphInputDataX.size(); i++){
+			if (graphInputDataX.get(i) > temp)
+				temp = graphInputDataX.get(i);
+		}
+		return temp;
+	}
+
+	public double getMinInputX(){
+		double temp = 0;
+		for(int i = 0; i < graphInputDataX.size(); i++){
+			if (graphInputDataX.get(i) < temp)
+				temp = graphInputDataX.get(i);
+		}
+		return temp;
+	}
+
+	public int getMaxInputY(){
+		int temp = 0;
+		for(int i = 0; i < graphInputDataY.size(); i++){
+			if (graphInputDataY.get(i) > temp)
+				temp = graphInputDataY.get(i);
+		}
+		return temp;		
+	}
+	
+	public int getMaxRawY(){
+		return data.getMaxFreq();		
+	}
+	
+	/*public void setxMaxWithMargin(double xm) {
+		//System.out.println("varHistgram setxMax "+xm);
+		if (plotWithMargin)
+			xMax = xm*1.2;
+		else xMax = xm;
+		setWidth();
+	}*/
+	public void setxMax(double xm) {
+		xMax = xm;
+		setWidth();
+	}
+	public void setDomain(double xmin, double xmax ){
+		xMin= xmin; xMax = xmax;
+		double width = (xMax -xMin) / modelerGuiLink.histBinNos;
+		width /= 2;
+		data = new IntervalData(xMin, xMax, width);
+		//System.out.println("ModelerHistgram setDomain xmin="+xmin+" "+data.getDomain().lowerBound+ " width="+width);
+		setIntervalData(data);
+	}
+	
+	public void setxMin(double xm) {
+		//System.out.println("ModelerHistgram setxMin "+xm);
+		xMin = xm;
+		setWidth();
+	}
+	
+/*	public void setxMinWithMargin(double xm){
+	
+		if (plotWithMargin)
+			xMin = xm*1.2;
+		else xMin = xm;
+		setWidth();
+	}*/
+	
+	public void setyMax(double ym) {
+		System.out.println("graph setyMax="+ym);
+		Exception e = new Exception();
+		e.printStackTrace();
+		yMax = ym;
+	}
+	public void setyMin(double ym) {
+		yMin = ym;
+	}
+	public void setType(int i){
+		if (i < 0) i = 0; else if (i > 2) i = 2;
+		type = i;
+		repaint();
+	}
+}

@@ -1,0 +1,34 @@
+# http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_ModelerActivities
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\ucla\stat\SOCR\modeler
+# current format is "name, classname"
+# there are 13 files in the package edu.ucla.stat.SOCR.modeler
+
+BetaFit_Modeler, edu.ucla.stat.SOCR.modeler.BetaFit_Modeler
+BinomialFit_Modeler, edu.ucla.stat.SOCR.modeler.BinomialFit_Modeler
+ChiFit_Modeler, edu.ucla.stat.SOCR.modeler.ChiFit_Modeler
+ChiSquareFit_Modeler, edu.ucla.stat.SOCR.modeler.ChiSquareFit_Modeler
+ErlangFit_Modeler, edu.ucla.stat.SOCR.modeler.ErlangFit_Modeler
+ErrorFit_Modeler, edu.ucla.stat.SOCR.modeler.ErrorFit_Modeler
+ExponentialFit_Modeler, edu.ucla.stat.SOCR.modeler.ExponentialFit_Modeler
+FisherTippettFit_Modeler , edu.ucla.stat.SOCR.modeler.FisherTippettFit_Modeler
+FourierFit_Modeler, edu.ucla.stat.SOCR.modeler.FourierFit_Modeler
+GammaFit_Modeler, edu.ucla.stat.SOCR.modeler.GammaFit_Modeler
+GeometricFit_Modeler, edu.ucla.stat.SOCR.modeler.GeometricFit_Modeler
+GumbelFit_Modeler, edu.ucla.stat.SOCR.modeler.GumbelFit_Modeler
+InverseGammaFit_Modeler, edu.ucla.stat.SOCR.modeler.InverseGammaFit_Modeler
+InverseGaussianFit_Modeler, edu.ucla.stat.SOCR.modeler.InverseGaussianFit_Modeler
+LaplaceFit_Modeler, edu.ucla.stat.SOCR.modeler.LaplaceFit_Modeler
+LogarithmicSeriesFit_Modeler, edu.ucla.stat.SOCR.modeler.LogarithmicSeriesFit_Modeler
+LogisticFit_Modeler, edu.ucla.stat.SOCR.modeler.LogisticFit_Modeler
+LogNormalFit_Modeler, edu.ucla.stat.SOCR.modeler.LogNormalFit_Modeler 
+MixedFit_Modeler, edu.ucla.stat.SOCR.modeler.MixedFit_Modeler
+NormalFit_Modeler, edu.ucla.stat.SOCR.modeler.NormalFit_Modeler
+ParetoFit_Modeler, edu.ucla.stat.SOCR.modeler.ParetoFit_Modeler
+PoissonFit_Modeler, edu.ucla.stat.SOCR.modeler.PoissonFit_Modeler
+PowerFunctionFit_Modeler, edu.ucla.stat.SOCR.modeler.PowerFunctionFit_Modeler
+RayleighFit_Modeler, edu.ucla.stat.SOCR.modeler.RayleighFit_Modeler
+RiceFit_Modeler, edu.ucla.stat.SOCR.modeler.RiceFit_Modeler
+UQuadraticFit_Modeler, edu.ucla.stat.SOCR.modeler.UQuadraticFit_Modeler
+VonMisesFit_Modeler, edu.ucla.stat.SOCR.modeler.VonMisesFit_Modeler 
+WaveletFit_Modeler, edu.ucla.stat.SOCR.modeler.WaveletFit_Modeler

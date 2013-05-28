@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Cerium</name>
+   <symbol>Ce</symbol>
+   <atomic-number>58</atomic-number>
+   <mass-number>140</mass-number>
+   <electronegativity>1.12</electronegativity>
+   <covalent-radius>1.65</covalent-radius>
+   <atomic-radius>2.70</atomic-radius>
+   <melting-point>1071</melting-point>
+   <boiling-point>3699</boiling-point>
+   <density>6.78</density>
+   <specific-heat>0.19</specific-heat>
+   <electrical-conductivity>0.0115e6</electrical-conductivity>
+   <thermal-conductivity>0.114</thermal-conductivity>
+</element>

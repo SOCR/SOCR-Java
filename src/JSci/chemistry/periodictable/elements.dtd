@@ -1,0 +1,30 @@
+<!-- entities -->
+
+<!ENTITY % series-values "alkali-metal|alkali-earth-metal|halogen|noble-gas|non-metal|metal|rare-earth-metal|transition-metal">
+<!ENTITY % potentials "first,second?,third?,fourth?">
+
+<!-- the top level element -->
+
+<!ELEMENT element (name,symbol,atomic-number,mass-number)>
+<!ATTLIST element series (%series-values;) #REQUIRED>
+
+<!-- elements -->
+
+<!ELEMENT name                      (#PCDATA)>
+<!ELEMENT symbol                    (#PCDATA)>
+<!ELEMENT atomic-number             (#PCDATA)>
+<!ELEMENT mass-number               (#PCDATA)>
+<!ELEMENT electronegativity         (#PCDATA)>
+<!ELEMENT ionization-potentials     (%potentials;)>
+   <!ELEMENT first    (#PCDATA)>
+   <!ELEMENT second   (#PCDATA)>
+   <!ELEMENT third    (#PCDATA)>
+   <!ELEMENT fourth   (#PCDATA)>
+<!ELEMENT covalent-radius           (#PCDATA)>
+<!ELEMENT atomic-radius             (#PCDATA)>
+<!ELEMENT melting-point             (#PCDATA)>
+<!ELEMENT boiling-point             (#PCDATA)>
+<!ELEMENT density                   (#PCDATA)>
+<!ELEMENT specific-heat             (#PCDATA)>
+<!ELEMENT electrical-conductivity   (#PCDATA)>
+<!ELEMENT thermal-conductivity      (#PCDATA)>

@@ -1,0 +1,23 @@
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from /Users/jenny/work/My_SOCR/classes/edu/ucla/stat/SOCR/applications/demo
+# current format is "name, classname"
+# 
+
+[Root]
+subCategory = Financial Applications
+#subCategory = Other Applications
+
+
+[Financial Applications]
+#item = Portfolio, edu.ucla.stat.SOCR.applications.demo.PortfolioApplication
+item = Portfolio, edu.ucla.stat.SOCR.applications.demo.PortfolioApplication2
+item = TradingOptions, edu.ucla.stat.SOCR.applications.demo.StockApplication
+item = BinomialOptionPricing, edu.ucla.stat.SOCR.applications.demo.BinomialTradingApplication
+item = StockSimulation, edu.ucla.stat.SOCR.applications.demo.StockSimulationApplication
+item = BlackScholesOptionPricing, edu.ucla.stat.SOCR.applications.demo.BlackScholesApplication
+
+
+[Other Applications]
+#item = Portfolio, edu.ucla.stat.SOCR.applications.demo.PortfolioApplication2
+#subCategory = CategoryPlot
+

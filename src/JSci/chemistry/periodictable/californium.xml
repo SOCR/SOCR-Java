@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Californium</name>
+   <symbol>Cf</symbol>
+   <atomic-number>98</atomic-number>
+   <mass-number>251</mass-number>
+   <electronegativity>1.3</electronegativity>
+   <melting-point>900.0</melting-point>
+   <thermal-conductivity>0.1</thermal-conductivity>
+</element>

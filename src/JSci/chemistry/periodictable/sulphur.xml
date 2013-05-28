@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Sulphur</name>
+   <symbol>S</symbol>
+   <atomic-number>16</atomic-number>
+   <mass-number>32</mass-number>
+   <electronegativity>2.58</electronegativity>
+   <covalent-radius>1.04</covalent-radius>
+   <atomic-radius>1.09</atomic-radius>
+   <melting-point>388.36</melting-point>
+   <boiling-point>717.75</boiling-point>
+   <density>2.07</density>
+   <specific-heat>0.71</specific-heat>
+   <electrical-conductivity>0.5e-17</electrical-conductivity>
+   <thermal-conductivity>0.00269</thermal-conductivity>
+</element>

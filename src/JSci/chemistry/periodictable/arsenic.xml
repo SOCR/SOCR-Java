@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Arsenic</name>
+   <symbol>As</symbol>
+   <atomic-number>33</atomic-number>
+   <mass-number>75</mass-number>
+   <electronegativity>2.18</electronegativity>
+   <covalent-radius>1.21</covalent-radius>
+   <atomic-radius>1.33</atomic-radius>
+   <melting-point>1081</melting-point>
+   <boiling-point>876</boiling-point>
+   <density>5.72</density>
+   <specific-heat>0.33</specific-heat>
+   <electrical-conductivity>0.0345e6</electrical-conductivity>
+   <thermal-conductivity>0.5</thermal-conductivity>
+</element>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Neodymium</name>
+   <symbol>Nd</symbol>
+   <atomic-number>60</atomic-number>
+   <mass-number>144</mass-number>
+   <electronegativity>1.14</electronegativity>
+   <covalent-radius>1.64</covalent-radius>
+   <atomic-radius>2.64</atomic-radius>
+   <melting-point>1289.0</melting-point>
+   <boiling-point>3341.0</boiling-point>
+   <density>7.0</density>
+   <specific-heat>0.19</specific-heat>
+   <electrical-conductivity>0.0157e6</electrical-conductivity>
+   <thermal-conductivity>0.165</thermal-conductivity>
+</element>

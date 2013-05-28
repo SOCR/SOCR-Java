@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_Charts.jnlp"> 
+    <information> 
+       <title>SOCR Charts</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCRCharts</description> 
+       <description kind="short">SOCR Charts</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_charts_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_charts_webstart" 
+      main-class="edu.ucla.stat.SOCR.core.SOCRChart" 
+      width="1500" 
+      height="900"> 
+       <param name=selectedItemName value="HistogramChartDemo3">
+     </applet-desc>
+</jnlp>

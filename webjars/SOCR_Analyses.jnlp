@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_Analyses.jnlp"> 
+    <information> 
+       <title>SOCR Analyses</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCRAnalyses</description> 
+       <description kind="short">SOCR Analyses</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_analyses_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_analyses_webstart" 
+      main-class="edu.ucla.stat.SOCR.core.SOCRAnalyses" 
+      width="1500" 
+      height="900"> 
+     </applet-desc>
+</jnlp>

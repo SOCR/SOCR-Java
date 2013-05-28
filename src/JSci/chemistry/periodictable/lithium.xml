@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="alkali-metal">
+   <name>Lithium</name>
+   <symbol>Li</symbol>
+   <atomic-number>3</atomic-number>
+   <mass-number>7</mass-number>
+   <electronegativity>0.98</electronegativity>
+   <covalent-radius>1.23</covalent-radius>
+   <atomic-radius>2.05</atomic-radius>
+   <melting-point>453.7</melting-point>
+   <boiling-point>1615.0</boiling-point>
+   <density>0.53</density>
+   <specific-heat>3.6</specific-heat>
+   <electrical-conductivity>0.108e6</electrical-conductivity>
+   <thermal-conductivity>0.847</thermal-conductivity>
+</element>

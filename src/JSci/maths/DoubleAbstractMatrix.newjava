@@ -1,0 +1,371 @@
+package JSci.maths;
+
+import JSci.GlobalSettings;
+import JSci.maths.groups.AbelianGroup;
+import JSci.maths.algebras.*;
+import JSci.maths.fields.*;
+
+/**
+* The DoubleAbstractMatrix class provides default implementations of the standard matrix methods
+* without any reference to how the matrix elements are stored.
+* A subclass must implement:
+* {@link #newInstance(int,int) newInstance},
+* {@link #getElement(int,int) getElement}
+* and {@link #setElement(int,int,double) setElement}.
+* @note Experimental.
+* @version 1.0
+* @author Mark Hale
+*/
+public abstract class DoubleAbstractMatrix extends Matrix {
+        /** Hints */
+        protected static final int DENSE=0;
+        protected static final int SPARSE=1;
+        protected static final int THIS=15;
+        /**
+        * Number of rows.
+        */
+        private final int numRows;
+        /**
+        * Number of columns.
+        */
+        private final int numCols;
+        /**
+        * Constructs an empty matrix.
+        * @param rows the number of rows.
+        * @param cols the number of columns.
+        */
+        public DoubleAbstractMatrix(final int rows, final int cols) {
+                numRows=rows;
+                numCols=cols;
+        }
+        /**
+        * Abstract constructor.
+        * Enables an abstract matrix to be constructed from an underlying implementation.
+        * @param rows the number of rows.
+        * @param cols the number of columns.
+        * @param hint suggestion of the optimal matrix type to use.
+        */
+        protected abstract DoubleAbstractMatrix newInstance(int rows, int cols, int hint);
+        /**
+        * Compares two double matrices for equality.
+        * @param m a double matrix
+        */
+        public boolean equals(Object m) {
+                if(m!=null && (m instanceof DoubleAbstractMatrix) &&
+                rows()==((DoubleAbstractMatrix)m).rows() && columns()==((DoubleAbstractMatrix)m).columns()) {
+                        final DoubleAbstractMatrix dm=(DoubleAbstractMatrix)m;
+                        for(int j,i=0;i<rows();i++) {
+                                for(j=0;j<columns();j++) {
+                                        if(Math.abs(getElement(i,j)-dm.getElement(i,j))>GlobalSettings.ZERO_TOL)
+                                                return false;
+                                }
+                        }
+                        return true;
+                } else
+                        return false;
+        }
+        /**
+        * Returns a string representing this matrix.
+        */
+        public String toString() {
+                final StringBuffer buf=new StringBuffer(5*rows()*columns());
+                for(int j,i=0;i<rows();i++) {
+                        for(j=0;j<columns();j++) {
+                                buf.append(getElement(i,j));
+                                buf.append(' ');
+                        }
+                        buf.append('\n');
+                }
+                return buf.toString();
+        }
+        /**
+        * Returns a hashcode for this matrix.
+        */
+        public int hashCode() {
+                return (int)Math.exp(infNorm());
+        }
+        /**
+        * Returns an element of the matrix.
+        * @param i row index of the element
+        * @param j column index of the element
+        */
+        public abstract double getElement(int i, int j);
+        /**
+        * Sets the value of an element of the matrix.
+        * @param i row index of the element
+        * @param j column index of the element
+        * @param x a number
+        */
+        public abstract void setElement(int i, int j, double x);
+        /**
+        * Returns the l<sup><img border=0 alt="infinity" src="doc-files/infinity.gif"></sup>-norm.
+        * @author Taber Smith
+        */
+        public double infNorm() {
+                double result=0.0,tmpResult;
+                for(int j,i=0;i<rows();i++) {
+                        tmpResult=0.0;
+                        for(j=0;j<columns();j++)
+                                tmpResult+=Math.abs(getElement(i,j));
+                        if(tmpResult>result)
+                                result=tmpResult;
+                }
+                return result;
+        }
+        /**
+        * Returns the Frobenius (l<sup>2</sup>) norm.
+        */
+        public double frobeniusNorm() {
+                double result=0.0;
+                for(int j,i=0;i<rows();i++)
+                        for(j=0;j<columns();j++)
+                                result=ExtraMath.hypot(result,getElement(i,j));
+                return result;
+        }
+        /**
+        * Returns the number of rows.
+        */
+        public final int rows() {
+                return numRows;
+        }
+        /**
+        * Returns the number of columns.
+        */
+        public final int columns() {
+                return numCols;
+        }
+
+//============
+// OPERATIONS
+//============
+
+        /**
+        * Returns the negative of this matrix.
+        */
+        public AbelianGroup.Member negate() {
+                final DoubleAbstractMatrix ans=newInstance(rows(),columns(),THIS);
+                for(int j,i=0;i<rows();i++) {
+                        ans.setElement(i,0,-getElement(i,0));
+                        for(j=1;j<columns();j++)
+                                ans.setElement(i,j,-getElement(i,j));
+                }
+                return ans;
+        }
+
+// ADDITION
+
+        /**
+        * Returns the addition of this matrix and another.
+        */
+        public AbelianGroup.Member add(final AbelianGroup.Member m) {
+                if(m instanceof DoubleAbstractMatrix)
+                        return add((DoubleAbstractMatrix)m);
+                else
+                        throw new IllegalArgumentException("Member class not recognised by this method.");
+        }
+        /**
+        * Returns the addition of this matrix and another.
+        * @param m a double matrix
+        * @exception MatrixDimensionException If the matrices are different sizes.
+        */
+        public DoubleAbstractMatrix add(final DoubleAbstractMatrix m) {
+                if(rows()==m.rows() && columns()==m.columns()) {
+                        final DoubleAbstractMatrix ans=newInstance(rows(),columns(),DENSE);
+                        for(int j,i=0;i<rows();i++) {
+                                ans.setElement(i,0,getElement(i,0)+m.getElement(i,0));
+                                for(j=1;j<columns();j++)
+                                        ans.setElement(i,j,getElement(i,j)+m.getElement(i,j));
+                        }
+                        return ans;
+                } else
+                        throw new MatrixDimensionException("Matrices are different sizes.");
+        }
+
+// SUBTRACTION
+
+        /**
+        * Returns the subtraction of this matrix by another.
+        */
+        public AbelianGroup.Member subtract(final AbelianGroup.Member m) {
+                if(m instanceof DoubleAbstractMatrix)
+                        return subtract((DoubleAbstractMatrix)m);
+                else
+                        throw new IllegalArgumentException("Member class not recognised by this method.");
+        }
+        /**
+        * Returns the subtraction of this matrix by another.
+        * @param m a double matrix
+        * @exception MatrixDimensionException If the matrices are different sizes.
+        */
+        public DoubleAbstractMatrix subtract(final DoubleAbstractMatrix m) {
+                if(rows()==m.rows() && columns()==m.columns()) {
+                        final DoubleAbstractMatrix ans=newInstance(rows(),columns(),DENSE);
+                        for(int j,i=0;i<rows();i++) {
+                                ans.setElement(i,0,getElement(i,0)-m.getElement(i,0));
+                                for(j=1;j<columns();j++)
+                                        ans.setElement(i,j,getElement(i,j)-m.getElement(i,j));
+                        }
+                        return ans;
+                } else
+                        throw new MatrixDimensionException("Matrices are different sizes.");
+        }
+
+// SCALAR MULTIPLICATION
+
+        /**
+        * Returns the multiplication of this matrix by a scalar.
+        */
+        public Module.Member scalarMultiply(Ring.Member x) {
+                if(x instanceof MathDouble)
+                        return scalarMultiply(((MathDouble)x).value());
+                else if(x instanceof MathInteger)
+                        return scalarMultiply(((MathInteger)x).value());
+                else
+                        throw new IllegalArgumentException("Member class not recognised by this method.");
+        }
+        /**
+        * Returns the multiplication of this matrix by a scalar.
+        * @param x a double.
+        * @return a double matrix.
+        */
+        public DoubleAbstractMatrix scalarMultiply(final double x) {
+                final DoubleAbstractMatrix ans=newInstance(rows(),columns(),THIS);
+                for(int j,i=0;i<rows();i++) {
+                        ans.setElement(i,0,x*getElement(i,0));
+                        for(j=1;j<columns();j++)
+                                ans.setElement(i,j,x*getElement(i,j));
+                }
+                return ans;
+        }
+
+// SCALAR DIVISON
+
+        /**
+        * Returns the division of this matrix by a scalar.
+        */
+        public VectorSpace.Member scalarDivide(Field.Member x) {
+                if(x instanceof MathDouble)
+                        return scalarDivide(((MathDouble)x).value());
+                else
+                        throw new IllegalArgumentException("Member class not recognised by this method.");
+        }
+        /**
+        * Returns the division of this matrix by a scalar.
+        * @param x a double.
+        * @return a double matrix.
+        */
+        public DoubleAbstractMatrix scalarDivide(final double x) {
+                final DoubleAbstractMatrix ans=newInstance(rows(),columns(),THIS);
+                for(int j,i=0;i<rows();i++) {
+                        ans.setElement(i,0,getElement(i,0)/x);
+                        for(j=1;j<columns();j++)
+                                ans.setElement(i,j,getElement(i,j)/x);
+                }
+                return ans;
+        }
+
+// SCALAR PRODUCT
+
+        /**
+        * Returns the scalar product of this matrix and another.
+        * @param m a double matrix.
+        * @exception MatrixDimensionException If the matrices are different sizes.
+        */
+        public double scalarProduct(final DoubleAbstractMatrix m) {
+                if(rows()==m.rows() && columns()==m.columns()) {
+                        double ans=0.0;
+                        for(int j,i=0;i<rows();i++) {
+                                ans+=getElement(i,0)*m.getElement(i,0);
+                                for(j=1;j<columns();j++)
+                                        ans+=getElement(i,j)*m.getElement(i,j);
+                        }
+                        return ans;
+                } else
+                        throw new MatrixDimensionException("Matrices are different sizes.");
+        }
+
+// MATRIX MULTIPLICATION
+
+        /**
+        * Returns the multiplication of a vector by this matrix.
+        * @param v a double vector.
+        * @exception DimensionException If the matrix and vector are incompatible.
+        */
+        public DoubleVector multiply(final DoubleVector v) {
+                if(columns()==v.dimension()) {
+                        final double array[]=new double[rows()];
+                        for(int j,i=0;i<rows();i++) {
+                                array[i]=getElement(i,0)*v.getComponent(0);
+                                for(j=1;j<columns();j++)
+                                        array[i]+=getElement(i,j)*v.getComponent(j);
+                        }
+                        return new DoubleVector(array);
+                } else
+                        throw new DimensionException("Matrix and vector are incompatible.");
+        }
+        /**
+        * Returns the multiplication of this matrix and another.
+        */
+        public Ring.Member multiply(final Ring.Member m) {
+                if(m instanceof DoubleAbstractMatrix)
+                        return multiply((DoubleAbstractMatrix)m);
+                else
+                        throw new IllegalArgumentException("Member class not recognised by this method.");
+        }
+        /**
+        * Returns the multiplication of this matrix and another.
+        * @param m a double matrix
+        * @exception MatrixDimensionException If the matrices are incompatible.
+        */
+        public DoubleAbstractMatrix multiply(final DoubleAbstractMatrix m) {
+                if(columns()==m.rows()) {
+                        final DoubleAbstractMatrix ans=newInstance(rows(),m.columns(),DENSE);
+                        double sum;
+                        for(int n,k,j=0;j<rows();j++) {
+                                for(k=0;k<m.columns();k++) {
+                                        sum=getElement(j,0)*m.getElement(0,k);
+                                        for(n=1;n<columns();n++)
+                                                sum+=getElement(j,n)*m.getElement(n,k);
+                                        ans.setElement(j,k,sum);
+                                }
+                        }
+                        return ans;
+                } else
+                        throw new MatrixDimensionException("Incompatible matrices.");
+        }
+
+// TRANSPOSE
+
+        /**
+        * Returns the transpose of this matrix.
+        * @return a double matrix
+        */
+        public Matrix transpose() {
+                final DoubleAbstractMatrix ans=newInstance(columns(),rows(),THIS);
+                for(int j,i=0;i<columns();i++) {
+                        ans.setElement(0,i,getElement(i,0));
+                        for(j=1;j<rows();j++)
+                                ans.setElement(j,i,getElement(i,j));
+                }
+                return ans;
+        }
+
+// MAP ELEMENTS
+
+        /**
+        * Applies a function on all the matrix elements.
+        * @param f a user-defined function
+        * @return a double matrix
+        */
+        public DoubleAbstractMatrix mapElements(final Mapping f) {
+                final DoubleAbstractMatrix ans=newInstance(rows(),columns(),THIS);
+                for(int j,i=0;i<rows();i++) {
+                        ans.setElement(i,0,f.map(getElement(i,0)));
+                        for(j=1;j<columns();j++)
+                                ans.setElement(i,j,f.map(getElement(i,j)));
+                }
+                return ans;
+        }
+}
+
+

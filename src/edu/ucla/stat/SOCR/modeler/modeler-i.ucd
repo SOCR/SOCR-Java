@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="modeler-i" size="1391,988" id="edu.ucla.stat.SOCR.modeler" metadata="nsuml-1.4" initialized="true" tag="5" key="323030343131323520534F4352">
+  <children xsi:type="editmodel:ClassEditModel" name="ExponentialFit_Modeler" location="702,379" size="230,499" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler" runTimeClassModel="returnModelY(),ExponentialFit_Modeler(Ljavax.swing.JPanel;),clm2,kernalVarField,ExponentialFit_Modeler(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),getInstructions(),kernalVar,rateParamLabel,fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),rateParamField,getModelCount(),addParams(Ljavax.swing.JPanel;),returnModelX(),getLowerLimit(),userParams,getDescription(),stdExponential,generateSamples(I),getUpperLimit(),getModelType(),estimateParams,itemStateChanged(Ljava.awt.event.ItemEvent;),toggleParams(Z)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,144">
+      <children xsi:type="editmodel:AttributeEditModel" name="clm2" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#clm2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estimateParams" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#estimateParams"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVarField" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#kernalVarField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rateParamField" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#rateParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rateParamLabel" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#rateParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdExponential" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#stdExponential"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userParams" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#userParams"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="141,306">
+      <children xsi:type="editmodel:MethodEditModel" name="ExponentialFit_Modeler" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#ExponentialFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ExponentialFit_Modeler" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#ExponentialFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="itemStateChanged" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#itemStateChanged(Ljava.awt.event.ItemEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/ExponentialFit_Modeler" source="//@children.0" target="//@children.6/@sourceConnections.0" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="115,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PoissonFit_Modeler" location="1184,379" size="187,535" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler" runTimeClassModel="PoissonFit_Modeler(Ljavax.swing.JPanel;),returnModelY(),clm2,getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),kernalVar,fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),PoissonFit_Modeler(),getModelCount(),dPoisson,addParams(Ljavax.swing.JPanel;),returnModelX(),paramField,getLowerLimit(),paramLabel,userParams,coeffs,getDescription(),rawCheck,generateSamples(I),getUpperLimit(),getModelType(),data,estimateParams,itemStateChanged(Ljava.awt.event.ItemEvent;),toggleParams(Z)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="clm2" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#clm2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="coeffs" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#coeffs"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dPoisson" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#dPoisson"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="data" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#data"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estimateParams" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#estimateParams"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="paramField" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#paramField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="paramLabel" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#paramLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rawCheck" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#rawCheck"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userParams" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#userParams"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,306">
+      <children xsi:type="editmodel:MethodEditModel" name="PoissonFit_Modeler" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#PoissonFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="PoissonFit_Modeler" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#PoissonFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="itemStateChanged" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#itemStateChanged(Ljava.awt.event.ItemEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/PoissonFit_Modeler" source="//@children.1" target="//@children.6/@sourceConnections.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GammaFit_Modeler" location="962,379" size="192,535" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler" runTimeClassModel="returnModelY(),shapeParamField,GammaFit_Modeler(Ljavax.swing.JPanel;),scaleParamLabel,kernalVarField,clm2,getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),kernalVar,fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),getModelCount(),addParams(Ljavax.swing.JPanel;),returnModelX(),getLowerLimit(),stdGamma,shapeParamLabel,userParams,scaleParamField,getDescription(),generateSamples(I),GammaFit_Modeler(),getModelType(),getUpperLimit(),estimateParams,itemStateChanged(Ljava.awt.event.ItemEvent;),toggleParams(Z)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="169,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="clm2" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#clm2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estimateParams" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#estimateParams"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVarField" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#kernalVarField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="scaleParamField" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#scaleParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="scaleParamLabel" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#scaleParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="shapeParamField" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#shapeParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="shapeParamLabel" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#shapeParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdGamma" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#stdGamma"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userParams" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#userParams"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="122,306">
+      <children xsi:type="editmodel:MethodEditModel" name="GammaFit_Modeler" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#GammaFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="GammaFit_Modeler" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#GammaFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="itemStateChanged" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#itemStateChanged(Ljava.awt.event.ItemEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/GammaFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/GammaFit_Modeler" source="//@children.2" target="//@children.6/@sourceConnections.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MixedFit_Modeler" location="262,379" size="187,607" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler" runTimeClassModel="returnModelY(),reinit,modelCt,clm2,modelPts,MixedFit_Modeler(),getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),kernalVar,fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),getModelCount(),dPoisson,addParams(Ljavax.swing.JPanel;),returnModelX(),paramField,getLowerLimit(),paramLabel,coeffs,normalmixture,getDescription(),IterationsLabel,rawCheck,generateSamples(I),mType,getUpperLimit(),getModelType(),data,MixedFit_Modeler(Ljavax.swing.JPanel;),toggleParams(Z),IterationsField">
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,252">
+      <children xsi:type="editmodel:AttributeEditModel" name="IterationsField" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#IterationsField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="IterationsLabel" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#IterationsLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="clm2" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#clm2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="coeffs" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#coeffs"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dPoisson" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#dPoisson"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="data" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#data"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mType" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#mType"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelCt" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#modelCt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelPts" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#modelPts"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="normalmixture" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#normalmixture"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="paramField" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#paramField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="paramLabel" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#paramLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rawCheck" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#rawCheck"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reinit" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#reinit"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,288">
+      <children xsi:type="editmodel:MethodEditModel" name="MixedFit_Modeler" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#MixedFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="MixedFit_Modeler" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#MixedFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/MixedFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/MixedFit_Modeler" source="//@children.3" target="//@children.6/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BetaFit_Modeler" location="479,379" size="193,589" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler" runTimeClassModel="dBeta,returnModelY(),rightParamField,leftLimitField,kernalVarField,BetaFit_Modeler(),rightLimitField,getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),kernalVar,rightParamLabel,fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),getModelCount(),addParams(Ljavax.swing.JPanel;),returnModelX(),getLowerLimit(),userParams,leftParamLabel,BetaFit_Modeler(Ljavax.swing.JPanel;),getDescription(),rightLimitLabel,generateSamples(I),getModelType(),getUpperLimit(),estimateParams,leftParamField,itemStateChanged(Ljava.awt.event.ItemEvent;),leftLimitLabel,toggleParams(Z)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,234">
+      <children xsi:type="editmodel:AttributeEditModel" name="dBeta" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#dBeta"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estimateParams" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#estimateParams"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVarField" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#kernalVarField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="leftLimitField" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#leftLimitField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="leftLimitLabel" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#leftLimitLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="leftParamField" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#leftParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="leftParamLabel" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#leftParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rightLimitField" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#rightLimitField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rightLimitLabel" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#rightLimitLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rightParamField" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#rightParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rightParamLabel" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#rightParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userParams" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#userParams"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,306">
+      <children xsi:type="editmodel:MethodEditModel" name="BetaFit_Modeler" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#BetaFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BetaFit_Modeler" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#BetaFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="itemStateChanged" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#itemStateChanged(Ljava.awt.event.ItemEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/BetaFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/BetaFit_Modeler" source="//@children.4" target="//@children.6/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Modeler" location="567,50" size="273,279" stereotype="interface" id="edu.ucla.stat.SOCR.core/Modeler" runTimeClassModel="returnModelY(),returnModelX(),generateSamples(I),getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),getModelType(),getUpperLimit(),getLowerLimit(),fitCurve([FFFLjavax.swing.JTextArea;),getResearch(),getModelCount(),getDescription()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,216">
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.core/Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.core/Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.core/Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.core/Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.core/Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.core/Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.core/Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.core/Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.core/Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.core/Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.core/Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.core/Modeler#returnModelY()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="NormalFit_Modeler" location="50,379" size="182,571" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler" runTimeClassModel="returnModelY(),meanParamField,stdevParamField,clm2,kernalVarField,NormalFit_Modeler(Ljavax.swing.JPanel;),getInstructions(),registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;),kernalVar,stdNorm,NormalFit_Modeler(),fitCurve([FFFLjavax.swing.JTextArea;),stdevParamLabel,getResearch(),getModelCount(),addParams(Ljavax.swing.JPanel;),returnModelX(),getLowerLimit(),userParams,coeffs,getDescription(),rawCheck,generateSamples(I),getModelType(),getUpperLimit(),estimateParams,meanParamLabel,itemStateChanged(Ljava.awt.event.ItemEvent;),toggleParams(Z)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="159,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="clm2" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#clm2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="coeffs" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#coeffs"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estimateParams" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#estimateParams"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVar" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#kernalVar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kernalVarField" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#kernalVarField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="meanParamField" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#meanParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="meanParamLabel" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#meanParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rawCheck" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#rawCheck"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdNorm" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#stdNorm"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdevParamField" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#stdevParamField"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdevParamLabel" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#stdevParamLabel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userParams" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#userParams"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,306">
+      <children xsi:type="editmodel:MethodEditModel" name="NormalFit_Modeler" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#NormalFit_Modeler(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="NormalFit_Modeler" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#NormalFit_Modeler()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParams" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#addParams(Ljavax.swing.JPanel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fitCurve" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#fitCurve([FFFLjavax.swing.JTextArea;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="generateSamples" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#generateSamples(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstructions" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getInstructions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLowerLimit" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getLowerLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelCount" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getModelCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelType" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getModelType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResearch" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getResearch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLimit" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#getUpperLimit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="itemStateChanged" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#itemStateChanged(Ljava.awt.event.ItemEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="registerObservers" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#registerObservers(Ledu.ucla.stat.SOCR.util.ObservableWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelX" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#returnModelX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="returnModelY" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#returnModelY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toggleParams" id="edu.ucla.stat.SOCR.modeler/NormalFit_Modeler#toggleParams(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.4/@sourceConnections.0 //@children.0/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.1/@sourceConnections.0" id="edu.ucla.stat.SOCR.core/Modeler&lt;-edu.ucla.stat.SOCR.modeler/NormalFit_Modeler" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="136,279" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" properties="wireOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

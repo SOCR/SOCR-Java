@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="noble-gas">
+   <name>Argon</name>
+   <symbol>Ar</symbol>
+   <atomic-number>18</atomic-number>
+   <mass-number>40</mass-number>
+   <electronegativity>0.0</electronegativity>
+   <covalent-radius>0.98</covalent-radius>
+   <atomic-radius>0.88</atomic-radius>
+   <melting-point>83.81</melting-point>
+   <boiling-point>87.3</boiling-point>
+   <density>0.001784</density>
+   <specific-heat>0.520</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.0001772</thermal-conductivity>
+</element>

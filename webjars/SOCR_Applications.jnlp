@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_Applications.jnlp"> 
+    <information> 
+       <title>SOCR Applications</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCRApplications</description> 
+       <description kind="short">SOCR Applications</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_applications_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_applications_webstart" 
+      main-class="edu.ucla.stat.SOCR.core.SOCRApplications" 
+      width="1500" 
+      height="900"> 
+     </applet-desc>
+</jnlp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Tin</name>
+   <symbol>Sn</symbol>
+   <atomic-number>50</atomic-number>
+   <mass-number>119</mass-number>
+   <electronegativity>1.96</electronegativity>
+   <covalent-radius>1.40</covalent-radius>
+   <atomic-radius>1.72</atomic-radius>
+   <melting-point>505.06</melting-point>
+   <boiling-point>2876.0</boiling-point>
+   <density>7.30</density>
+   <specific-heat>0.227</specific-heat>
+   <electrical-conductivity>0.0917e6</electrical-conductivity>
+   <thermal-conductivity>0.666</thermal-conductivity>
+</element>

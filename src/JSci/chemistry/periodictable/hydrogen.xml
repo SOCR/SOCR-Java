@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Hydrogen</name>
+   <symbol>H</symbol>
+   <atomic-number>1</atomic-number>
+   <mass-number>1</mass-number>
+   <electronegativity>2.20</electronegativity>
+   <ionization-potentials>
+      <first>13.598</first>
+   </ionization-potentials>
+   <covalent-radius>0.371</covalent-radius>
+   <atomic-radius>0.79</atomic-radius>
+   <melting-point>14.025</melting-point>
+   <boiling-point>20.268</boiling-point>
+   <density>0.0000899</density>
+   <specific-heat>14.304</specific-heat>
+   <electrical-conductivity>0.0</electrical-conductivity>
+   <thermal-conductivity>0.001815</thermal-conductivity>
+</element>

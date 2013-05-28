@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  <jnlp
+  codebase="http://socr.stat.ucla.edu/webstart/webjars/" 
+  href="SOCR_Games.jnlp"> 
+    <information> 
+       <title>SOCR Games</title> 
+       <vendor>SOCR</vendor> 
+       <description>SOCRGames</description> 
+       <description kind="short">SOCR Games</description> 
+       <offline-allowed/> 
+     </information> 
+     <resources> 
+       <j2se version="1.6"/> 
+       <jar href="SOCR_games_webstart.jar"/> 
+     </resources> 
+    <applet-desc 
+      documentBase="http://socr.stat.ucla.edu/webstart/webjars/" 
+      name="SOCR_games_webstart" 
+      main-class="edu.ucla.stat.SOCR.core.SOCRGames" 
+      width="1500" 
+      height="900"> 
+     </applet-desc>
+</jnlp>

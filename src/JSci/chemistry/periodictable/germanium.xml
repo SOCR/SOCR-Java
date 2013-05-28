@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Germanium</name>
+   <symbol>Ge</symbol>
+   <atomic-number>32</atomic-number>
+   <mass-number>72</mass-number>
+   <electronegativity>2.01</electronegativity>
+   <covalent-radius>1.22</covalent-radius>
+   <atomic-radius>1.52</atomic-radius>
+   <melting-point>1210.4</melting-point>
+   <boiling-point>3107.0</boiling-point>
+   <density>5.323</density>
+   <specific-heat>0.32</specific-heat>
+   <electrical-conductivity>0.0145</electrical-conductivity>
+   <thermal-conductivity>0.599</thermal-conductivity>
+</element>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Zirconium</name>
+   <symbol>Zr</symbol>
+   <atomic-number>40</atomic-number>
+   <mass-number>91</mass-number>
+   <electronegativity>1.33</electronegativity>
+   <covalent-radius>1.45</covalent-radius>
+   <atomic-radius>2.16</atomic-radius>
+   <melting-point>2125.0</melting-point>
+   <boiling-point>4682.0</boiling-point>
+   <density>6.4</density>
+   <specific-heat>0.27</specific-heat>
+   <electrical-conductivity>0.0236e6</electrical-conductivity>
+   <thermal-conductivity>0.227</thermal-conductivity>
+</element>

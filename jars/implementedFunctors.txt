@@ -1,0 +1,9 @@
+# http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials_FunctorActivities
+# This file created by edu.ucla.stat.SOCR.core.CreateImplementationFile,
+# search from E:\Ivo.dir\Eclipse_Projects\SOCR\classes\.\edu\ucla\stat\SOCR\core
+# current format is "name, classname"
+# there are currently 3 SOCR Functor files in the package edu.ucla.stat.SOCR.core
+
+PDF/CDF, edu.ucla.stat.SOCR.core.DistributionGraphPanel
+MGF, edu.ucla.stat.SOCR.core.MGFGraphPanel
+PGF, edu.ucla.stat.SOCR.core.PGFGraphPanel

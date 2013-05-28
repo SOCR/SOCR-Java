@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="non-metal">
+   <name>Nitrogen</name>
+   <symbol>N</symbol>
+   <atomic-number>7</atomic-number>
+   <mass-number>14</mass-number>
+   <electronegativity>3.04</electronegativity>
+   <covalent-radius>0.70</covalent-radius>
+   <atomic-radius>0.75</atomic-radius>
+   <melting-point>63.14</melting-point>
+   <boiling-point>77.35</boiling-point>
+   <density>0.0012506</density>
+   <specific-heat>1.04</specific-heat>
+   <thermal-conductivity>0.0002598</thermal-conductivity>
+</element>

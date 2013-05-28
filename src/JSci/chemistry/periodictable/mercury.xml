@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="transition-metal">
+   <name>Mercury</name>
+   <symbol>Hg</symbol>
+   <atomic-number>80</atomic-number>
+   <mass-number>201</mass-number>
+   <electronegativity>2.00</electronegativity>
+   <covalent-radius>1.44</covalent-radius>
+   <atomic-radius>1.76</atomic-radius>
+   <melting-point>234.28</melting-point>
+   <boiling-point>630.0</boiling-point>
+   <density>13.546</density>
+   <specific-heat>0.139</specific-heat>
+   <electrical-conductivity>0.0104e6</electrical-conductivity>
+   <thermal-conductivity>0.0834</thermal-conductivity>
+</element>

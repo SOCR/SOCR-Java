@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="rare-earth-metal">
+   <name>Samarium</name>
+   <symbol>Sm</symbol>
+   <atomic-number>62</atomic-number>
+   <mass-number>150</mass-number>
+   <electronegativity>1.17</electronegativity>
+   <covalent-radius>1.62</covalent-radius>
+   <atomic-radius>2.59</atomic-radius>
+   <melting-point>1345.0</melting-point>
+   <boiling-point>2064.0</boiling-point>
+   <density>7.54</density>
+   <specific-heat>0.20</specific-heat>
+   <electrical-conductivity>9.56e3</electrical-conductivity>
+   <thermal-conductivity>0.133</thermal-conductivity>
+</element>

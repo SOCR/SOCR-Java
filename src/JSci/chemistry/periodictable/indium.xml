@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE element SYSTEM "elements.dtd">
+<element series="metal">
+   <name>Indium</name>
+   <symbol>In</symbol>
+   <atomic-number>49</atomic-number>
+   <mass-number>115</mass-number>
+   <electronegativity>1.78</electronegativity>
+   <covalent-radius>1.50</covalent-radius>
+   <atomic-radius>2.00</atomic-radius>
+   <melting-point>429.76</melting-point>
+   <boiling-point>2346.0</boiling-point>
+   <density>7.31</density>
+   <specific-heat>0.23</specific-heat>
+   <electrical-conductivity>0.116e6</electrical-conductivity>
+   <thermal-conductivity>0.816</thermal-conductivity>
+</element>
