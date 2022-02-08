@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8" content="">
+    <meta name="description" content="Statistics Online Computational Resource">
+    <meta name="author" content="Ivo Dinov - http://www.socr.umich.edu">
+    <meta name="keywords" content="Statistics Online Computational Resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../js/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./scripts/SOCR_Tools_style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/SOCR_Web_Icon.ico">
+    <link rel="alternate" type="application/rss+xml" rel="tooltip" title="SOCR News" href="http://socr.umich.edu/html/feed.rss">
+    <script type="text/javascript" src="./scripts/jquery-1.7.2.min.js"></script>
+    <script type = "text/javascript" src="./scripts/jquery-ui.js"></script>
+    <script src="./scripts/ResizeSensor.js"></script>
+    <script src="./scripts/ElementQueries.js"></script>
+    <script type="text/javascript" src="./scripts/plotly.min.js"></script>
+    <script type="text/javascript" src="./scripts/jcanvas.js"></script>
+    <script src="./scripts/dwt.js"></script>
+    <script type="text/javascript" src="./scripts/game.js"></script>
+    <script>
+    MathJax = {
+      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <link href="./scripts/style.css" rel="stylesheet">
+    <title>Fourier Game</title>
+</head>
+<body>
+    <div id = "pageContainer">
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse"
+                        data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span>
+                    </a> <a class="brand" href="../../index.html" rel="tooltip"
+                        title="Statistics Online Computational Resource">SOCR</a>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right">
+                            <a href="http://socr.umich.edu/html/feed.rss" class="btn icon rss">
+                                <i class="icon-bullhorn"></i>RSS
+                            </a>
+                        </p>
+                        <ul class="nav">
+                            <!-- <li class="active"><a href="#">Home</a></li>  -->
+                            <li class="dropdown"><a class="dropdown-toggle" id="drop5"
+                                role="button" data-toggle="dropdown" href="#" rel="tooltip"
+                                title="Learn about the SOCR Resource">About<b class="caret"></b></a>
+                                <ul id="menu3" class="dropdown-menu" role="menu"
+                                    aria-labelledby="drop5">
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/html/SOCR_About.html">About
+                                            SOCR</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://wiki.socr.umich.edu/index.php/SOCR_News">News
+                                            and Events</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/people">SOCR
+                                            Team</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/html/SOCR_UserGoogleMap.html">Geo-Map</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/html/SOCR_Contact.html">Contact</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://wiki.socr.umich.edu/index.php/SOCR_News">News/Events</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_Publications.html">Publications</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_Recognitions.html">Recognitions</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/docs/SOCR_Brochure_UMich.pdf">Brochure</a></li>
+                                    <li class="divider"></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_Funding.html">Funding</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.SOCR.umich.edu/html/SOCR_Support.html">Donations</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_Acknowledgments.html">Acknowledgments</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_CitingLicense.html">Citing/Licences</a></li>
+                                    <li class="divider"></li>
+                                    <li><a tabindex="-1" href="http://wiki.socr.umich.edu/">SOCR
+                                            Wiki</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://wiki.socr.umich.edu/index.php/SOCR_Servers">SOCR
+                                            Servers</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/docs/SOCR_Documentation.html">Documentation</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/SOCR_Download.html">Download</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.socr.umich.edu/html/SOCR_Languages.html">Language
+                                            Translation</a></li>
+                                    <li class="divider"></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/Navigators.html" rel="tooltip"
+                                        title="SOCR Resource Graphical Navigator"> SOCR Resource
+                                            Navigator</a></li>
+    
+                                </ul></li>
+                            <li><a
+                                href="http://www.socr.umich.edu/html/SOCR_Contact.html"
+                                rel="tooltip" title="Contact the SOCR Resource">Contact</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" id="drop5"
+                                role="button" data-toggle="dropdown" href="#" rel="tooltip"
+                                title="Use these tools if your browser is Java/JVM 1.6+ enabled!">
+                                    Java Applets<b class="caret"></b>
+                            </a>
+                                <ul id="menu3" class="dropdown-menu" role="menu"
+                                    aria-labelledby="drop5">
+                                    <li><a tabindex="-1" href="#" rel="tooltip"
+                                        title="Use these tools if your browser is Java/JVM 1.6+ enabled!">Java
+                                            1.6 Applets</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/html/dist/">Distributions</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/html/exp">Experiments</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/html/mod">Modeler</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/html/ana">Analyses</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/html/cha">Charts</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/html/gam">Games</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.ucla.edu/webstart/index.html">Web-Start</a></li>
+                                    <li class="divider"></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.ucla.edu/legacy/htmls/" rel="tooltip"
+                                        title="For older Java/JVM 1.5 enabled Browsers Use the links below!">Legacy
+                                            Java 1.5 Applets</a></li>
+                                </ul></li>
+                            <li class="dropdown"><a class="dropdown-toggle" id="drop5"
+                                role="button" data-toggle="dropdown" href="#" rel="tooltip"
+                                title="A collection of portable modern HTML5 Webapps">Webapps<b
+                                    class="caret"></b></a>
+                                <ul id="menu3" class="dropdown-menu" role="menu"
+                                    aria-labelledby="drop5">
+                                    <li><a tabindex="-1" href="http://www.distributome.org/V3">Distributome
+                                            Navigator</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://www.distributome.org/tools.html">Distributome
+                                            Webapps</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/HTML5/BivariateNormal/">Bivariate
+                                            Normal Distribution Calculator</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/HTML5/charts/ViolinChart/">Violin
+                                            Chart</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/HTML5/Resampling_Webapp/">Randomization
+                                            and Resampling Webapp</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/Applets/index.html#Tables">Probability
+                                            Tables</a></li>
+                                    <li><a tabindex="-1" href="http://socr.umich.edu/HTML5/">Other
+                                            SOCR HTML5 Webapps</a></li>
+                                </ul></li>
+                            <li class="dropdown"><a class="dropdown-toggle" id="drop5"
+                                role="button" data-toggle="dropdown" href="#" rel="tooltip"
+                                title="Additional SOCR Resources">More<b class="caret"></b></a>
+                                <ul id="menu3" class="dropdown-menu" role="menu"
+                                    aria-labelledby="drop5">
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/Applets/index.html#High-Precision_Distribution_Calculators">High-Precision
+                                            Calculators</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/Applets/index.html#Tables">Probability
+                                            Tables</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/Applets/index.html#Function_and_Image-Processing_Tools">Function
+                                            and Image-Processing Applets</a></li>
+                                    <li><a tabindex="-1"
+                                        href="http://socr.umich.edu/Applets/index.html#Other_Interesting_Java_Applets">Other
+                                            Java Applets</a></li>
+                                </ul></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <h1 class="fourier">Fourier Transformation Game</h1>
+        <h1 class="wavelets">Daubechies Wavelet Transformation Game</h1>
+        <select id = "gameselect">
+            <option value="0" id = "fourierselected">Fourier Game</option>
+            <option value="1" id="daubselected">Daubechies Wavelet Game</option>
+        </select>
+        <h2>Instructions</h2>
+        <ul class="fourier">
+            <li><b>Requirements</b> - modern web-browser with HTML and JavaScript support</li>
+            <li>The game is divided into three windows - the Time Series window (top), the Magnitudes window (middle) and the Phases window (bottom)</li>
+            <li style="list-style-type: none;"><h5>Time Series Window</h5></li>
+            <li style="list-style-type: none;"><ul>
+                <li>Displays the Time Series (in blue when applicable) and the Inverse Fourier Transform (in red)</li>
+                <li>All presets generate 3 periods, meaning that the signal is repeated 3 times on the graph. The user however is free to use the entire canvas to draw a custom input</li>
+                <li>The blue line is shown for the following options - Square wave, Triangle wave, Sawtooth wave and User Drawing. For all other options the Time Series is identical to the IFFT, and is thus not shown</li>
+                <li>Each pixel on the curve is a data point, meaning that there are <b id = "numpoints">1500</b> data points being analyzed and processed</li>
+                <li>All data output is normalized to [-1,1] for ease of drawing, before any offset is added</li>
+                <li><b>To start drawing a custom signal, simply click and drag with your mouse / finger on the game window! The game will update when you release the mouse button or lift your finger. More rules can be found in the Methodology and Calculator Rules section</b></li>
+            </ul></li>
+            <li style="list-style-type: none;"><h5>Magnitudes Window</h5></li>
+            <li style="list-style-type: none;"><ul>
+                <li>Displays the Magnitudes of FFT components, with each circle representing a specific frequency</li>
+                <li>All magnitudes are normalized to [0,1] for ease of drawing</li>
+            </ul></li>
+            <li style="list-style-type: none;"><h5>Phases Window</h5></li>
+            <li style="list-style-type: none;"><ul>
+                <li>Displays the Phases of FFT components, with each circle representing a specific frequency</li>
+                <li>All phases are normalized to [-&pi;,&pi;] for ease of drawing</li>
+            </ul></li>
+            <li>There are <b id = "pairs">50</b> magnitude/phase pairs displayed. Use the slider below to change that:</li>
+            <li style="list-style-type: none;"><input type="range" min="20" max="100" value="50" id="mppairs"></li>
+        </ul>
+        <ul class="wavelets">
+            <li><b>Requirements</b> - modern web-browser with HTML and JavaScript support</li>
+            <li>The game is divided into two windows - the Time Series window (top) and the Magnitudes window (bottom)</li>
+            <li style="list-style-type: none;"><h5>Time Series Window</h5></li>
+            <li style="list-style-type: none;"><ul>
+                <li>Displays the Time Series (in blue when applicable) and the Inverse Fourier Transform (in red)</li>
+                <li>All presets generate 3 periods, meaning that the signal is repeated 3 times on the graph. The user however is free to use the entire canvas to draw a custom input</li>
+                <li>Each pixel on the curve is a data point, meaning that there are <b id = "numpoints">1500</b> data points being analyzed and processed</li>
+                <li>All data output is initially normalized to [-1,1] for ease of drawing, before any user input is added</li>
+                <li><b>To start drawing a custom signal, simply click and drag with your mouse / finger on the game window! The game will update when you release the mouse button or lift your finger. More rules can be found in the Methodology and Calculator Rules section</b></li>
+            </ul></li>
+            <li style="list-style-type: none;"><h5>Magnitudes Window</h5></li>
+            <li style="list-style-type: none;"><ul>
+                <li>Displays the Magnitudes of Wavelet components, with each circle (blue) representing a specific wavelet, as well as displaying the raw Daubechies transform as a curve (red)</li>
+                <li>Using the slider below you cn select whiich layer of the decomposition to display - the first (default) layer represents the average frequency of the entire signal, while each layer beyond that splits the signal into smaller sections while increasing the frequency of the wavelets, with each section being represented with a magnitude point. More information can be found in the Methodology section</li>
+                <li>Each individual magnitude point, when you hover over it will highlight a section of the curve it is responsible for, both on the time series curve and on the raw transform curve</li>
+                <li>All magnitudes are normalized to [-1,1] for ease of drawing</li>
+                <li>Below the Magnitudes window is a 3D Plotly representation of the Daubechies output, see the Methodology section for more information</li>
+            </ul></li>
+            <li>There are <b id = "wpairs">1</b> layers of decomposition displayed. Use the slider below to change that:</li>
+            <li style="list-style-type: none;"><input type="range" min="1" max="7" value="1" id="wmags"></li>
+            <li>The current transformation is <b id = "daub">Daubechies 2</b>. Use the drop down below to change that:</li>
+            <li style="list-style-type: none;"><select id = daubselect>
+                <option value="1">Daubechies 1 / Haar</option>
+                <option value="2" selected>Daubechies 2</option>
+                <option value="3">Daubechies 3</option>
+                <option value="4">Daubechies 4</option>
+                <option value="5">Daubechies 5</option>
+                <option value="6">Daubechies 6</option>
+                <option value="7">Daubechies 7</option>
+                <option value="8">Daubechies 8</option>
+                <option value="9">Daubechies 9</option>
+                <option value="10">Daubechies 10</option>
+            </select></li>
+        </ul>
+    </header>
+    <div id = "backdim"></div>
+    <div id = "rules">
+        <button id = "closeR">&times;</button>
+        <h2>Methodology</h2>
+        <p class="fourier">The Fourier Game is based on the forwards and backwards Fourier transformations, with the time series data being displayed alongside the magnitude and phase data. The steps taken by the game to generate the FFT and the IFFT are outlined below:</p>
+        <ul class="fourier">
+            <li>First, the time series curve is normalized to [-1,1] and stored in an array</li>
+            <li>Then, the discrete FFT algorithm is used to generate the frequency array. This algorithm is the Cooley–Tukey FFT algorithm, and is outlined below:</li>
+            <li style="list-style-type: none;">\[X_k = \sum_{n=0}^{N-1}(x_n \times e^{-2i\pi n k / N})\]</li>
+            <li>Where N is the total number of points in the time array, $x_n$ is the $n_{th}$ point of the time series, and $X_k$ is the $k_{th}$ point of the frequency series</li>
+            <li>Since ordinary JavaScript cannot process imaginary numbers, the Euler's formula is used to split the exponent into a real and imaginary component, which are stored in separate arrays. The real and imaginary components are calculated as follows:</li>
+            <li style="list-style-type: none;">\[X_k^{Re} = \sum_{n=0}^{N-1}(x_n \times \cos{(\frac{-2i\pi n k}{N})})\]</li>
+            <li style="list-style-type: none;">\[X_k^{Im} = \sum_{n=0}^{N-1}(x_n \times \sin{(\frac{-2i\pi n k}{N})})\]</li>
+            <li>Afterwards, the real and imaginary arrays are transformed into Magnitude and Phase arrays, using the following formulae:</li>
+            <li style="list-style-type: none;">\[X_k^{Mag} = \sqrt{{(X_k^{Re})}^2 + {(X_k^{Im})}^2}\]</li>
+            <li style="list-style-type: none;">\[X_k^{Phase} = \arctan{	\left(\frac{X_k^{Im}}{X_k^{Re}}\right)}\]</li>
+            <li>These are then diplayed at the appropriate heights on the Magnitude graph (middle) and the Phase graph (bottom).</li>
+            <li>Lastly, the Inverse FFT is calculated, based on a Fourier sum series, aka a sum of multiple sine waves. The formula for the resulting time series is as follows:</li>
+            <li style="list-style-type: none;">\[x = \sum_{k=1}^{K}(X_k^{Mag} \times \sin{(2\pi k t + X_k^{Phase})})\]</li>
+            <li>Where t is the time array and K is the length of the magnitudes array. The time array is then normalized to [-1,1] to be displayed.</li>
+            <li>Note: there is no offset for the time curve, as it is normalized to [-1,1]</li>
+            <li>Note: the sine wave increments in steps of &pi;, meaning that the first magnitide-phase pair describe sin(&pi;t), the second pair describes sin(2&pi;t), etc.</li>
+        </ul>
+        <p  class="wavelets">The Daubechies Wavelets Game is based on the forwards and backwards Wavelet Transform, with the time series data being displayed alongside the magnitude data. The steps taken by the game to generate both transforms are outlined below:</p>
+        <ul class="wavelets">
+            <li>First, the time series curve is normalized to [-1,1] and stored in an array, with only one iteration being analyzed - each third of the time series window is one iteration and drawing on any one of them updates the others, so overall the time series curve consists of three repetitions</li>
+            <li>Next, the time series data is transformed from a 1 by 500 array into a 2 by 250 matrix, using the Daubechies transform. The source code for the Daubechies transform can be found <a href = "https://www.npmjs.com/package/discrete-wavelets" target="blank">here</a></li>
+            <li>The first row of the resulting matrix is a condensed version of the original time series curve, while the second row is the raw frequency output</li>
+            <li>Afterwards, the program takes the number of the layer selected and breaks up the frequency output into the corresponding number of section - the first layer only has 1 frequency, the second has 2 frequencies, the third has 4, and so on until the seventh layer has 64 sections. The decomposition stops at the 7th layer, as it is visually confusing to display 128 frequency points on such a small window</li>
+            <li>Each section of the raw frequency data is then averaged to get the average frequency for that section, and it is then stored in an array to be displayed. The frequency display is normalized to have frequencies between [-1,1] for ease of calculations and displayability</li>
+            <li>The raw matrix output is then further dusplayed in the 3D graph at the bottom of the page, with the scale parameter representing the row of the raw output matrix</li>
+        </ul>
+        <br>
+        <h2>Game Rules</h2>
+        <ul>
+            <li>Any custom drawn input is accepted, and the user can draw over previously drawn lines</li>
+            <li  style="list-style-type: none;"><ul><li>Note: Rapid movement is not tracked accurately and thus a straight line is assumed to exist between two mouse movements</li></ul></li>
+            <li class="fourier">The number of layers can only be between 20 and 100</li>
+            <li>The number of data points on the curve strictly depends on your window size and cannot be changed. </li>
+        </ul>
+    </div>
+    <div id = "downloads">
+        <button id = "closeD">&times;</button>
+        <h2>Download Options</h2>
+        <h3 class="fourier">Download Data</h3>
+        <ul class="fourier">
+            <li>This generates a text file with the FFT output (magnitudes and phases), as well as the IFFT curve data.</li>
+            <li>If a user-input curve, or a pre-set curve was used (Square / Triangle / Sawtooth), its data also downloaded.</li>
+            <li>Note: This text file is large and may take a while to download.</li>
+        </ul>
+        <!--<h3>Generate Settings</h3> Note - this is a copy from the Trivariate distributions czalculator, this could be used in a future game
+        <ul>
+            <li>This generates a URL in the textarea below that can be pasted to the address bar to load the page with custom settings</li>
+            <li>The text string consists of the following: (xdistType ? rhoxy ? parameter1X ? parameter2X ? parameter3X ? parameter4X ? xmin ? xmax) repeated for each distribution</li>
+            <li>Please note: a URL string that does not produce valid settings will be ignored and the page will load with standard normal distributions</li>
+        </ul>
+        <h3>Copy Settings</h3>
+        <ul>
+            <li>This copies the entire URL to clipboard</li>
+            <li>This can also be done by manually copying from the textarea</li>
+        </ul>-->
+        <h3 class="fourier">Download FFT</h3>
+        <ul class="fourier">
+            <li>This downloads just the FFT output data, in the form of (A+Bi)</li>
+        </ul>
+        <h3 class="wavelets">Download Wavelets</h3>
+        <ul class="wavelets">
+            <li>This downloads just the Wavelet Transform output data, in the form of [position, value] pairs</li>
+        </ul>
+        <h3 class="wavelets">Download Full Transform</h3>
+        <ul class="wavelets">
+            <li>This downloads the Wavelet Transform output data in the form of [position, value] pairs, and also the raw Daubechies transform</li>
+        </ul>
+        <!--<textarea id = "setout" onfocus="this.select()" readonly></textarea>
+            <br>-->
+        <button id = "downdata" class="fourier">Download Data</button>
+        <!--<button id = "getset">Generate Settings</button>-->
+        <!--<button id = "copyset">Copy Settings</button>-->
+        <button id = "downfft" class="fourier">Download FFT Data</button>
+        <button id = "downwave" class="wavelets">Download Wave Data</button>
+        <button id = "downwavefull" class="wavelets">Download Full Transform Data</button>
+    </div>
+    <div id = "versionHist">
+        <button id = "closeV">&times;</button>
+        <h2>Version History</h2>
+        <!--<h3>1.X</h3>
+        <ul>
+            <li>Thing added</li>
+            <li>Thing added</li>
+            <li>Thing added</li>
+        </ul>-->
+        <h3>2.0</h3>
+        <ul>
+            <li>Daubechies Wavelet app launched into full rerease</li>
+            <li>Added Download options</li>
+            <li>Expanded calculations</li>
+            <li>Annotated code, explaining all the supportive functions</li>
+        </ul>
+        <h3>1.4</h3>
+        <ul>
+            <li>Refined and upgraded the various curves and the methods to display them</li>
+            <li>Added two more buttons - Flat and Unit Signal</li>
+            <li>Tested added buttons to work in both gales</li>
+            <li></li>
+        </ul>
+        <h3>1.3</h3>
+        <ul>
+            <li>Removed multiple layers from he magnitides canvas - was becoming too cluttered</li>
+            <li>Added slider for layers instead - can now support up to 7th layer (128 points)</li>
+        </ul>
+        <h3>1.2</h3>
+        <ul>
+            <li>Added ability to manipulate layers for the Daubechies transform - now can view up to 6 layers - each layer is separated by a vertical line</li>
+            <li>Added custom URL extensions to all games - default is still Fourier, but the new game has a sub-link that can be called to directly access it</li>
+            <li>Renamed the folder path to frequency_games, thus encompassing all current and future transforms</li>
+        </ul>
+        <h3>1.1</h3>
+        <ul>
+            <li>Added a basic structure for the Daubechies Wavelet Transform - game, methodology and downloads were modified and expanded to include the new game</li>
+            <li>Added additional canvas structures for the Daubechies game to not interfere with the Fourier game</li>
+            <li>Added 3D surface graphs to better illustrate the Daubechies decomposition</li>
+        </ul>
+        <h3>1.0</h3>
+        <ul>
+            <li>Initial release</li>
+            <li>Added Y Offset, used by all custom graphs</li>
+            <li>Fixed Time series bug where a custom drawn graph would show up as a single line at origin</li>
+            <li>Added more advanced mouse movement detection</li>
+            <li>Added ther option to change the number of magnitude/phase pairs</li>
+            <li>Removed canvas resizing options</li>
+        </ul>
+        <h3>0.5</h3>
+        <ul>
+            <li>Added user input for the Time Series Window</li>
+            <li>Updated HTML text</li>
+        </ul>
+        <h3>0.4</h3>
+        <ul>
+            <li>Added square, triangle and sawtooth waves</li>
+            <li>Added custom FFT function to process any input, based on the Cooley-Tukey algorithm</li>
+            <li>Added FFT output download and tweaked Data download</li>
+            <li>Modified and expanded Methodology section</li>
+            <li>Added substance to Instructions</li>
+        </ul>
+        <h3>0.3</h3>
+        <ul>
+            <li>Added display resizing - screens are now divided into 4 categories: &lt; 1000 px, 1000-1300 px, 1300-1600 px, &gt; 1600</li>
+            <li>Buttons for preset Time plots added - only the Sine and Noise buttons work for now</li>
+            <li>Download data capability added</li>
+        </ul>
+        <h3>0.2</h3>
+        <ul>
+            <li>User interactivity added on Magnitudes and Phases sections</li>
+            <li>50 sine curves are now being used to make the Time series plot</li>
+        </ul>
+        <h3>0.1</h3>
+        <ul>
+            <li>Game Created</li>
+            <li>Basic display added</li>
+        </ul>
+    </div>
+    <button id = "showR">Methodology and Calculator Rules</button>
+    <button id = "showD">Download Options</button>
+    <button id = "showV">Version History</button>
+    <!--<button id="test">Test</button>-->
+    <div id = "graphs">
+        <div>
+            <h2 id = "gametit">Fourier Transform Graph</h2>
+            <p>Currently showing <b id = "graphtitle"></b></p>
+            <p class="fourier">Y offset = <b id = "yoink">0</b><moo>.</moo><input type="range" min="-100" max="100" value="0" id="yoinkval"></p>
+            <button id = "sine">Sine</button>
+            <button id = "square">Square</button>
+            <button id = "triangle">Triangle</button>
+            <button id = "sawtooth">Sawtooth</button>
+            <button id = "noise">Noise</button>
+            <button id = "flat">Flat Curve</button>
+            <button id = "unitsig">Impulse Function</button>
+            <br>
+            <canvas class="fourier" id = "game" width="1520" height="220"></canvas>
+            <canvas class="fourier" id = "magnitudes" width="1520" height="220"></canvas>
+            <canvas class="fourier" id = "offsets" width="1520" height="220"></canvas>
+            <canvas class="wavelets" id = "wgame" width="1520" height="220"></canvas>
+            <canvas class="wavelets" id = "wmagnitudes" width="1520" height="220"></canvas>
+            <br>
+            <div id = "yeet"></div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <a href="http://www.socr.umich.edu/">SOCR Resource</a> Visitor number
+        <img class="statcounter" src="https://c.statcounter.com/5714596/0/038e9ac4/0/" alt="Web Analytics" align="middle" border="0">
+        <script type="text/javascript">
+            var d = new Date();
+            document.write(" | " + d.getFullYear() + " | ");
+        </script>
+        <a href="../../../img/SOCR_Email.png"><img alt="SOCR Email" title="SOCR Email" src="../../../img/SOCR_Email.png" style="border: 0px solid;"></a>
+        <script src="../../../js/bootstrap-transition.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-alert.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-modal.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-dropdown.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-scrollspy.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-tab.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-tooltip.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-popover.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-button.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-collapse.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-carousel.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap-typeahead.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var sc_project = 5714596;var sc_invisible = 1;var sc_partition = 71;var sc_click_stat = 1; var sc_security = "038e9ac4";
+        </script>
+        <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+        <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script type="text/javascript"> _uacct = "UA-676559-1"; urchinTracker();</script>
+    </footer>
+</body>
+</html>
