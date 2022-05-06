@@ -56,6 +56,12 @@ moo{
     margin-top: 10px;
 }
 
+#touched{
+    color: white;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
 #rules{
     display: none;
     background-color: #eee;

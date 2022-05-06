@@ -3,45 +3,18 @@ $(document).ready(function(){
     var pagewidth = $(window).width();
     $('.fourier').hide();
     $('.wavelets').hide();
-    if(pagewidth >= 1600){//Default state
-        $('#numpoints').replaceWith('<b id = "numpoints">1500</b>');
-    }
-    else if(pagewidth < 1600 && pagewidth >= 1300){
-        $('#numpoints').replaceWith('<b id = "numpoints">1200</b>');
+    var gamewidth = 20+300*Math.floor((pagewidth-200)/300);
+    var initialpairs = Math.floor((gamewidth-20)/30);
+    $('#numpoints').replaceWith('<b id = "numpoints">' + gamewidth + '</b>');
 
-        $('#game').replaceWith('<canvas id = "game" width="1220" height="220"></canvas>');
-        $('#magnitudes').replaceWith('<canvas id = "magnitudes" width="1220" height="220"></canvas>');
-        $('#offsets').replaceWith('<canvas id = "offsets" width="1220" height="220"></canvas>');
-        $('#mppairs').val(40).trigger('change');
-        $('#pairs').replaceWith('<b id = "pairs">40</b>');
-        
-        $('#wgame').replaceWith('<canvas id = "wgame" width="1220" height="220"></canvas>');
-        $('#wmagnitudes').replaceWith('<canvas id = "wmagnitudes" width="1220" height="220"></canvas>');
-    }
-    else if(pagewidth < 1300 && pagewidth >= 1000){
-        $('#numpoints').replaceWith('<b id = "numpoints">900</b>');
-
-        $('#game').replaceWith('<canvas id = "game" width="920" height="220"></canvas>');
-        $('#magnitudes').replaceWith('<canvas id = "magnitudes" width="920" height="220"></canvas>');
-        $('#offsets').replaceWith('<canvas id = "offsets" width="920" height="220"></canvas>');
-        $('#mppairs').val(30).trigger('change');
-        $('#pairs').replaceWith('<b id = "pairs">30</b>');
-        
-        $('#wgame').replaceWith('<canvas id = "wgame" width="1220" height="220"></canvas>');
-        $('#wmagnitudes').replaceWith('<canvas id = "wmagnitudes" width="1220" height="220"></canvas>');
-    }
-    else if(pagewidth < 1000){
-        $('#numpoints').replaceWith('<b id = "numpoints">600</b>');
-
-        $('#game').replaceWith('<canvas id = "game" width="620" height="220"></canvas>');
-        $('#magnitudes').replaceWith('<canvas id = "magnitudes" width="620" height="220"></canvas>');
-        $('#offsets').replaceWith('<canvas id = "offsets" width="620" height="220"></canvas>');
-        $('#mppairs').val(20).trigger('change');
-        $('#pairs').replaceWith('<b id = "pairs">20</b>');
-        
-        $('#wgame').replaceWith('<canvas id = "wgame" width="1220" height="220"></canvas>');
-        $('#wmagnitudes').replaceWith('<canvas id = "wmagnitudes" width="1220" height="220"></canvas>');
-    }
+    $('#game').replaceWith('<canvas class = "fourier" id = "game" width="' + gamewidth + '" height="220"></canvas>');
+    $('#magnitudes').replaceWith('<canvas class = "fourier" id = "magnitudes" width="' + gamewidth + '" height="220"></canvas>');
+    $('#offsets').replaceWith('<canvas class = "fourier" id = "offsets" width="' + gamewidth + '" height="220"></canvas>');
+    $('#mppairs').val(initialpairs).trigger('change');
+    $('#pairs').replaceWith('<b id = "pairs">' + initialpairs + '</b>');
+    
+    $('#wgame').replaceWith('<canvas class = "wavelets" id = "wgame" width="' + gamewidth + '" height="220"></canvas>');
+    $('#wmagnitudes').replaceWith('<canvas class = "wavelets" id = "wmagnitudes" width="' + gamewidth + '" height="220"></canvas>');
                                                             //Notes and Comments:
     /*
     - Notes:
@@ -382,6 +355,7 @@ $(document).ready(function(){
                                                             //General
     var drawCurve = function(array, color, $canv){//Draws the required array using the provided color string - must be of format '#000'
         var xdist = Math.floor(xaxisrange/array.length);
+        if(xdist == 0){xdist = 1;}
         for(var i = 1; i < array.length; i++){
             if($canv == $wmagsCanvas){
                 $canv.drawPath({
@@ -1105,6 +1079,24 @@ $(document).ready(function(){
         }
         
     });
+    $gameCanvas.touchit({//This makes the mobile integration work, DO NOT REMOVE
+        onTouchStart: function (x, y) {
+            $("#touched").text('Touch Start');
+        },
+        onTouchMove: function (x, y) {
+            $("#touched").text("Touch Move");
+        },
+        onTouchEnd: function (x, y) {
+            $("#touched").text("Touch End ");
+        },
+        onDoubleTap: function (x, y) {
+            $("#touched").text("Double Tap ");
+        },
+        onPinch: function (scale) {
+            $("#touched").text("Pinch ");
+        }
+    });
+    
                                                             //Wavelet
     $wgameCanvas.mousedown(function(event) {// Starts drawing the trueline (blue) when the mouse button is pressed
         showid = 5;
@@ -1216,6 +1208,23 @@ $(document).ready(function(){
         if(pressed == 1){
             pressed = 0;
             populatewaves();
+        }
+    });
+    $wgameCanvas.touchit({//This makes the mobile integration work, DO NOT REMOVE
+        onTouchStart: function (x, y) {
+            $("#touched").text('Touch Start');
+        },
+        onTouchMove: function (x, y) {
+            $("#touched").text("Touch Move");
+        },
+        onTouchEnd: function (x, y) {
+            $("#touched").text("Touch End ");
+        },
+        onDoubleTap: function (x, y) {
+            $("#touched").text("Double Tap ");
+        },
+        onPinch: function (scale) {
+            $("#touched").text("Pinch ");
         }
     });
 
@@ -1606,6 +1615,7 @@ $(document).ready(function(){
     if(params[1] == "Wavelets"){//If there is a custom URL then a custom mode is launched
         gametype = 1;
         $('.wavelets').show();
+        $('.fourier').hide();
         $('#gametit').replaceWith('<h2 id = "gametit">Wavelet Transform Graph</h2>');
         $('#daubselected').replaceWith('<option value="1" id="daubselected" selected>Daubechies Wavelet Game</option>')
         initialwavelet();
@@ -1613,6 +1623,7 @@ $(document).ready(function(){
     else if(params[1] == "Fourier"){//If the custom URL is strange or not present, launches standard Fourier game
         gametype = 0;
         $('.fourier').show();
+        $('.wavelets').hide();
         $('#gametit').replaceWith('<h2 id = "gametit">Fourier Transform Graph</h2>');
         initialfourier();
     }
